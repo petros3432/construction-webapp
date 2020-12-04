@@ -21,7 +21,7 @@ public class Owner {
     @Column(name = "owner_id")
     private Long id;
 
-    @Column(name = "ΑΦΜ", nullable = false)
+    @Column(name = "AFM", nullable = false)
     private String afm;
 
     @Column(name = "Name")
@@ -46,7 +46,7 @@ public class Owner {
     @Column(name = "Type of Property")
     private TypeOfProperty typeOfProperty;
 
-    @OneToMany(mappedBy = "Repair", targetEntity = Repair.class)
+    @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
     @Override
@@ -55,7 +55,7 @@ public class Owner {
         sb.append("id=").append(id);
         sb.append(", firstName='").append(name).append('\'');
         sb.append(", lastName='").append(surname).append('\'');
-        sb.append(", ΑΦΜ='").append(afm).append('\'');
+        sb.append(", afm='").append(afm).append('\'');
         sb.append(", Email='").append(email).append('\'');
         sb.append(", Password='").append(password).append('\'');
         sb.append(", Type of Property='").append(typeOfProperty.getFullName()).append('\'');
