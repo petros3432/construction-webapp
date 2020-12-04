@@ -9,27 +9,27 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.sql.Date;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
 @Entity
 @Table(name="Repair")
 public class Repair {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "repair_id)")
+    @Column(name = "repair_id")
     private Long id;
 
-    @Column(name = "Scheduled Date Of Repair")
+    @Column(name = "Scheduled_Date_Of_Repair")
     private Date scheduledDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "State Of Repair")
+    @Column(name = "State_Of_Repair")
     private StateOfRepair state;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Type Of Repair")
+    @Column(name = "Type_Of_Repair")
     private TypeOfRepair typeOfRepair;
 
     @Column(name = "Cost")
@@ -47,18 +47,20 @@ public class Repair {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Author{");
+        final StringBuilder sb = new StringBuilder("Repair{");
         sb.append("id=").append(id);
-        sb.append(", Scheduled ='").append(scheduledDate).append('\'');
-        sb.append(", State Of Repair='").append(state.getFullName()).append('\'');
-        sb.append(", Type Of Repair='").append(typeOfRepair.getFullName()).append('\'');
-        sb.append(", Cost='").append(cost).append('\'');
-        sb.append(", Address='").append(address).append('\'');
-        sb.append(", Decription='").append(textDesc).append('\'');
-        sb.append(", Owner='").append(owner).append('\'');
+        sb.append(",Scheduled_Date_Of_Repair='").append(scheduledDate).append('\'');
+        sb.append(",State_Of_Repair='").append(state.getFullName()).append('\'');
+        sb.append(",Type_Of_Repair='").append(typeOfRepair.getFullName()).append('\'');
+        sb.append(",Cost='").append(cost).append('\'');
+        sb.append(",Address='").append(address).append('\'');
+        sb.append(",Description='").append(textDesc).append('\'');
+        sb.append(",owner='").append(owner).append('\'');
         sb.append('}');
         return sb.toString();
     }
+
+
 
 
 }

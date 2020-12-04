@@ -2,11 +2,11 @@ package gr.pf.team2.constructionwebapp.enums;
 
 public enum TypeOfRepair {
 
-    ΒΑΨΙΜΟ("Βάψιμο"),
-    ΜΟΝΩΣΗ("Μόνωση"),
-    ΚΟΥΦΩΜΑΤΑ("Κουφώματα"),
-    ΥΔΡΑΥΛΙΚΑ("Υδραυλικές εργασίες"),
-    ΗΛΕΚΤΡΟΛΟΓΙΚΑ("Ηλεκτρολογικές εργασίες");
+    PAINTING("Painting"),
+    INSULATION("Insulation"),
+    FRAMES("Frames"),
+    PLUMBING("Plumbing tasks"),
+    ELECTRICAL("Electrical tasks");
 
 
     private String fullName;

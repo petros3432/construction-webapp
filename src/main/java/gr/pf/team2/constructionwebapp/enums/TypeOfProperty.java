@@ -2,9 +2,9 @@ package gr.pf.team2.constructionwebapp.enums;
 
 public enum TypeOfProperty {
 
-    ΜΟΝΟΚΑΤΟΙΚΙΑ("Μονοκατοικία"),
-    ΠΟΛΥΚΑΤΟΙΚΙΑ("Πολυκατοικία"),
-    ΜΕΖΟΝΕΤΑ("Μεζονέτα");
+    MONOKATOIKIA("Monokatoikia"),
+    POLIKATOIKIA("Polikatoikia"),
+    MEZONETA("Mezoneta");
 
     private String fullName;
 

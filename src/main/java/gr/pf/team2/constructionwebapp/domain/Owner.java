@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="Owner")
+@Table(name="Owner" , uniqueConstraints = {@UniqueConstraint(columnNames = {"AFM"})})
 public class Owner {
 
     @Id
@@ -33,7 +33,7 @@ public class Owner {
     @Column(name = "Address")
     private String address;
 
-    @Column(name = "Telephone number")
+    @Column(name = "Telephone_number")
     private String tel;
 
     @Column(name = "Email")
@@ -43,24 +43,30 @@ public class Owner {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Type of Property")
+    @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Owner{");
         sb.append("id=").append(id);
-        sb.append(", firstName='").append(name).append('\'');
-        sb.append(", lastName='").append(surname).append('\'');
-        sb.append(", afm='").append(afm).append('\'');
-        sb.append(", Email='").append(email).append('\'');
-        sb.append(", Password='").append(password).append('\'');
-        sb.append(", Type of Property='").append(typeOfProperty.getFullName()).append('\'');
+        sb.append(",Name='").append(name).append('\'');
+        sb.append(",Surname='").append(surname).append('\'');
+        sb.append(",AFM='").append(afm).append('\'');
+        sb.append(",Address='").append(address).append('\'');
+        sb.append(",Telephone_Number='").append(address).append('\'');
+        sb.append(",Email='").append(email).append('\'');
+        sb.append(",Password='").append(password).append('\'');
+        sb.append(",Type_of_Property='").append(typeOfProperty.getFullName()).append('\'');
         sb.append('}');
         return sb.toString();
     }
+
+
 
 }
