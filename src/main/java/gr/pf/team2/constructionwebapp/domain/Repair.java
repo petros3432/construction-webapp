@@ -18,7 +18,7 @@ public class Repair {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "repair_id")
+    @Column(name = "Repair_id")
     private Long id;
 
     @Column(name = "Scheduled_Date_Of_Repair")
@@ -42,7 +42,7 @@ public class Repair {
     private String textDesc;
 
     @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "Owner_id")
     private Owner owner;
 
     @Override
