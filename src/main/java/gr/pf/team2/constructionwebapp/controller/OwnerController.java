@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.controller;
 
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,9 +21,9 @@ public class OwnerController {
     @GetMapping({"/"})
     public String OwnersShowoff(Model model, @RequestParam(value = "id", required = false, defaultValue = "1") Long id) {
 
-        Optional name = ownerService.findOwner(id);
+        Owner owner = ownerService.findOwner(id).get();
 
-        model.addAttribute("name", name);
+        model.addAttribute("owner", owner);
 
         return "hello";
     }
