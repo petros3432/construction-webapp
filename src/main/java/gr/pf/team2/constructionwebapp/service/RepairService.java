@@ -5,5 +5,5 @@ import gr.pf.team2.constructionwebapp.domain.Repair;
 import java.util.List;
 
 public interface RepairService {
-    List<Repair> returnFirstTen();
+    List<Repair> returnFirstTenRepairs();
 }

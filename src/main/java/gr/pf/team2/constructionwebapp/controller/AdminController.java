@@ -14,8 +14,8 @@ public class AdminController {
     private RepairService repairService;
 
     public String adminHomePageRepairs(){
-        List<Repair> repairs = repairService.returnFirstTen();
+        List<Repair> repairs = repairService.returnFirstTenRepairs();
         System.out.println(repairs);
-        return null;
+        return "Hello World";
     }
 }
