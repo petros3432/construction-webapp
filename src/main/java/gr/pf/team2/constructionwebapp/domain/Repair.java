@@ -10,9 +10,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name="Repair")
 public class Repair {
