@@ -7,7 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
+
 
 //@NoArgsConstructor
 //@AllArgsConstructor
@@ -22,7 +23,7 @@ public class Repair {
     private Long id;
 
     @Column(name = "Scheduled_Date_Of_Repair")
-    private Date scheduledDate;
+    private LocalDate scheduledDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "State_Of_Repair")

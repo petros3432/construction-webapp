@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.domain;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
+import gr.pf.team2.constructionwebapp.enums.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="Owner" , uniqueConstraints = {@UniqueConstraint(columnNames = {"AFM"})})
+@Table(name="Owner")
 public class Owner {
 
     @Id
@@ -21,7 +22,7 @@ public class Owner {
     @Column(name = "Owner_id")
     private Long id;
 
-    @Column(name = "AFM", nullable = false)
+    @Column(name = "AFM")
     private String afm;
 
     @Column(name = "Name")
@@ -43,6 +44,10 @@ public class Owner {
     private String password;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "Type_of_User")
+    private UserType userType;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
 
@@ -62,6 +67,7 @@ public class Owner {
         sb.append(",Telephone_Number='").append(address).append('\'');
         sb.append(",Email='").append(email).append('\'');
         sb.append(",Password='").append(password).append('\'');
+        sb.append(",Type_of_User='").append(userType).append('\'');
         sb.append(",Type_of_Property='").append(typeOfProperty.getFullName()).append('\'');
         sb.append('}');
         return sb.toString();
