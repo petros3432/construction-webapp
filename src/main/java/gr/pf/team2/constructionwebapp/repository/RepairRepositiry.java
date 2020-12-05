@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface RepairRepositiry extends JpaRepository<Repair,Long> {
 
-    List<Repair> findTopFiveByDate();
+    List<Repair> findTopFourByDate();
+
 }

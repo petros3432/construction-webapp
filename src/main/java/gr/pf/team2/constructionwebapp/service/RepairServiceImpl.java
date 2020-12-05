@@ -16,7 +16,7 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public List<Repair> returnFirstTen() {
-        repairRepository.findTopFiveByDate();
+        repairRepository.findTopFourByDate();
         return null;
     }
 }
