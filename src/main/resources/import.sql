@@ -11,3 +11,8 @@ INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair 
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Thrakomakedonwn 35' , '200' , '2020-10-5 11:30:00' , 'COMPLETED'  , 'FRAMES' , '3');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Mouratidou 12' , '170' , '2020-10-25 12:00:00' , 'COMPLETED'  , 'PLUMBING' , '4');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Kiriakou 5' , '120' , '2021-1-5 9:00:00' , 'DEFAULT'  , 'ELECTRICAL' , '5');
+
+INSERT INTO Admin (Email,Password) VALUES ('admin1@gmail.com' , 'adminadmin');
+INSERT INTO Admin (Email,Password) VALUES ('admin2@gmail.com' , 'Admin2');
+INSERT INTO Admin (Email,Password) VALUES ('admin3@gmail.com' , 'Admin3');
+INSERT INTO Admin (Email,Password) VALUES ('admin4@gmail.com' , 'Admin4');
