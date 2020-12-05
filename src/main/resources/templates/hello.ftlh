@@ -6,7 +6,7 @@
     <link href="/css/main.css" rel="stylesheet" />
 </head>
 <body>
-<h2 class="hello-title">${TenRepairs}!</h2>
+<h2 class="hello-title">${TenRepairs.scheduledDate}</h2>
 <script src="/js/main.js"></script>
 </body>
 

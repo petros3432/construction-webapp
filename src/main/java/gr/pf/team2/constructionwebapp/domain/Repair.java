@@ -21,6 +21,8 @@ public class Repair {
     @Column(name = "Repair_id")
     private Long id;
 
+
+
     @Column(name = "Scheduled_Date_Of_Repair")
     private Date scheduledDate;
 
@@ -44,6 +46,10 @@ public class Repair {
     @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "Owner_id")
     private Owner owner;
+
+    public Date getScheduledDate() {
+        return scheduledDate;
+    }
 
     @Override
     public String toString() {

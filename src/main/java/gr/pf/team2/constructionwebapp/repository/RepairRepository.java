@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface RepairRepository extends JpaRepository<Repair,Long> {
 
-    @Query(value="SELECT TOP 10 * FROM Repair ORDER BY Scheduled_Date_Of_Repair", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair", nativeQuery = true)
     List<Repair> showFirstTenRepairs();
 
 }

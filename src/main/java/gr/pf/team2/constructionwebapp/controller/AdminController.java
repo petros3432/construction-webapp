@@ -17,8 +17,8 @@ public class AdminController {
 
     @GetMapping({"/","hello"})
     public String adminHomePageRepairs(Model model){
-        String repairs = repairService.returnFirstTenRepairs().toString();
-        model.addAttribute("TenRepairs",repairs);
+        List<Repair> repairs = repairService.returnFirstTenRepairs();
+        model.addAttribute("TenRepairs",repairs.get(1));
         return "hello";
     }
 }
