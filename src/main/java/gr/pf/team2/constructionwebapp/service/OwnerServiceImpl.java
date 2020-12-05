@@ -7,6 +7,4 @@ import org.springframework.stereotype.Service;
 public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
-
-
 }
