@@ -6,9 +6,8 @@ import gr.pf.team2.constructionwebapp.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class OwnerController {
@@ -16,35 +15,14 @@ public class OwnerController {
     @Autowired
     private OwnerService ownerService;
 
+    @GetMapping({"/" , "/owner"})
+    public String OwnersShowoff(Model model, @RequestParam(value = "id", required = false, defaultValue = "1") Long id) {
 
-    @GetMapping({"ownerByAfm/{afm}"})
-    public String OwnerByAfm(Model model,@PathVariable String afm) {
-        Owner owner = ownerService.findOwnerByAfm(afm).orElseThrow();
+        Owner owner = ownerService.findOwner(id).get();
+
         model.addAttribute("owner", owner);
-        return "hello";
-    }
 
-    @GetMapping({"ownerByEmail/{email}"})
-    public String OwnerByEmail(Model model,@PathVariable String email) {
-        Owner owner = ownerService.findOwnerByEmail(email).orElseThrow();
-        model.addAttribute("owner", owner);
-        return "hello";
-    }
-
-    @PatchMapping({"ownerUpdate/{id}"})
-    public String UpdateOwnerProperty(Model model,@ModelAttribute Owner owner) {
-        Owner databaseOwner = ownerService.findOwnerById(owner.getId()).orElseThrow();
-        databaseOwner = ownerService.updateOwner(owner,databaseOwner);
-        model.addAttribute("owner", databaseOwner);
-        return "hello";
-    }
-
-
-    @PostMapping({"addOwnerProperty"})
-    public String doAddOwnerProperty(Model model,@ModelAttribute Owner owner){
-        owner=ownerService.addOwnerProperty(owner);
-        model.addAttribute(owner);
-        return "hello";
+        return "owner";
     }
 
 }
