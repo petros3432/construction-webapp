@@ -18,11 +18,14 @@ $(document).ready(function () {
                 '<td>' + data[i].state + '</td>'+
                 '<td>' + data[i].sceduledDate + '</td>' +
                 '<td>' +
-                '<button data-toggle="modal" data-target="#DetailModal" class="btn btn-success btn-sm">'+
+                '<button data-toggle="modal" data-target="#DetailModal" class="action btn btn-success btn-sm">'+
                 '<span class="glyphicon glyphicon-floppy-open"></span>Detail</button>'+
-                '<button data-toggle="modal" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>'+
-                '<button  id=' + i + ' data-toggle="modal" class="delete btn btn-danger btn-sm" onclick="removeRow(' + i + ')">'+
+                '<button data-toggle="modal" class="action btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>'+
+                '<button  id=' + i + ' data-toggle="modal" data-target="#remove" class=" action btn btn-danger btn-sm">'+
                 '<span class="glyphicon glyphicon-trash"></span> Delete</button></td></tr>')
+
+
+            // onclick="removeRow(' + i + ')"
 
         }
     }

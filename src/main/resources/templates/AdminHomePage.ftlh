@@ -259,6 +259,30 @@
             </div>
         </div>
 
+<#--        Modal for the deletion confirmation-->
+        <div id="remove" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm delete</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" data-feather="x"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this entry?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <form data-action-url="/repair-delete/" method="delete" class="modal-delete-action">
+                            <buttton type="submit" class="btn btn-danger">Delete</buttton>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </div>
 
     </div>
@@ -266,6 +290,7 @@
 
 
     <script src="/js/main.js"></script>
+<script src="/css/main.css"></script>
 
 
 </body>
