@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.domain;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
+import gr.pf.team2.constructionwebapp.enums.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,15 +14,17 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="Owner" , uniqueConstraints = {@UniqueConstraint(columnNames = {"AFM"})})
+@Table(name="Owner")
 public class Owner {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Owner_id")
     private Long id;
 
-    @Column(name = "AFM", nullable = false)
+    @Column(name = "AFM")
     private String afm;
 
     @Column(name = "Name")
@@ -43,12 +46,64 @@ public class Owner {
     private String password;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "Type_of_User")
+    private UserType userType;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getAfm() {
+        return afm;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public TypeOfProperty getTypeOfProperty() {
+        return typeOfProperty;
+    }
+
+    public List<Repair> getRepairs() {
+        return repairs;
+    }
 
 
     @Override
@@ -62,6 +117,7 @@ public class Owner {
         sb.append(",Telephone_Number='").append(address).append('\'');
         sb.append(",Email='").append(email).append('\'');
         sb.append(",Password='").append(password).append('\'');
+        sb.append(",Type_of_User='").append(userType).append('\'');
         sb.append(",Type_of_Property='").append(typeOfProperty.getFullName()).append('\'');
         sb.append('}');
         return sb.toString();

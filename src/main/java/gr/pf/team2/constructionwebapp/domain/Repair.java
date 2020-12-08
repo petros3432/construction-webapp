@@ -7,11 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Data
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name="Repair")
 public class Repair {
@@ -24,7 +25,7 @@ public class Repair {
 
 
     @Column(name = "Scheduled_Date_Of_Repair")
-    private Date scheduledDate;
+    private LocalDate scheduledDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "State_Of_Repair")
