@@ -17,11 +17,12 @@ $(document).ready(function () {
                 '<td>' + data[i].cost + '</td>'+
                 '<td>' + data[i].state + '</td>'+
                 '<td>' + data[i].sceduledDate + '</td>' +
-                '<td>'+
-                '<button data-toggle="modal" data-target="#exampleModal" class="btn btn-success btn-sm">'+
+                '<td>' +
+                '<button data-toggle="modal" data-target="#DetailModal" class="btn btn-success btn-sm">'+
                 '<span class="glyphicon glyphicon-floppy-open"></span>Detail</button>'+
                 '<button data-toggle="modal" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>'+
-                '<button  id=' + i + ' data-toggle="modal" class="delete btn btn-danger btn-sm" onclick="removeRow(' + i + ')"><span class="glyphicon glyphicon-trash"></span> Delete</button></td></tr>')
+                '<button  id=' + i + ' data-toggle="modal" class="delete btn btn-danger btn-sm" onclick="removeRow(' + i + ')">'+
+                '<span class="glyphicon glyphicon-trash"></span> Delete</button></td></tr>')
 
         }
     }
