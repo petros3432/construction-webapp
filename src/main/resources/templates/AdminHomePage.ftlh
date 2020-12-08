@@ -13,6 +13,8 @@
 
 
 <body>
+
+<#--bootsrap navbar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -30,16 +32,23 @@
     </nav>
 
     <div class="container">
-        <!-- First Button Row -->
+
         <div class="row">
+
+<#--            Add New button-->
+
             <div class="col-md-4" style="padding-left:0%;">
                 <button href="#AddNew" data-toggle="modal" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-plus"></span> Add New
                 </button>
             </div>
+
+            <!-- Search form -->
+
             <div class="col-md-4"></div>
             <div class="col-md-4 text-right" style="padding-right:0%;">
-                <!-- Search form -->
+
+
                 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
                         aria-label="Search">
@@ -47,8 +56,11 @@
                 </form>
             </div>
         </div>
+
         <div class="row">
+
              <#--Table for the repair items-->
+
             <div style="height:50px;"></div>
             <table class="table table-striped table-bordered table-responsive table-hover" id="empTable">
                 <thead>
@@ -74,6 +86,8 @@
                 <tbody class='content'></tbody>
             </table>
         </div>
+
+
         <!-- Modal for the add new repair form -->
         <div class="modal fade" id="AddNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -244,6 +258,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     </div>
