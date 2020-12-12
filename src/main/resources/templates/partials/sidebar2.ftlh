@@ -25,8 +25,8 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="/books/create">
-                    <span data-feather="plus-circle"></span>
-                    Create
+                    <span data-feather="settings"></span>
+                    Repairs
                 </a>
             </li>
         </ul>
