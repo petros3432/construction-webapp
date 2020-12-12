@@ -24,6 +24,6 @@ public class AdminController {
 
 
 
-        return "AdminHomePage";
+        return "pages/AdminHomePage";
     }
 }

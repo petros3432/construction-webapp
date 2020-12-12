@@ -43,9 +43,9 @@ public class OwnerController {
 
 
     @PostMapping({"addOwnerProperty"})
-    public String doAddOwnerProperty(Model model,@ModelAttribute Owner owner){
-        owner=ownerService.addOwnerProperty(owner);
+    public String doAddOwnerProperty(Model model,@ModelAttribute Owner owner) {
+        owner = ownerService.addOwnerProperty(owner);
         model.addAttribute(owner);
         return "pages/AdminHomePage";
-
+    }
 }
