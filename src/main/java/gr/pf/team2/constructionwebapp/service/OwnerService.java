@@ -10,7 +10,6 @@ public interface OwnerService {
     Optional<Owner> findOwnerById(Long id);
     Optional<Owner> findOwnerByAfm(String afm);
     Optional<Owner> findOwnerByEmail(String email);
-    Owner updateOwner(Owner owner, Owner dbOwner);
 
     List<Owner> getAllOwners();
 

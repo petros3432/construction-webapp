@@ -12,12 +12,12 @@ import java.util.Optional;
 @Repository
 public interface OwnerRepository extends JpaRepository<Owner,Long> {
 
-    @Query(value="SELECT * FROM Owner WHERE AFM = (:afm)")
+    @Query(value="SELECT * FROM Owner WHERE AFM = (:afm)", nativeQuery = true)
     Optional<Owner> findOwnerByAfm(String afm);
 
-    @Query(value="SELECT * FROM Owner WHERE Email = (:email)")
+    @Query(value="SELECT * FROM Owner WHERE Email = (:email)", nativeQuery = true)
     Optional<Owner> findOwnerByEmail(String email);
 
-    @Query(value="UPDATE Owner SET Address=(:address) WHERE Owner_id = (:id)")
-    void updateAddress(Long id,String address);
+    //@Query(value="UPDATE Owner SET Address=(:address) WHERE Owner_id = (:id)")
+    //void updateAddress(Long id,String address);
 }

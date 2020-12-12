@@ -5,7 +5,7 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 
 import java.time.LocalDate;
 
-public class RepairModel {
+public class RepairModelDetails {
 
     private LocalDate scheduledDate;
 
@@ -13,8 +13,17 @@ public class RepairModel {
 
     private TypeOfRepair typeOfRepair;
 
+    private double cost;
 
-    public LocalDate getScheduledDate(LocalDate scheduledDate) {
+    private String address;
+
+    private String textDesc;
+
+
+
+    private Long id;
+
+    public LocalDate getScheduledDate() {
         return this.scheduledDate;
     }
 
@@ -37,5 +46,33 @@ public class RepairModel {
     public void setTypeOfRepair(TypeOfRepair typeOfRepair) {
         this.typeOfRepair = typeOfRepair;
     }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTextDesc() {
+        return textDesc;
+    }
+
+    public void setTextDesc(String textDesc) {
+        this.textDesc = textDesc;
+    }
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
 }

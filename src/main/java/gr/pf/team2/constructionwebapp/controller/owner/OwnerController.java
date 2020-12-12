@@ -1,4 +1,4 @@
-package gr.pf.team2.constructionwebapp.controller;
+package gr.pf.team2.constructionwebapp.controller.owner;
 
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
@@ -19,7 +19,7 @@ public class OwnerController {
     private OwnerService ownerService;
 
 
-    @GetMapping({"ownerByAfm/{afm}"})
+    /*@GetMapping({"ownerByAfm/{afm}"})
     public String OwnerByAfm(Model model,@PathVariable String afm) {
         Owner owner = ownerService.findOwnerByAfm(afm).orElseThrow();
         model.addAttribute("owner", owner);
@@ -40,12 +40,5 @@ public class OwnerController {
         model.addAttribute("owner", databaseOwner);
         return "pages/AdminHomePage";
     }
-
-
-    @PostMapping({"addOwnerProperty"})
-    public String doAddOwnerProperty(Model model,@ModelAttribute Owner owner) {
-        owner = ownerService.addOwnerProperty(owner);
-        model.addAttribute(owner);
-        return "pages/AdminHomePage";
-    }
+    */
 }
