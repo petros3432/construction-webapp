@@ -2,11 +2,13 @@ package gr.pf.team2.constructionwebapp.models;
 
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
 public class RepairModel {
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate scheduledDate;
 
     private StateOfRepair state;

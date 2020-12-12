@@ -35,10 +35,10 @@ public class OwnerServiceImpl implements OwnerService {
         return ownerRepository.save(owner);
     }
 
-    @Override
-    public Owner updateOwner(Owner owner, Owner dbOwner) {
-        if (!dbOwner.getAddress().equals(dbOwner.getAddress()))
-            ownerRepository.updateAddress(owner.getId(),owner.getAddress());
-        return dbOwner;
-    }
+//    @Override
+//    public Owner updateOwner(Owner owner, Owner dbOwner) {
+//        if (!dbOwner.getAddress().equals(dbOwner.getAddress()))
+//            ownerRepository.updateAddress(owner.getId(),owner.getAddress());
+//        return dbOwner;
+//    }
 }

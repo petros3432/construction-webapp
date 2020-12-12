@@ -2,7 +2,10 @@ package gr.pf.team2.constructionwebapp.maps;
 
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RepairMapper {
 
     public RepairModel repairToModel(Repair repair){

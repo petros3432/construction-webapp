@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ public class Repair {
     @Column(name = "Repair_id")
     private Long id;
 
+    @DateTimeFormat
     @Column(name = "Scheduled_Date_Of_Repair")
     private LocalDate scheduledDate;
 

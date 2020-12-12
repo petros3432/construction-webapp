@@ -32,7 +32,33 @@
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
-                    <tbody class='content'></tbody>
+                    <tbody>
+                    <#if top10rep??>
+                        <#list top10rep as rep>
+                            <tr>
+                                <#--                        <td><a href="/books/${rep.id}/edit">#${rep.id}</a></td>-->
+                                <td>${rep.typeOfRepair}</td>
+                                <td>${rep.address}</td>
+                                <td>${rep.cost}</td>
+                                <td>${rep.state}</td>
+<#--                                <td class="text-center"><a class="btn btn-link" href="/books/${book.id}/edit"><span data-feather="tool"></span></a></td>-->
+<#--                                <td class="text-center">-->
+
+<#--                                    <button-->
+<#--                                            class="btn btn-link"-->
+<#--                                            data-toggle="modal"-->
+<#--                                            data-target="#modal"-->
+<#--                                            data-id="${book.id}"-->
+<#--                                    >-->
+<#--                                        <span data-feather="x"></span>-->
+<#--                                    </button>-->
+
+<#--                                </td>-->
+                                <td>${rep.scheduledDate}</td>
+                            </tr>
+                        </#list>
+                    </#if>
+                    </tbody>
                 </table>
             </div>
         </main>
