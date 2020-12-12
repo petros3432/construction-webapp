@@ -21,8 +21,8 @@ public class RepairModel {
 
     private String textDesc;
 
-    public LocalDate getScheduledDate(LocalDate scheduledDate) {
-        return this.scheduledDate;
+    public LocalDate getScheduledDate() {
+        return scheduledDate;
     }
 
     public void setScheduledDate(LocalDate scheduledDate) {
