@@ -14,9 +14,7 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerRepository ownerRepository;
 
     @Override
-    public Optional<Owner> findOwnerById(Long id) {
-        return ownerRepository.findById(id);
-    }
+    public Optional<Owner> findOwnerById(Long id) { return ownerRepository.findById(id); }
 
     @Override
     public Optional<Owner> findOwnerByAfm(String afm) {
@@ -29,20 +27,18 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Owner updateOwner(Owner owner, Owner dbOwner) {
-        if (!dbOwner.getAddress().equals(dbOwner.getAddress()))
-            ownerRepository.updateAddress(owner.getId(),owner.getAddress());
-        return dbOwner;
-    }
-
-    @Override
-    public List<Owner> getAllOwners() {
-        return ownerRepository.findAll();
-    }
+    public List<Owner> getAllOwners() { return ownerRepository.findAll(); }
 
     @Override
     public Owner addOwnerProperty(Owner owner) {
         if (owner == null) return null;
         return ownerRepository.save(owner);
+    }
+
+    @Override
+    public Owner updateOwner(Owner owner, Owner dbOwner) {
+        if (!dbOwner.getAddress().equals(dbOwner.getAddress()))
+            ownerRepository.updateAddress(owner.getId(),owner.getAddress());
+        return dbOwner;
     }
 }

@@ -33,7 +33,7 @@ public class OwnerController {
         return "pages/AdminHomePage";
     }
 
-    @PatchMapping({"ownerUpdate/{id}"})
+    @GetMapping({"ownerUpdate/{id}"})
     public String UpdateOwnerProperty(Model model,@ModelAttribute Owner owner) {
         Owner databaseOwner = ownerService.findOwnerById(owner.getId()).orElseThrow();
         databaseOwner = ownerService.updateOwner(owner,databaseOwner);

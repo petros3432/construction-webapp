@@ -9,9 +9,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Entity
 @Table(name="Repair")
@@ -45,6 +42,70 @@ public class Repair {
     @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "Owner_id")
     private Owner owner;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getScheduledDate() {
+        return scheduledDate;
+    }
+
+    public void setScheduledDate(LocalDate scheduledDate) {
+        this.scheduledDate = scheduledDate;
+    }
+
+    public StateOfRepair getState() {
+        return state;
+    }
+
+    public void setState(StateOfRepair state) {
+        this.state = state;
+    }
+
+    public TypeOfRepair getTypeOfRepair() {
+        return typeOfRepair;
+    }
+
+    public void setTypeOfRepair(TypeOfRepair typeOfRepair) {
+        this.typeOfRepair = typeOfRepair;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTextDesc() {
+        return textDesc;
+    }
+
+    public void setTextDesc(String textDesc) {
+        this.textDesc = textDesc;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
     @Override
     public String toString() {
