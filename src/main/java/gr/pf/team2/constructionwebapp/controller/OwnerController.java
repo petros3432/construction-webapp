@@ -18,11 +18,11 @@ public class OwnerController {
     @GetMapping({"/"})
     public String OwnersShowoff(Model model, @RequestParam(value = "id", required = false, defaultValue = "1") Long id) {
 
-//        Owner owner = ownerService.findOwner(id).get();
-//
-//        model.addAttribute("owner", owner);
+        Owner owner = ownerService.findOwner(id).get();
 
-        return "hello";
+        model.addAttribute("owner", owner);
+
+        return "pages/AdminHomePage";
     }
 
 }

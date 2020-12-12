@@ -3,57 +3,42 @@
 
 <head>
     <title>Admin Home Page</title>
-<#--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-    <link  href="/css/main.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/../css/main2.css" rel="stylesheet"/>
     <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
 </head>
 
+
 <body>
-<#include "../partials/CreateModal.ftlh">
-<#include "../partials/TopNavbar.ftlh">
-<#include "../partials/ShowModal.ftlh">
-<div class="container">
-    <!-- First Button Row -->
-    <div class="row justify-content-between">
-        <div class="col-md-4 mt-4" style="padding-left:0%;">
-            <button href="#AddNew" data-toggle="modal" class="btn btn-primary btn-lg" style="border-radius: 25px">
-                <span class="glyphicon glyphicon-plus"></span>Προσθήκη
-            </button>
-        </div>
-        <div class="col-md-4 mt-4 text-right" style="padding-right:0%;">
-            <form class="form-inline" style="display: inline-block;">
-                <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
-    </div>
+<#include "../partials/createmodal.ftlh">
+<#include "../partials/topnavbar2.ftlh">
 
+<div class="container-fluid">
     <div class="row mt-4">
+        <#include "../partials/sidebar2.ftlh">
         <#--Table for the repair items-->
-
-        <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
-               id="empTable">
-            <thead>
-            <tr>
-                <th scope="col">Type</th>
-                <th scope="col">Address</th>
-                <th scope="col">Cost</th>
-                <th scope="col">State</th>
-                <th scope="col">Scheduled Date</th>
-                <th scope="col">Action</th>
-            </tr>
-            </thead>
-            <tbody class='content'></tbody>
-        </table>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h3 class="mb-3">10 Most Recent Repairs</h3>
+            <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
+                       id="empTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Scheduled Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody class='content'></tbody>
+                </table>
+            </div>
+        </main>
     </div>
 </div>
-
-
-<#--    <script src="/../js/main.js"></script>-->
-
-
+<#include "../partials/scripts.ftlh">
 </body>
 
 </html>
