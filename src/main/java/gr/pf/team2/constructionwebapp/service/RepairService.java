@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface RepairService {
 
+    RepairModel createRepair(RepairForm repairForm);
     List<RepairModel> firstTenRepairs();
 
 //    RepairModelDetails seById(Long id);
@@ -16,7 +17,6 @@ public interface RepairService {
 
     void deleteById(Long id);
 
-    void createRepair(RepairForm repairForm);
 
     List<RepairModelByAfm> searchByAfm(String afm);
 

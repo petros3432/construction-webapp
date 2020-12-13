@@ -25,17 +25,13 @@ public class RepairMapper {
         return repairModel;
     }
 
-
-
-
-
     public Repair repairFormToRepair(RepairForm repairForm){
         Repair repair = new Repair();
-
+        repair.setScheduledDate(repairForm.getScheduledDate());
         repair.setTextDesc(repairForm.getTextDesc());
         repair.setTypeOfRepair(repairForm.getTypeOfRepair());
         repair.setState(repairForm.getState());
-        repair.setScheduledDate(repairForm.getScheduledDate());
+
         repair.setCost(repairForm.getCost());
         repair.setAddress(repairForm.getAddress());
 

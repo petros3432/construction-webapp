@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 
+import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
@@ -21,6 +22,7 @@ public class RepairServiceImpl implements RepairService {
     private RepairMapper repairMapper;
 
 
+
     @Override
     public List<RepairModel> firstTenRepairs() {
         return repairRepository
@@ -29,23 +31,17 @@ public class RepairServiceImpl implements RepairService {
                 .map(repair -> repairMapper.repairToModel(repair))
                 .collect(Collectors.toList());
     }
-//
-//    @Override
-//    public RepairModelDetails seById(Long id) {
-//        return repairMapper.repairToModelDetails(repairRepository.findById(id).orElseThrow());
-//    }
-//
-//    @Override
-//    public void updateRepair(RepairModelDetails repairModelDetails) {
-//        repairRepository.save(repairMapper.repairSetToRepair(repairRepository.findById(repairModelDetails.getId()).get(),repairModelDetails));
-//    }
 
     @Override
     public void deleteById(Long id) { repairRepository.deleteById(id); }
 
     @Override
-    public void createRepair(RepairForm repairForm) {
-        repairRepository.save(repairMapper.repairFormToRepair(repairForm));
+    public RepairModel createRepair(RepairForm repairForm) {
+        Repair repair = repairMapper.repairFormToRepair(repairForm);
+        Repair newRepair = repairRepository.save(repair);
+        return repairMapper.repairToModel(newRepair);
+        //This could be a one-liner but it would be unreadable:
+        // return bookModelMapper.map(bookRepository.save(bookMapper.map(bookForm)));
     }
 
     @Override

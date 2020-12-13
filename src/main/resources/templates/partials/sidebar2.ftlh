@@ -1,4 +1,3 @@
-<#include "showmodal.ftlh">
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column mt-4">
@@ -10,10 +9,10 @@
             </li>
 
             <li class="nav-item">
-                <a href="#AddNew" data-toggle="modal" class="nav-link"
+                <a class="nav-link" href="/repairs/create"
                         style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
-                    Add Owner
+                    Add Repair
                 </a>
             </li>
 
@@ -26,7 +25,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/books/create">
                     <span data-feather="settings"></span>
-                    Repairs
+                    Owners
                 </a>
             </li>
         </ul>

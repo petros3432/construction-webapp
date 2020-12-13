@@ -5,14 +5,11 @@
     <title>Admin Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="/../css/main2.css" rel="stylesheet"/>
-
-
     <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
 </head>
 
 
 <body>
-<#include "../partials/createmodal.ftlh">
 <#include "../partials/topnavbar2.ftlh">
 
 <div class="container-fluid">
@@ -44,18 +41,19 @@
                                 <td>${rep.cost}</td>
                                 <td>${rep.state}</td>
                                 <td>${rep.scheduledDate}</td>
-                                <td class="text-center"><a class="btn btn-link" ><span data-feather="tool"></span></a></td>
-
-                                    <td class="text-center">
+                                <td class="text-center"><a class="btn btn-link" href="/repairs/${rep.id}/edit"><span data-feather="tool"></span></a></td>
+                                <td class="text-center">
 
                                     <button
-                                    class="btn btn-link"
+                                            class="btn btn-link"
+                                            data-toggle="modal"
+                                            data-target="#modal"
+                                            data-id="${rep.id}"
                                     >
                                         <span data-feather="x"></span>
                                     </button>
 
                                 </td>
-
                             </tr>
 
                         </#list>
