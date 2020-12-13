@@ -16,7 +16,7 @@ import javax.validation.Valid;
 
 import static gr.pf.team2.constructionwebapp.utils.GlobalVariables.ERROR_MESSAGE;
 @Controller
-public class RepairCreateController {
+public class AdminCreate {
 
     private static final String REPAIR_FORM = "repairForm";
     private static final String REPAIR_STATE = "repairStates";

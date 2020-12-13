@@ -11,12 +11,11 @@ public interface RepairService {
     RepairModel createRepair(RepairForm repairForm);
     List<RepairModel> firstTenRepairs();
 
-//    RepairModelDetails seById(Long id);
+    RepairModel findRepairById(Long id);
 
-//    void updateRepair(RepairModelDetails repairModelDetails);
+    RepairModel updateRepair(RepairModel repairModel);
 
     void deleteById(Long id);
-
 
     List<RepairModelByAfm> searchByAfm(String afm);
 

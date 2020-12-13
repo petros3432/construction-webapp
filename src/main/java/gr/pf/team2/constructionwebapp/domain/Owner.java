@@ -17,18 +17,6 @@ import java.util.List;
 @Table(name="Owner")
 public class Owner {
 
-    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
-        this.afm = afm;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.tel = tel;
-        this.email = email;
-        this.password = password;
-        this.typeOfProperty = typeOfProperty;
-        this.userType = userType;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Owner_id")
@@ -66,10 +54,27 @@ public class Owner {
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
     private List<Repair> repairs;
 
+
+    public Owner(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
+        this.afm = afm;
+        this.name = name;
+        this.surname = surname;
+        this.tel = tel;
+        this.email = email;
+        this.password = password;
+        this.typeOfProperty = typeOfProperty;
+        this.userType = userType;
+    }
+
+
     public void setAddress(String address) {
         this.address = address;
     }
-
 
     public Long getId() {
         return id;

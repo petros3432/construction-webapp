@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.maps;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
@@ -19,8 +20,10 @@ public class RepairMapper {
         repairModel.setCost(repair.getCost());
         repairModel.setId(repair.getId());
         repairModel.setTextDesc(repair.getTextDesc());
-        repairModel.setOwnersName(repair.getOwner().getName() + " " + repair.getOwner().getSurname());
-        repairModel.setOwnersAFM(repair.getOwner().getAfm());
+        repairModel.setOwnerFirstName(repair.getOwner().getName());
+        repairModel.setOwnerLastName(repair.getOwner().getSurname());
+        repairModel.setOwnerID(repair.getOwner().getId());
+        repairModel.setOwnerAFM(repair.getOwner().getAfm());
 
         return repairModel;
     }
@@ -31,7 +34,7 @@ public class RepairMapper {
         repair.setTextDesc(repairForm.getTextDesc());
         repair.setTypeOfRepair(repairForm.getTypeOfRepair());
         repair.setState(repairForm.getState());
-
+        repair.setOwner(new Owner(repairForm.getOwnerFirstName(), repairForm.getOwnerLastName()));
         repair.setCost(repairForm.getCost());
         repair.setAddress(repairForm.getAddress());
 

@@ -33,15 +33,25 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
+    public RepairModel findRepairById(Long id) {
+        return (RepairModel) repairRepository
+                .findAll()
+                .stream()
+                .map(repair -> repairMapper.repairToModel(repair))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public RepairModel updateRepair(RepairModel repairModel) {
+        return null;
+    }
+
+    @Override
     public void deleteById(Long id) { repairRepository.deleteById(id); }
 
     @Override
     public RepairModel createRepair(RepairForm repairForm) {
-        Repair repair = repairMapper.repairFormToRepair(repairForm);
-        Repair newRepair = repairRepository.save(repair);
-        return repairMapper.repairToModel(newRepair);
-        //This could be a one-liner but it would be unreadable:
-        // return bookModelMapper.map(bookRepository.save(bookMapper.map(bookForm)));
+        return repairMapper.repairToModel(repairRepository.save(repairMapper.repairFormToRepair(repairForm)));
     }
 
     @Override

@@ -19,6 +19,12 @@ public class RepairForm {
 
     private String textDesc;
 
+    private String ownerFirstName;
+
+    private String ownerLastName;
+
+
+
     public LocalDate getScheduledDate() {
         return scheduledDate;
     }
@@ -66,6 +72,14 @@ public class RepairForm {
     public void setTextDesc(String textDesc) {
         this.textDesc = textDesc;
     }
+
+    public String getOwnerFirstName() { return ownerFirstName; }
+
+    public void setOwnerFirstName(String ownerFirstName) { this.ownerFirstName = ownerFirstName; }
+
+    public String getOwnerLastName() { return ownerLastName; }
+
+    public void setOwnerLastName(String ownerLastName) { this.ownerLastName = ownerLastName; }
 
 
 

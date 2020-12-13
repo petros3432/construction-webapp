@@ -1,6 +1,5 @@
 package gr.pf.team2.constructionwebapp.models;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -24,27 +23,34 @@ public class RepairModel {
 
     private Long id;
 
-    private String ownersName;
+    private String ownerFirstName;
+
+    private String ownerLastName;
+
+    private String ownerAFM;
+
+    private Long ownerID;
 
 
-    public String getOwnersName() {
-        return ownersName;
+    public String getOwnerFirstName() { return ownerFirstName; }
+
+    public void setOwnerFirstName(String ownerFirstName) { this.ownerFirstName = ownerFirstName; }
+
+    public String getOwnerLastName() { return ownerLastName; }
+
+    public void setOwnerLastName(String ownerLastName) { this.ownerLastName = ownerLastName; }
+
+    public Long getOwnerID() { return ownerID; }
+
+    public void setOwnerID(Long ownerID) { this.ownerID = ownerID; }
+
+    public String getOwnerAFM() {
+        return ownerAFM;
     }
 
-    public void setOwnersName(String ownersName) {
-        this.ownersName = ownersName;
+    public void setOwnerAFM(String ownerAFM) {
+        this.ownerAFM = ownerAFM;
     }
-
-    public String getOwnersAFM() {
-        return ownersAFM;
-    }
-
-    public void setOwnersAFM(String ownersAFM) {
-        this.ownersAFM = ownersAFM;
-    }
-
-    private String ownersAFM;
-
 
     public LocalDate getScheduledDate() {
         return scheduledDate;
