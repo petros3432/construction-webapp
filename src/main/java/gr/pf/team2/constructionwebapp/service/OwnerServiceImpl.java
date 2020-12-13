@@ -2,13 +2,16 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.enums.UserType;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm2;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -31,27 +34,28 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public List<Owner> getAllOwners() { return ownerRepository.findAll(); }
 
-    @Override
-    public Owner addOwnerProperty(Owner owner) {
-        if (owner == null) return null;
-        return ownerRepository.save(owner);
-    }
+//    @Override
+//    public Owner addOwnerProperty(Owner owner) {
+//        if (owner == null) return null;
+//        return ownerRepository.save(owner);
+//    }
 
     @Override
-    public Owner register(RegisterOwnerForm registerOwnerForm){
-        Owner newOwner = new Owner(
-                registerOwnerForm.getAfm(),
-                registerOwnerForm.getFirstName(),
-                registerOwnerForm.getLastName(),
-                registerOwnerForm.getAddress(),
-                registerOwnerForm.getTel(),
-                registerOwnerForm.getEmail(),
-                registerOwnerForm.getPassword(),
-                TypeOfProperty.valueOf(registerOwnerForm.getTypeOfProperty())
+    public Owner register(RegisterOwnerForm2 registerOwnerForm2){
+        Owner owner = new Owner(
+                registerOwnerForm2.getAfm(),
+                registerOwnerForm2.getName(),
+                registerOwnerForm2.getSurname(),
+                registerOwnerForm2.getAddress(),
+                registerOwnerForm2.getTel(),
+                registerOwnerForm2.getEmail(),
+                registerOwnerForm2.getPassword(),
+                TypeOfProperty.valueOf(registerOwnerForm2.getTypeOfProperty()),
+                OWNER
 
         );
-
-        return newOwner;
+        Owner savedOwner = ownerRepository.save(owner);
+        return savedOwner;
     }
 
 }

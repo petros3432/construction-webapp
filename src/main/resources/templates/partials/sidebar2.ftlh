@@ -9,10 +9,10 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/repairs/create"
+                <a class="nav-link" href="/registerOwner"
                         style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
-                    Add Repair
+                    Add Owner
                 </a>
             </li>
 

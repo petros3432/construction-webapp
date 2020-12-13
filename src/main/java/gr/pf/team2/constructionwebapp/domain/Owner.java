@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name="Owner")
 public class Owner {
 
-    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty) {
+    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -26,6 +26,7 @@ public class Owner {
         this.email = email;
         this.password = password;
         this.typeOfProperty = typeOfProperty;
+        this.userType = userType;
     }
 
     @Id
