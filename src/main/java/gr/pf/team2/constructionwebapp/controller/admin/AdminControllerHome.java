@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.controller.admin;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelDetails;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
@@ -18,6 +19,7 @@ import java.util.List;
 @Controller
 public class AdminControllerHome {
     private static final String TOP_10_REPAIRS = "top10rep";
+    private static final String REGISTER_FORM = "registerOwnerForm";
 
     @Autowired
     private OwnerService ownerService;
@@ -29,6 +31,8 @@ public class AdminControllerHome {
     public String OwnersShowoff(Model model) {
         List<RepairModel> repairs = repairService.firstTenRepairs();
         model.addAttribute(TOP_10_REPAIRS, repairs);
+        model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
         return "pages/AdminHomePage";
     }
+
 }
