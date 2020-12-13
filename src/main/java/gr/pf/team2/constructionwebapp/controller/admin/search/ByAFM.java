@@ -17,14 +17,14 @@ public class ByAFM {
     @Autowired
     private RepairService repairService;
 
-   /* @GetMapping(value = "/repair/search")
+    @GetMapping(value = "/repair/search")
     public String searchByAfm(Model model) {
         String afm="";
         model.addAttribute("afm",afm);
         return "pages/searchmodalbyafm";
-    }*/
+    }
 
-    @GetMapping(value = "/repair/search")
+    @PostMapping(value = "/repair/search")
     public String searchByAfm(Model model,@PathVariable String afm){
         List<RepairModelByAfm> repairs = repairService.searchByAfm(afm);
         model.addAttribute(SEARCH_AFM,repairs);

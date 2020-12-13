@@ -19,9 +19,8 @@ public class RepairModelDetails {
 
     private String textDesc;
 
-
-
     private Long id;
+
 
     public LocalDate getScheduledDate() {
         return this.scheduledDate;
