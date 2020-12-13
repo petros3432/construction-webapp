@@ -5,7 +5,6 @@ import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
-import gr.pf.team2.constructionwebapp.models.RepairModelDetails;
 import gr.pf.team2.constructionwebapp.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,16 +29,16 @@ public class RepairServiceImpl implements RepairService {
                 .map(repair -> repairMapper.repairToModel(repair))
                 .collect(Collectors.toList());
     }
-
-    @Override
-    public RepairModelDetails seById(Long id) {
-        return repairMapper.repairToModelDetails(repairRepository.findById(id).orElseThrow());
-    }
-
-    @Override
-    public void updateRepair(RepairModelDetails repairModelDetails) {
-        repairRepository.save(repairMapper.repairSetToRepair(repairRepository.findById(repairModelDetails.getId()).get(),repairModelDetails));
-    }
+//
+//    @Override
+//    public RepairModelDetails seById(Long id) {
+//        return repairMapper.repairToModelDetails(repairRepository.findById(id).orElseThrow());
+//    }
+//
+//    @Override
+//    public void updateRepair(RepairModelDetails repairModelDetails) {
+//        repairRepository.save(repairMapper.repairSetToRepair(repairRepository.findById(repairModelDetails.getId()).get(),repairModelDetails));
+//    }
 
     @Override
     public void deleteById(Long id) { repairRepository.deleteById(id); }

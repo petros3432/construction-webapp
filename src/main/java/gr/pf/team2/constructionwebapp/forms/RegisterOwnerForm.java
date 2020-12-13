@@ -10,6 +10,7 @@ public class RegisterOwnerForm {
     private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
     private static final String TELEPHONE_PATTERN = "^[0-9]*$";
     private static final String AFM_PATTERN = "^[0-9]*$";
+
     private static final int PASSWORD_MIN_SIZE = 6;
     private static final int PASSWORD_MAX_SIZE = 20;
     private static final int TELEPHONE_SIZE = 10;
@@ -46,19 +47,9 @@ public class RegisterOwnerForm {
     @NotEmpty(message = "{registerOwner.lastName.not.null}")
     private String lastName;
 
-
-
-
     String address;
 
-
-
     String typeOfProperty;
-
-
-
-
-
 
     public String getPassword() {
         return password;
@@ -91,6 +82,7 @@ public class RegisterOwnerForm {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     public String getAfm() {
         return afm;
     }
@@ -99,7 +91,6 @@ public class RegisterOwnerForm {
         this.afm = afm;
     }
 
-
     public String getTel() {
         return tel;
     }
@@ -107,6 +98,7 @@ public class RegisterOwnerForm {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
     public String getTypeOfProperty() {
         return typeOfProperty;
     }
@@ -114,6 +106,7 @@ public class RegisterOwnerForm {
     public void setTypeOfProperty(String typeOfProperty) {
         this.typeOfProperty = typeOfProperty;
     }
+
     public String getAddress() {
         return address;
     }

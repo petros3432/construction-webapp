@@ -1,6 +1,8 @@
 package gr.pf.team2.constructionwebapp.controller;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.validators.RegistrationOwnerValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +22,14 @@ import javax.validation.Valid;
 public class RegistrationOwnerController {
     private static final String REGISTER_FORM = "registerOwnerForm";
     private static final String ERROR_MESSAGE = "errorMessage";
+
+    @Autowired
+    private OwnerService ownerService;
     @Autowired
     private RegistrationOwnerValidator registrationOwnerValidator;
     @InitBinder(REGISTER_FORM)
     protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators((Validator) registrationOwnerValidator);
+        binder.addValidators(registrationOwnerValidator);
     }
 
 
@@ -41,10 +46,10 @@ public class RegistrationOwnerController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            return "partials/createmodal";
+            return "pages/AdminHomePage";
         }
-//        User user = userService.register(registerForm);
-//        redirectAttributes.addAttribute("id", user.getId());
-      return "redirect:/";
+        Owner newOwner = ownerService.register(registerOwnerForm);
+        redirectAttributes.addAttribute("id", newOwner.getId());
+      return "redirect:/AdminHomePage";
     }
 }

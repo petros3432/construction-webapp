@@ -4,7 +4,6 @@ import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
-import gr.pf.team2.constructionwebapp.models.RepairModelDetails;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,34 +15,19 @@ public class RepairMapper {
         repairModel.setScheduledDate(repair.getScheduledDate());
         repairModel.setState(repair.getState());
         repairModel.setTypeOfRepair(repair.getTypeOfRepair());
+        repairModel.setAddress(repair.getAddress());
+        repairModel.setCost(repair.getCost());
+        repairModel.setId(repair.getId());
+        repairModel.setTextDesc(repair.getTextDesc());
+        repairModel.setOwnersName(repair.getOwner().getName() + " " + repair.getOwner().getSurname());
+        repairModel.setOwnersAFM(repair.getOwner().getAfm());
 
         return repairModel;
     }
 
-    public RepairModelDetails repairToModelDetails(Repair repair){
-        RepairModelDetails repairModelDetails = new RepairModelDetails();
 
-        repairModelDetails.setScheduledDate(repair.getScheduledDate());
-        repairModelDetails.setState(repair.getState());
-        repairModelDetails.setTypeOfRepair(repair.getTypeOfRepair());
-        repairModelDetails.setCost(repair.getCost());
-        repairModelDetails.setTextDesc(repair.getTextDesc());
-        repairModelDetails.setAddress(repair.getAddress());
-        repairModelDetails.setId(repair.getId());
 
-        return repairModelDetails;
-    }
 
-    public Repair repairSetToRepair(Repair repair, RepairModelDetails repairModelDetails){
-        repair.setAddress(repairModelDetails.getAddress());
-        repair.setCost(repairModelDetails.getCost());
-        repair.setScheduledDate(repairModelDetails.getScheduledDate());
-        repair.setState(repairModelDetails.getState());
-        repair.setTypeOfRepair(repairModelDetails.getTypeOfRepair());
-        repair.setTextDesc(repairModelDetails.getTextDesc());
-
-        return repair;
-    }
 
     public Repair repairFormToRepair(RepairForm repairForm){
         Repair repair = new Repair();

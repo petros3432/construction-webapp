@@ -17,7 +17,16 @@ import java.util.List;
 @Table(name="Owner")
 public class Owner {
 
-
+    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty) {
+        this.afm = afm;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.tel = tel;
+        this.email = email;
+        this.password = password;
+        this.typeOfProperty = typeOfProperty;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

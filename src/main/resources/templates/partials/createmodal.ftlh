@@ -17,7 +17,7 @@
             <div class="modal-body">
 
                 <div class="container-fluid">
-                    <form class="well form-horizontal">
+                    <form class="well form-horizontal" action="/registerOwner" name="registerOwner" method="POST">
                         <div class="row">
                             <div class="form-group col-md-6 text-left">
                                 <label for="" class="control-label">Όνομα</label>

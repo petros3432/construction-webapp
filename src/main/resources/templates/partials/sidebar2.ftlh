@@ -13,7 +13,7 @@
                 <a href="#AddNew" data-toggle="modal" class="nav-link"
                         style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
-                    Add
+                    Add Owner
                 </a>
             </li>
 

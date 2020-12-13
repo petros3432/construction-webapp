@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,8 @@ public interface OwnerService {
     List<Owner> getAllOwners();
 
     Owner addOwnerProperty(Owner owner);
+
+    Owner register(RegisterOwnerForm registerOwnerForm);
 
 
 

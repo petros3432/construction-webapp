@@ -3,7 +3,6 @@ package gr.pf.team2.constructionwebapp.controller.admin;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
-import gr.pf.team2.constructionwebapp.models.RepairModelDetails;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,8 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,23 @@ public class OwnerServiceImpl implements OwnerService {
     public Owner addOwnerProperty(Owner owner) {
         if (owner == null) return null;
         return ownerRepository.save(owner);
+    }
+
+    @Override
+    public Owner register(RegisterOwnerForm registerOwnerForm){
+        Owner newOwner = new Owner(
+                registerOwnerForm.getAfm(),
+                registerOwnerForm.getFirstName(),
+                registerOwnerForm.getLastName(),
+                registerOwnerForm.getAddress(),
+                registerOwnerForm.getTel(),
+                registerOwnerForm.getEmail(),
+                registerOwnerForm.getPassword(),
+                TypeOfProperty.valueOf(registerOwnerForm.getTypeOfProperty())
+
+        );
+
+        return newOwner;
     }
 
 }
