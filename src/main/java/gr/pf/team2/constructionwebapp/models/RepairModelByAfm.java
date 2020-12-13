@@ -1,30 +1,26 @@
 package gr.pf.team2.constructionwebapp.models;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-public class RepairModel {
+public class RepairModelByAfm {
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate scheduledDate;
 
     private StateOfRepair state;
 
     private TypeOfRepair typeOfRepair;
 
+    private double cost;
 
-    private Long id;
+    private String address;
 
-    public Long getId() {
-        return id;
-    }
+    private String textDesc;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private Owner owner;
 
     public LocalDate getScheduledDate() {
         return scheduledDate;
@@ -50,4 +46,35 @@ public class RepairModel {
         this.typeOfRepair = typeOfRepair;
     }
 
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTextDesc() {
+        return textDesc;
+    }
+
+    public void setTextDesc(String textDesc) {
+        this.textDesc = textDesc;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 }
