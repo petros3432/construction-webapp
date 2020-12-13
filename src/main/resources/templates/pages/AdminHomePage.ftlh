@@ -29,7 +29,9 @@
                         <th scope="col">Cost</th>
                         <th scope="col">State</th>
                         <th scope="col">Scheduled Date</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Remove</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,20 +43,33 @@
                                 <td>${rep.address}</td>
                                 <td>${rep.cost}</td>
                                 <td>${rep.state}</td>
-<#--                                <td class="text-center"><a class="btn btn-link" href="/books/${book.id}/edit"><span data-feather="tool"></span></a></td>-->
-<#--                                <td class="text-center">-->
+                                <td>${rep.scheduledDate}</td>
+                                <td class="text-center"><a class="btn btn-link" ><span data-feather="tool"></span></a></td>
+                                <td class="text-center">
 
-<#--                                    <button-->
-<#--                                            class="btn btn-link"-->
+                                    <button
+                                            class="btn btn-link"
+                                            <#--                                            data-toggle="modal"-->
+                                            <#--                                            data-target="#modal"-->
+                                            <#--                                            data-id="${rep.id}"-->
+                                    >
+                                        <span data-feather="align-right"></span>
+                                    </button>
+
+                                </td>
+                                <td class="text-center">
+
+                                    <button
+                                            class="btn btn-link"
 <#--                                            data-toggle="modal"-->
 <#--                                            data-target="#modal"-->
-<#--                                            data-id="${book.id}"-->
-<#--                                    >-->
-<#--                                        <span data-feather="x"></span>-->
-<#--                                    </button>-->
+<#--                                            data-id="${rep.id}"-->
+                                    >
+                                        <span data-feather="x"></span>
+                                    </button>
 
-<#--                                </td>-->
-                                <td>${rep.scheduledDate}</td>
+                                </td>
+
                             </tr>
                         </#list>
                     </#if>
