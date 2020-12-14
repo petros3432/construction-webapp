@@ -19,26 +19,21 @@ public class OwnerController {
     private OwnerService ownerService;
 
 
-    /*@GetMapping({"ownerByAfm/{afm}"})
-    public String OwnerByAfm(Model model,@PathVariable String afm) {
-        Owner owner = ownerService.findOwnerByAfm(afm).orElseThrow();
-        model.addAttribute("owner", owner);
-        return "pages/AdminHomePage";
-    }
+
 
     @GetMapping({"ownerByEmail/{email}"})
-    public String OwnerByEmail(Model model,@PathVariable String email) {
+    public String OwnerByEmail(Model model, @PathVariable String email) {
         Owner owner = ownerService.findOwnerByEmail(email).orElseThrow();
         model.addAttribute("owner", owner);
         return "pages/AdminHomePage";
     }
+//
+//    @GetMapping({"ownerUpdate/{id}"})
+//    public String UpdateOwnerProperty(Model model, @ModelAttribute Owner owner) {
+//        Owner databaseOwner = ownerService.findOwnerById(owner.getId()).orElseThrow();
+//        databaseOwner = ownerService.updateOwner(owner, databaseOwner);
+//        model.addAttribute("owner", databaseOwner);
+//        return "pages/AdminHomePage";
+//    }
 
-    @GetMapping({"ownerUpdate/{id}"})
-    public String UpdateOwnerProperty(Model model,@ModelAttribute Owner owner) {
-        Owner databaseOwner = ownerService.findOwnerById(owner.getId()).orElseThrow();
-        databaseOwner = ownerService.updateOwner(owner,databaseOwner);
-        model.addAttribute("owner", databaseOwner);
-        return "pages/AdminHomePage";
-    }
-    */
 }

@@ -63,18 +63,24 @@
 
 
 
+<#--    <div class="mb-3">-->
+<#--        <label for="ownersName">Owner's First Name</label>-->
+<#--        <div class="input-group">-->
+<#--            <input type="text" class="form-control" id="owner-first-name" name="ownerFirstName">-->
+<#--        </div>-->
+<#--    </div>-->
+<#--    <div class="mb-3">-->
+<#--        <label for="ownersName">Owner's Last Name</label>-->
+<#--        <div class="input-group">-->
+<#--            <input type="text" class="form-control" id="owner-last-name" name="ownerLastName">-->
+<#--        </div>-->
+<#--    </div>-->
     <div class="mb-3">
-        <label for="ownersName">Owner's First Name</label>
-        <div class="input-group">
-            <input type="text" class="form-control" id="owner-first-name" name="ownerFirstName">
-        </div>
-    </div>
-    <div class="mb-3">
-        <label for="ownersName">Owner's Last Name</label>
-        <div class="input-group">
-            <input type="text" class="form-control" id="owner-last-name" name="ownerLastName">
-        </div>
-    </div>
+                <label for="ownersAfm">Owner's AFM</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="owner-first-name" name="ownersAfm">
+                </div>
+            </div>
 
 
 

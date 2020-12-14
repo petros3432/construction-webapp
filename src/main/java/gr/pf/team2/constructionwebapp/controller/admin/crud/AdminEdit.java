@@ -16,14 +16,14 @@ public class AdminEdit {
 
     @GetMapping(value = "/repair/{id}/edit")
     public String editGetById(@PathVariable Long id, Model model) {
-        RepairModel repairModel = repairService.seById(id);
-        model.addAttribute(EDIT_SERVICE,repairModel);
+//        RepairModel repairModel = repairService.seById(id);
+//        model.addAttribute(EDIT_SERVICE,repairModel);
         return "pages/editmodal";
     }
 
     @PostMapping(value = "/repair/edit")
     public String editBook(RepairModel repairModel) {
-        repairService.updateRepair(repairModel);
+//        repairService.updateRepair(repairModel);
         return "redirect:/pages/AdminHomePage";
     }
 

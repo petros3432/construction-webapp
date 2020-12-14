@@ -3,6 +3,7 @@ package gr.pf.team2.constructionwebapp.controller.admin.crud;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
+import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,11 +37,13 @@ public class RepairCreateController {
     @PostMapping(value = "/repairs/create")
     public String createRepair(Model model, @Valid @ModelAttribute(REPAIR_FORM) RepairForm repairForm, BindingResult bindingResult) {
 
-        if (bindingResult.hasErrors()) {
-            model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_create";
+
+            if (bindingResult.hasErrors()) {
+                model.addAttribute(ERROR_MESSAGE, "an error occurred");
+                return "pages/repairs_create";
+            }
+            repairService.createRepair(repairForm);
+            return "redirect:pages/AdminHomePage";
         }
-        repairService.createRepair(repairForm);
-        return "redirect:pages/AdminHomePage";
-    }
+
 }

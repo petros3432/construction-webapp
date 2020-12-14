@@ -1,13 +1,19 @@
 package gr.pf.team2.constructionwebapp.maps;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
+import gr.pf.team2.constructionwebapp.service.OwnerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RepairMapper {
+    @Autowired
+    private OwnerService ownerService;
+    private Owner formOwner;
 
     public RepairModel repairToModel(Repair repair){
         RepairModel repairModel = new RepairModel();
@@ -34,6 +40,12 @@ public class RepairMapper {
 
         repair.setCost(repairForm.getCost());
         repair.setAddress(repairForm.getAddress());
+        if(ownerService.findOwnerByAfm(repairForm.getOwnersAfm()).isPresent()){
+            formOwner = ownerService.findOwnerByAfm(repairForm.getOwnersAfm()).get();
+        }
+        repair.setOwner(formOwner);
+
+        //repair.setOwner(ownerService.findOwnerByAfm(repairForm.getOwnersAfm()));
 
         return repair;
     }

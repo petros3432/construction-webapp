@@ -11,9 +11,9 @@ public interface RepairService {
     RepairModel createRepair(RepairForm repairForm);
     List<RepairModel> firstTenRepairs();
 
-    RepairModel seById(Long id);
+//    RepairModel seById(Long id);
 
-    void updateRepair(RepairModel repairModel);
+//    void updateRepair(RepairModel repairModel);
 
     void deleteById(Long id);
 

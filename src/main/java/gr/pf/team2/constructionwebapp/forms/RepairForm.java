@@ -19,6 +19,16 @@ public class RepairForm {
 
     private String textDesc;
 
+    public String getOwnersAfm() {
+        return ownersAfm;
+    }
+
+    public void setOwnersAfm(String ownersAfm) {
+        this.ownersAfm = ownersAfm;
+    }
+
+    private String ownersAfm;
+
     public LocalDate getScheduledDate() {
         return scheduledDate;
     }

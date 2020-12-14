@@ -20,6 +20,10 @@ public class RepairServiceImpl implements RepairService {
 
     @Autowired
     private RepairMapper repairMapper;
+//    @Override
+//    void updateRepair(RepairModel repairModel){
+//
+//    }
 
 
 

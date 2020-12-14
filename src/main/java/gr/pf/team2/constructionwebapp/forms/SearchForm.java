@@ -3,11 +3,20 @@ package gr.pf.team2.constructionwebapp.forms;
 import java.time.LocalDate;
 
 public class SearchForm {
-    private LocalDate scheduledDate;
+//    private LocalDate scheduledDate;
+//
+//    private LocalDate scheduledDateStart;
+//
+//    private LocalDate scheduledDateEnd;
 
-    private LocalDate scheduledDateStart;
+    public String getAfm() {
+        return afm;
+    }
 
-    private LocalDate scheduledDateEnd;
+    public void setAfm(String afm) {
+        this.afm = afm;
+    }
 
     private String afm;
+
 }
