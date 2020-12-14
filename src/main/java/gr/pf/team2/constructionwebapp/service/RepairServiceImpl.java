@@ -56,7 +56,9 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public RepairModel createRepair(RepairForm repairForm) {
-        return repairMapper.repairToModel(repairRepository.save(repairMapper.repairFormToRepair(repairForm)));
+        Repair repair = repairMapper.repairFormToRepair(repairForm);
+        Repair repair1 = repairRepository.save(repair);
+        return repairMapper.repairToModel(repair1);
     }
 
     @Override

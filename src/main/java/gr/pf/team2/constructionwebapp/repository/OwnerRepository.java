@@ -2,6 +2,7 @@ package gr.pf.team2.constructionwebapp.repository;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -13,7 +14,10 @@ import java.util.Optional;
 public interface OwnerRepository extends JpaRepository<Owner,Long> {
 
     @Query(value="SELECT * FROM Owner WHERE AFM = (:afm)", nativeQuery = true)
-    Optional<Owner> findOwnerByAfm(String afm);
+    Optional<OwnerModel> findOwnerByAfm(String afm);
+
+    @Query(value="SELECT * FROM Owner WHERE AFM = (:afm)", nativeQuery = true)
+    Optional<Owner> findOwnerByAfmOwner(String afm);
 
     @Query(value="SELECT * FROM Owner WHERE Email = (:email)", nativeQuery = true)
     Optional<Owner> findOwnerByEmail(String email);

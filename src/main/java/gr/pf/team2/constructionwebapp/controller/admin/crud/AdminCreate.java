@@ -26,7 +26,6 @@ public class AdminCreate {
     private static final String REPAIR_FORM = "repairForm";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
-    private static final String OWNER_NAMES = "onomataOwner";
 
     @Autowired
     private RepairService repairService;
@@ -34,27 +33,27 @@ public class AdminCreate {
     @Autowired
     private OwnerService ownerService;
 
-    @GetMapping(value = "/repairs/create")
+    @GetMapping(value = "/repair/create")
     public String repairDynamic(Model model) {
         model.addAttribute(REPAIR_FORM, new RepairForm());
         model.addAttribute(REPAIR_STATE, StateOfRepair.values());
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
-        return "pages/repairs_create";
+        return "pages/repair_create";
     }
 
-    @PostMapping(value = "/repairs/create")
+    @PostMapping(value = "/repair/create")
     public String createRepair(Model model, @Valid @ModelAttribute(REPAIR_FORM) RepairForm repairForm, BindingResult bindingResult) {
 
-        if (bindingResult.hasErrors()) {
+        /*if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_create";
-        }
-        Optional<Owner> owner = ownerService.findOwnerByAfm(repairForm.getAfmOwner());
+            return "pages/repairCreateForm";
+        }*/
+        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(repairForm.getAfmOwner());
         if(owner.isPresent()){
             repairForm.setOwner(owner.get());
             repairService.createRepair(repairForm);
-            return "redirect:pages/AdminHomePage";
+            return "redirect:/AdminHomePage";
         }
-        return "redirect:pages/AdminHomePage";
+        return "redirect:/AdminHomePage";
     }
 }

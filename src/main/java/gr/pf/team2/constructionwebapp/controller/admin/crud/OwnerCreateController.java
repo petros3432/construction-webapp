@@ -50,7 +50,7 @@ public class OwnerCreateController {
             return "pages/AdminHomePage";
         }
 //        Owner newOwner = ownerService.register(registerOwnerForm);
-        ownerService.register(registerOwnerForm);
+        //ownerService.register(registerOwnerForm);
 //        redirectAttributes.addAttribute("id", newOwner.getId());
       return "redirect:/AdminOwnerPage";
     }

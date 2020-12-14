@@ -7,6 +7,9 @@ import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 @Component
 public class RepairMapper {
 
@@ -20,17 +23,15 @@ public class RepairMapper {
         repairModel.setCost(repair.getCost());
         repairModel.setId(repair.getId());
         repairModel.setTextDesc(repair.getTextDesc());
-        repairModel.setOwnerFirstName(repair.getOwner().getName());
-        repairModel.setOwnerLastName(repair.getOwner().getSurname());
-        repairModel.setOwnerID(repair.getOwner().getId());
-        repairModel.setOwnerAFM(repair.getOwner().getAfm());
+
 
         return repairModel;
     }
 
     public Repair repairFormToRepair(RepairForm repairForm){
         Repair repair = new Repair();
-        repair.setScheduledDate(repairForm.getScheduledDate());
+
+        repair.setScheduledDate(parseLocalDateFromString(repairForm.getScheduledDate()));
         repair.setTextDesc(repairForm.getTextDesc());
         repair.setTypeOfRepair(repairForm.getTypeOfRepair());
         repair.setState(repairForm.getState());
@@ -54,6 +55,11 @@ public class RepairMapper {
 
         return repairModelByAfm;
 
+    }
+
+    private LocalDate parseLocalDateFromString(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
+        return LocalDate.parse(date, formatter);
     }
 
 }

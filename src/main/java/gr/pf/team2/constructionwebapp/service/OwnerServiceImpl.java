@@ -1,19 +1,14 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.UserType;
-import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm2;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-
-import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -27,8 +22,13 @@ public class OwnerServiceImpl implements OwnerService {
     public Optional<Owner> findOwnerById(Long id) { return ownerRepository.findById(id); }
 
     @Override
-    public Optional<Owner> findOwnerByAfm(String afm) {
+    public Optional<OwnerModel> findOwnerByAfm(String afm) {
         return ownerRepository.findOwnerByAfm(afm);
+    }
+
+    @Override
+    public Optional<Owner> findOwnerByAfmOwner(String afm) {
+        return ownerRepository.findOwnerByAfmOwner(afm);
     }
 
     @Override
@@ -45,31 +45,14 @@ public class OwnerServiceImpl implements OwnerService {
 //        return ownerRepository.save(owner);
 //    }
 
-    @Override
-    public Owner register(RegisterOwnerForm2 registerOwnerForm2){
-        Owner owner = new Owner(
-                registerOwnerForm2.getAfm(),
-                registerOwnerForm2.getName(),
-                registerOwnerForm2.getSurname(),
-                registerOwnerForm2.getAddress(),
-                registerOwnerForm2.getTel(),
-                registerOwnerForm2.getEmail(),
-                registerOwnerForm2.getPassword(),
-                TypeOfProperty.valueOf(registerOwnerForm2.getTypeOfProperty()),
-                OWNER
 
-        );
-        Owner savedOwner = ownerRepository.save(owner);
-        return savedOwner;
-    }
-
-    @Override
+   /* @Override
     public List<String> findAllNames() {
         return ownerRepository
                 .findAll()
                 .stream()
                 .map(owner -> ownerMapper.ownerToName(owner))
                 .collect(Collectors.toList());
-    }
+    }*/
 
 }

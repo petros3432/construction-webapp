@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class AdminOwnerEdit {
 
@@ -26,7 +29,7 @@ public class AdminOwnerEdit {
 
     @GetMapping(value = "/owner/{afm}/edit")
     public String editGetByAfm(@PathVariable String afm, Model model) {
-        OwnerModel ownerModel = ownerService.findOwnerByAfm(afm);
+        Optional<OwnerModel> ownerModel = ownerService.findOwnerByAfm(afm);
         model.addAttribute(EDIT_SERVICE, ownerModel);
         model.addAttribute(PROPERTY_TYPE, TypeOfProperty.values());
         return "pages/owner_edit";
@@ -34,7 +37,7 @@ public class AdminOwnerEdit {
 
     @PostMapping(value = "/owner/edit")
     public String editBook(OwnerModel ownerModel) {
-        ownerService.updateOwner(ownerModel);
+       // ownerService.updateOwner(ownerModel);
         return "redirect:/AdminOwnerPage";
     }
 

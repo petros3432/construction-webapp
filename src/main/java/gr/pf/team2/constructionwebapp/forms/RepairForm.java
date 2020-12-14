@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class RepairForm {
 
-    private LocalDate scheduledDate;
+    private String scheduledDate;
 
     private StateOfRepair state;
 
@@ -45,11 +45,11 @@ public class RepairForm {
         this.afmOwner = afmOwner;
     }
 
-    public LocalDate getScheduledDate() {
+    public String getScheduledDate() {
         return scheduledDate;
     }
 
-    public void setScheduledDate(LocalDate scheduledDate) {
+    public void setScheduledDate(String scheduledDate) {
         this.scheduledDate = scheduledDate;
     }
 

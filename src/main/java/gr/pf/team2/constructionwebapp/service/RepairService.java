@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface RepairService {
 
     RepairModel createRepair(RepairForm repairForm);
+
     List<RepairModel> firstTenRepairs();
 
     RepairModel findRepairById(Long id);
