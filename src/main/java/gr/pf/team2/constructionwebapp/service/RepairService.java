@@ -5,15 +5,16 @@ import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface RepairService {
 
     RepairModel createRepair(RepairForm repairForm);
     List<RepairModel> firstTenRepairs();
 
-    RepairModel seById(Long id);
+    RepairModel findRepairById(Long id);
 
-    void updateRepair(RepairModel repairModel);
+    RepairModel updateRepair(RepairModel repairModel);
 
     void deleteById(Long id);
 

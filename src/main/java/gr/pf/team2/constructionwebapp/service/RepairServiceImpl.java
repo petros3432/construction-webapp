@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +22,11 @@ public class RepairServiceImpl implements RepairService {
     @Autowired
     private RepairMapper repairMapper;
 
+    @Override
+    public RepairModel findRepairById(Long id) {
+        return repairMapper.repairToModel(repairRepository.findById(id).orElseThrow());
+
+    }
 
 
     @Override
@@ -30,6 +36,19 @@ public class RepairServiceImpl implements RepairService {
                 .stream()
                 .map(repair -> repairMapper.repairToModel(repair))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public RepairModel updateRepair(RepairModel repairModel) {
+        Repair repair = repairRepository.findById(repairModel.getId()).get();
+        repair.setAddress(repairModel.getAddress());
+        repair.setCost(repairModel.getCost());
+        repair.setState(repairModel.getState());
+        repair.setTypeOfRepair(repairModel.getTypeOfRepair());
+        repair.setScheduledDate(repairModel.getScheduledDate());
+        repair.setTextDesc(repairModel.getTextDesc());
+        Repair repair1 = repairRepository.save(repair);
+        return repairMapper.repairToModel(repair1);
     }
 
     @Override

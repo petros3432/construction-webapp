@@ -27,6 +27,21 @@ public class RepairModel {
     private String ownersName;
 
 
+    public RepairModel(LocalDate scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, double cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
+        this.scheduledDate = scheduledDate;
+        this.state = state;
+        this.typeOfRepair = typeOfRepair;
+        this.cost = cost;
+        this.address = address;
+        this.textDesc = textDesc;
+        this.id = id;
+        this.ownersName = ownersName;
+        this.ownersAFM = ownersAFM;
+    }
+
+    public RepairModel() {
+    }
+
     public String getOwnersName() {
         return ownersName;
     }

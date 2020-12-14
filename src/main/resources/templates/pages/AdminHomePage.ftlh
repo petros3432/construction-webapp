@@ -41,7 +41,7 @@
                                 <td>${rep.cost}</td>
                                 <td>${rep.state}</td>
                                 <td>${rep.scheduledDate}</td>
-                                <td class="text-center"><a class="btn btn-link" href="/repairs/${rep.id}/edit"><span data-feather="tool"></span></a></td>
+                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span data-feather="tool"></span></a></td>
                                 <td class="text-center">
 
                                     <button
