@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.forms;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 
@@ -23,7 +24,26 @@ public class RepairForm {
 
     private String ownerLastName;
 
+    private String afmOwner;
 
+    private Owner owner;
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+
+    public String getAfmOwner() {
+        return afmOwner;
+    }
+
+    public void setAfmOwner(String afmOwner) {
+        this.afmOwner = afmOwner;
+    }
 
     public LocalDate getScheduledDate() {
         return scheduledDate;

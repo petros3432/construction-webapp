@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 
 import java.util.List;
+import java.util.Optional;
 
 import static gr.pf.team2.constructionwebapp.utils.GlobalVariables.ERROR_MESSAGE;
 @Controller
@@ -34,8 +36,6 @@ public class AdminCreate {
 
     @GetMapping(value = "/repairs/create")
     public String repairDynamic(Model model) {
-        List<String> names = ownerService.findAllNames();
-        model.addAttribute(OWNER_NAMES, names);
         model.addAttribute(REPAIR_FORM, new RepairForm());
         model.addAttribute(REPAIR_STATE, StateOfRepair.values());
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
@@ -49,7 +49,12 @@ public class AdminCreate {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             return "pages/repairs_create";
         }
-        repairService.createRepair(repairForm);
+        Optional<Owner> owner = ownerService.findOwnerByAfm(repairForm.getAfmOwner());
+        if(owner.isPresent()){
+            repairForm.setOwner(owner.get());
+            repairService.createRepair(repairForm);
+            return "redirect:pages/AdminHomePage";
+        }
         return "redirect:pages/AdminHomePage";
     }
 }

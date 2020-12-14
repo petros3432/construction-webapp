@@ -55,6 +55,9 @@ public class Owner {
     private List<Repair> repairs;
 
 
+    public Owner() {
+    }
+
     public Owner(String name, String surname) {
         this.name = name;
         this.surname = surname;

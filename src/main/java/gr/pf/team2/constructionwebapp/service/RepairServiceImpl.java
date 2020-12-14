@@ -1,11 +1,13 @@
 package gr.pf.team2.constructionwebapp.service;
 
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
+import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import gr.pf.team2.constructionwebapp.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,6 @@ public class RepairServiceImpl implements RepairService {
 
     @Autowired
     private RepairMapper repairMapper;
-
 
 
     @Override

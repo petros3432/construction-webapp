@@ -19,4 +19,5 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
     @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Admin.Owner_id AND Owner.AFM=(:afm)", nativeQuery = true)
     List<Repair> findByAfm(String afm);
 
+
 }
