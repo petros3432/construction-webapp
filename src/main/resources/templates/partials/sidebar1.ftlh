@@ -9,7 +9,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/repairs/create"
+                <a class="nav-link" href="/repair/create"
                         style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
                     Add Repair
@@ -23,7 +23,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/books/create">
+                <a class="nav-link" href="/owner">
                     <span data-feather="settings"></span>
                     Owners
                 </a>

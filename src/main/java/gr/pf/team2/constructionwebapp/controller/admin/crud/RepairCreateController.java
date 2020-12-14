@@ -25,20 +25,20 @@ public class RepairCreateController {
     @Autowired
     private RepairService repairService;
 
-    @GetMapping(value = "/repairs/create")
+    @GetMapping(value = "/repair/create")
     public String repairDynamic(Model model) {
         model.addAttribute(REPAIR_FORM, new RepairForm());
         model.addAttribute(REPAIR_STATE, StateOfRepair.values());
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
-        return "pages/repairs_create";
+        return "pages/repair_create";
     }
 
-    @PostMapping(value = "/repairs/create")
+    @PostMapping(value = "/repair/create")
     public String createRepair(Model model, @Valid @ModelAttribute(REPAIR_FORM) RepairForm repairForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_create";
+            return "pages/repair_create";
         }
         repairService.createRepair(repairForm);
         return "redirect:pages/AdminHomePage";

@@ -6,7 +6,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="name" class="control-label">Name</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.firstName"/>-->
+                <#--                <@spring.bind "registerOwnerForm.firstName"/>-->
                 <input type="text" class="form-control" name="name" id="name"
                        placeholder="Name" required>
                 <#--                <#if spring.status.error>-->
@@ -22,7 +22,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="surname" class=" control-label">Surname</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.lastName"/>-->
+                <#--                <@spring.bind "registerOwnerForm.lastName"/>-->
                 <input type="text" class="form-control" name="surname" id="surname"
                        placeholder="Surname" required>
                 <#--                <#if spring.status.error>-->
@@ -40,7 +40,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="address" class=" control-label">Address</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.address"/>-->
+                <#--                <@spring.bind "registerOwnerForm.address"/>-->
                 <input type="text" class="form-control" name="address" id="address"
                        placeholder="Address" required>
                 <#--                <#if spring.status.error>-->
@@ -56,7 +56,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="AFM" class="control-label">AFM</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.afm"/>-->
+                <#--                <@spring.bind "registerOwnerForm.afm"/>-->
                 <input type="text" class="form-control" id="Afm" name="afm"
                        placeholder="AFM" required>
                 <#--                <#if spring.status.error>-->
@@ -74,7 +74,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="inputEmail3" class="control-label">Email</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.email"/>-->
+                <#--                <@spring.bind "registerOwnerForm.email"/>-->
                 <input type="email" class="form-control" id="inputEmail3" name="email"
                        placeholder="Email" required>
                 <#--                <#if spring.status.error>-->
@@ -89,7 +89,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="" class="control-label">Telephone</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.tel"/>-->
+                <#--                <@spring.bind "registerOwnerForm.tel"/>-->
                 <input type="tel" class="form-control" id="tel" name="tel"
                        placeholder="Telephone" pattern="[0-9]{10}" required>
                 <#--                <#if spring.status.error>-->
@@ -111,7 +111,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="inputPassword3" class=" control-label">Password</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm2.password"/>-->
+                <#--                <@spring.bind "registerOwnerForm.password"/>-->
                 <input type="password" class="form-control" name="password"
                        id="inputPassword3" placeholder="Password">
                 <#--                <#if spring.status.error>-->

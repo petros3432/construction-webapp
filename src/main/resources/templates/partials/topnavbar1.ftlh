@@ -4,10 +4,10 @@
 
     <ul class="navbar-nav px-3">
         <li class="nav-item active">
-            <a class="nav-link" href="/repairs">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/repair">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/owners">Owner Zone</a>
+            <a class="nav-link" href="/owner">Owner Zone</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="help.html">Help</a>

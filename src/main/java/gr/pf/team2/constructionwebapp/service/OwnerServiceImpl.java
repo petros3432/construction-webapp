@@ -1,15 +1,20 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.UserType;
-import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm2;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
+import gr.pf.team2.constructionwebapp.maps.RepairMapper;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
+import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
@@ -17,13 +22,15 @@ import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
-
+    @Autowired
+    private OwnerMapper ownerMapper;
     @Override
     public Optional<Owner> findOwnerById(Long id) { return ownerRepository.findById(id); }
 
     @Override
-    public Optional<Owner> findOwnerByAfm(String afm) {
-        return ownerRepository.findOwnerByAfm(afm);
+    public OwnerModel findOwnerByAfm(String Afm) {
+        return ownerMapper.ownerToModel(ownerRepository.findOwnerByAfm(Afm).orElseThrow());
+
     }
 
     @Override
@@ -41,21 +48,39 @@ public class OwnerServiceImpl implements OwnerService {
 //    }
 
     @Override
-    public Owner register(RegisterOwnerForm2 registerOwnerForm2){
+    public List<OwnerModel> firstTenOwners() {
+        return ownerRepository
+                .firstTenOwners()
+                .stream()
+                .map(owner -> ownerMapper.ownerToModel(owner))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public Owner register(RegisterOwnerForm registerOwnerForm){
         Owner owner = new Owner(
-                registerOwnerForm2.getAfm(),
-                registerOwnerForm2.getName(),
-                registerOwnerForm2.getSurname(),
-                registerOwnerForm2.getAddress(),
-                registerOwnerForm2.getTel(),
-                registerOwnerForm2.getEmail(),
-                registerOwnerForm2.getPassword(),
-                TypeOfProperty.valueOf(registerOwnerForm2.getTypeOfProperty()),
+                registerOwnerForm.getAfm(),
+                registerOwnerForm.getName(),
+                registerOwnerForm.getSurname(),
+                registerOwnerForm.getAddress(),
+                registerOwnerForm.getTel(),
+                registerOwnerForm.getEmail(),
+                registerOwnerForm.getPassword(),
+                TypeOfProperty.valueOf(registerOwnerForm.getTypeOfProperty()),
                 OWNER
 
         );
         Owner savedOwner = ownerRepository.save(owner);
         return savedOwner;
     }
-
+    public OwnerModel updateOwner(OwnerModel ownerModel) {
+        Owner owner = ownerRepository.findOwnerByAfm(ownerModel.getAfm()).get();
+       owner.setAddress(ownerModel.getAddress());
+        owner.setAfm(ownerModel.getAfm());
+        owner.setName(ownerModel.getName());
+        owner.setSurname(ownerModel.getSurname());
+        owner.setTel(ownerModel.getTel());
+        owner.setEmail(ownerModel.getEmail());
+        Owner owner1 = ownerRepository.save(owner);
+        return ownerMapper.ownerToModel(owner1);
+    }
 }

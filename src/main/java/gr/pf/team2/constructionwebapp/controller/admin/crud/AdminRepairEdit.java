@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class AdminEdit {
+public class AdminRepairEdit {
     private static final String EDIT_SERVICE = "rep";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
