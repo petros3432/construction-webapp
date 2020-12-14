@@ -33,14 +33,14 @@ public class RegistrationOwnerController {
     }
 
 
-    @GetMapping(value = "/registerOwner")
+    @GetMapping(value = "/owners/registerOwner")
     public String register(Model model) {
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm2());
         model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
         return "pages/owner_create";
     }
 
-    @PostMapping(value = "/registerOwner")
+    @PostMapping(value = "/owners/registerOwner")
     public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm2 registerOwnerForm2, BindingResult bindingResult,
                                 RedirectAttributes redirectAttributes) {
 
@@ -52,6 +52,6 @@ public class RegistrationOwnerController {
 //        Owner newOwner = ownerService.register(registerOwnerForm);
         ownerService.register(registerOwnerForm2);
 //        redirectAttributes.addAttribute("id", newOwner.getId());
-      return "redirect:/AdminHomePage";
+      return "redirect:/AdminOwnerPage";
     }
 }

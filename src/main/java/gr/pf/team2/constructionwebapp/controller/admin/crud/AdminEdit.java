@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
+import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -13,17 +14,17 @@ public class AdminEdit {
     @Autowired
     private RepairService repairService;
 
-//    @GetMapping(value = "/repair/{id}/edit")
-//    public String editGetById(@PathVariable Long id, Model model) {
-//        RepairModelDetails repairModelDetails = repairService.seById(id);
-//        model.addAttribute(EDIT_SERVICE,repairModelDetails);
-//        return "pages/editmodal";
-//    }
-//
-//    @PostMapping(value = "/repair/edit")
-//    public String editBook(RepairModelDetails repairModelDetails) {
-//        repairService.updateRepair(repairModelDetails);
-//        return "redirect:/pages/AdminHomePage";
-//    }
+    @GetMapping(value = "/repair/{id}/edit")
+    public String editGetById(@PathVariable Long id, Model model) {
+        RepairModel repairModel = repairService.seById(id);
+        model.addAttribute(EDIT_SERVICE,repairModel);
+        return "pages/editmodal";
+    }
+
+    @PostMapping(value = "/repair/edit")
+    public String editBook(RepairModel repairModel) {
+        repairService.updateRepair(repairModel);
+        return "redirect:/pages/AdminHomePage";
+    }
 
 }

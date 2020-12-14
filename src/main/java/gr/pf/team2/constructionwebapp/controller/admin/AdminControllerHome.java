@@ -22,12 +22,17 @@ public class AdminControllerHome {
     @Autowired
     private RepairService repairService;
 
-    @GetMapping({"/" , "/AdminHomePage"})
-    public String OwnersShowoff(Model model) {
+    @GetMapping({"/" , "/AdminHomePage","/repairs"})
+    public String RepairsShowoff(Model model) {
         List<RepairModel> repairs = repairService.firstTenRepairs();
         model.addAttribute(TOP_10_REPAIRS, repairs);
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm2());
         return "pages/AdminHomePage";
+    }
+    @GetMapping({ "/AdminOwnerPage","/owners"})
+    public String OwnersShowoff(Model model) {
+
+        return "pages/AdminOwnerPage";
     }
 
 }
