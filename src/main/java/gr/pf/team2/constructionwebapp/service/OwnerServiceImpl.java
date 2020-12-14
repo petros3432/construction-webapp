@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
@@ -38,6 +39,7 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     public List<Owner> getAllOwners() { return ownerRepository.findAll(); }
+
 
 //    @Override
 //    public Owner addOwnerProperty(Owner owner) {

@@ -4,6 +4,7 @@ package gr.pf.team2.constructionwebapp.service;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
+import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
@@ -69,5 +70,63 @@ public class RepairServiceImpl implements RepairService {
                 .map(repair -> repairMapper.repairToModelByAfm(repair))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<RepairModel> searchAdvanced(SearchForm searchForm) {
+        List<Repair> repairs;
+
+        if (!searchForm.getAfm().equals(null) && searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        {
+            return repairRepository.advSearchAfm(searchForm.getAfm())
+                    .orElseThrow()
+                    .stream()
+                    .map(repair -> repairMapper.repairToModel(repair))
+                    .collect(Collectors.toList());
+        }
+
+        if (!searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        {
+            return repairRepository.advSearchAfmDate(searchForm.getAfm(),
+                    repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
+                    .orElseThrow()
+                    .stream()
+                    .map(repair -> repairMapper.repairToModel(repair))
+                    .collect(Collectors.toList());
+        }
+
+        if (!searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && !searchForm.getScheduledDateEnd().equals(null))
+        {
+            return repairRepository.advSearchAfmDateBandwidth(searchForm.getAfm(),
+                    repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
+                    repairMapper.parseLocalDateFromString(searchForm.getScheduledDateEnd()))
+                    .orElseThrow()
+                    .stream()
+                    .map(repair -> repairMapper.repairToModel(repair))
+                    .collect(Collectors.toList());
+        }
+
+        if (searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        {
+            return repairRepository.advSearchDate(repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
+                    .orElseThrow()
+                    .stream()
+                    .map(repair -> repairMapper.repairToModel(repair))
+                    .collect(Collectors.toList());
+        }
+
+        if (searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && !searchForm.getScheduledDateEnd().equals(null))
+        {
+            return repairRepository.advSearchDateBandwidth(
+                    repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
+                    repairMapper.parseLocalDateFromString(searchForm.getScheduledDateEnd()))
+                    .orElseThrow()
+                    .stream()
+                    .map(repair -> repairMapper.repairToModel(repair))
+                    .collect(Collectors.toList());
+        }
+
+        return null;
+    }
+
 
 }

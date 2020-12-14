@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
 
 import java.util.List;
@@ -16,7 +17,5 @@ public interface OwnerService {
     Optional<Owner> findOwnerByEmail(String email);
 
     List<Owner> getAllOwners();
-
-    //List<String> findAllNames();
 
 }

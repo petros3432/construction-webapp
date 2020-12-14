@@ -57,7 +57,7 @@ public class RepairMapper {
 
     }
 
-    private LocalDate parseLocalDateFromString(String date) {
+    public LocalDate parseLocalDateFromString(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
         return LocalDate.parse(date, formatter);
     }

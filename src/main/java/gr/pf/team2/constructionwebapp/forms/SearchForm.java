@@ -1,13 +1,34 @@
 package gr.pf.team2.constructionwebapp.forms;
 
-import java.time.LocalDate;
 
 public class SearchForm {
-    private LocalDate scheduledDate;
+    private String scheduledDateStart;
 
-    private LocalDate scheduledDateStart;
-
-    private LocalDate scheduledDateEnd;
+    private String scheduledDateEnd;
 
     private String afm;
+
+    public String getScheduledDateStart() {
+        return scheduledDateStart;
+    }
+
+    public void setScheduledDateStart(String scheduledDateStart) {
+        this.scheduledDateStart = scheduledDateStart;
+    }
+
+    public String getScheduledDateEnd() {
+        return scheduledDateEnd;
+    }
+
+    public void setScheduledDateEnd(String scheduledDateEnd) {
+        this.scheduledDateEnd = scheduledDateEnd;
+    }
+
+    public String getAfm() {
+        return afm;
+    }
+
+    public void setAfm(String afm) {
+        this.afm = afm;
+    }
 }

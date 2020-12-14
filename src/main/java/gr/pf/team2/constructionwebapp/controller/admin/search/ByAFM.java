@@ -20,6 +20,7 @@ public class ByAFM {
 
     @GetMapping(value = "/repair/search")
     public String searchByAfm() {
+
         return "pages/searchmodalbyafm";
     }
 
