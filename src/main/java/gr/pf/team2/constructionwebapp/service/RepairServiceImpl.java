@@ -34,11 +34,7 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public RepairModel findRepairById(Long id) {
-        return (RepairModel) repairRepository
-                .findAll()
-                .stream()
-                .map(repair -> repairMapper.repairToModel(repair))
-                .collect(Collectors.toList());
+        return repairMapper.repairToModel(repairRepository.findById(id).orElseThrow());
     }
 
     @Override

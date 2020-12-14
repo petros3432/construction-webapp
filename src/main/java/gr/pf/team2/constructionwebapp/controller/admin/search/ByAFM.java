@@ -18,9 +18,7 @@ public class ByAFM {
     private RepairService repairService;
 
     @GetMapping(value = "/repair/search")
-    public String searchByAfm(Model model) {
-        String afm="";
-        model.addAttribute("afm",afm);
+    public String searchByAfm() {
         return "pages/searchmodalbyafm";
     }
 

@@ -18,6 +18,6 @@ public interface OwnerService {
 
     Owner register(RegisterOwnerForm2 registerOwnerForm2);
 
-
+    List<String> findAllNames();
 
 }

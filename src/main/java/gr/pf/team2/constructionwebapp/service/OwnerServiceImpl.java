@@ -4,12 +4,14 @@ import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.enums.UserType;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm2;
+import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
@@ -17,6 +19,9 @@ import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
+
+    @Autowired
+    private OwnerMapper ownerMapper;
 
     @Override
     public Optional<Owner> findOwnerById(Long id) { return ownerRepository.findById(id); }
@@ -56,6 +61,15 @@ public class OwnerServiceImpl implements OwnerService {
         );
         Owner savedOwner = ownerRepository.save(owner);
         return savedOwner;
+    }
+
+    @Override
+    public List<String> findAllNames() {
+        return ownerRepository
+                .findAll()
+                .stream()
+                .map(owner -> ownerMapper.ownerToName(owner))
+                .collect(Collectors.toList());
     }
 
 }
