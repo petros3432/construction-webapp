@@ -3,6 +3,7 @@ package gr.pf.team2.constructionwebapp.forms;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
 public class RegisterOwnerForm {
 
@@ -49,15 +50,17 @@ public class RegisterOwnerForm {
 
     private String userType;
 
+    private String address;
+
     public String getUserType() {
         return userType;
     }
 
     public void setUserType(String userType) {
-        this.userType = userType;
+        this.userType = userType ;
     }
 
-    String address;
+
 
     public String getName() {
         return name;
@@ -75,7 +78,7 @@ public class RegisterOwnerForm {
         this.surname = surname;
     }
 
-    String typeOfProperty;
+    private String typeOfProperty;
 
     public String getPassword() {
         return password;

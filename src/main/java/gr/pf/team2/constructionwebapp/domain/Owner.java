@@ -66,6 +66,7 @@ public class Owner {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
+        this.address = address;
         this.tel = tel;
         this.email = email;
         this.password = password;
