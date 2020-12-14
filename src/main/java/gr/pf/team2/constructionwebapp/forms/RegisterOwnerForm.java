@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class RegisterOwnerForm2 {
+public class RegisterOwnerForm {
 
 //    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9@#$%^&]*$";
 //    private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
@@ -46,6 +46,16 @@ public class RegisterOwnerForm2 {
 
 //    @NotEmpty(message = "{registerOwner.lastName.not.null}")
     private String surname;
+
+    private String userType;
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
 
     String address;
 

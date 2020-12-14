@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.models;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,34 +24,42 @@ public class RepairModel {
 
     private Long id;
 
-    private String ownerFirstName;
-
-    private String ownerLastName;
-
-    private String ownerAFM;
-
-    private Long ownerID;
+    private String ownersName;
 
 
-    public String getOwnerFirstName() { return ownerFirstName; }
-
-    public void setOwnerFirstName(String ownerFirstName) { this.ownerFirstName = ownerFirstName; }
-
-    public String getOwnerLastName() { return ownerLastName; }
-
-    public void setOwnerLastName(String ownerLastName) { this.ownerLastName = ownerLastName; }
-
-    public Long getOwnerID() { return ownerID; }
-
-    public void setOwnerID(Long ownerID) { this.ownerID = ownerID; }
-
-    public String getOwnerAFM() {
-        return ownerAFM;
+    public RepairModel(LocalDate scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, double cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
+        this.scheduledDate = scheduledDate;
+        this.state = state;
+        this.typeOfRepair = typeOfRepair;
+        this.cost = cost;
+        this.address = address;
+        this.textDesc = textDesc;
+        this.id = id;
+        this.ownersName = ownersName;
+        this.ownersAFM = ownersAFM;
     }
 
-    public void setOwnerAFM(String ownerAFM) {
-        this.ownerAFM = ownerAFM;
+    public RepairModel() {
     }
+
+    public String getOwnersName() {
+        return ownersName;
+    }
+
+    public void setOwnersName(String ownersName) {
+        this.ownersName = ownersName;
+    }
+
+    public String getOwnersAFM() {
+        return ownersAFM;
+    }
+
+    public void setOwnersAFM(String ownersAFM) {
+        this.ownersAFM = ownersAFM;
+    }
+
+    private String ownersAFM;
+
 
     public LocalDate getScheduledDate() {
         return scheduledDate;

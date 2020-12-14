@@ -2,17 +2,17 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column mt-4">
             <li class="nav-item">
-                <a class="nav-link" href="/owners">
+                <a class="nav-link" href="/hello">
                     <span data-feather="home"></span>
                     Home
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="owner/registerOwner"
-                   style="border: none; background-color: inherit;">
+                <a class="nav-link" href="/repair/create"
+                        style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
-                    Add Owner
+                    Add Repair
                 </a>
             </li>
 
@@ -23,9 +23,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/repair">
+                <a class="nav-link" href="/owner">
                     <span data-feather="settings"></span>
-                    Repairs
+                    Owners
                 </a>
             </li>
         </ul>

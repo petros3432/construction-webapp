@@ -1,7 +1,7 @@
-package gr.pf.team2.constructionwebapp.controller;
+package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm2;
+import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.validators.RegistrationOwnerValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 
 @Controller
-public class RegistrationOwnerController {
+public class OwnerCreateController {
     private static final String REGISTER_FORM = "registerOwnerForm";
     private static final String TYPE_OF_PROPERTIES = "typeOfProperties";
     private static final String ERROR_MESSAGE = "errorMessage";
@@ -33,15 +33,15 @@ public class RegistrationOwnerController {
     }
 
 
-    @GetMapping(value = "/registerOwner")
+    @GetMapping(value = "/owner/registerOwner")
     public String register(Model model) {
-        model.addAttribute(REGISTER_FORM, new RegisterOwnerForm2());
+        model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
         model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
         return "pages/owner_create";
     }
 
-    @PostMapping(value = "/registerOwner")
-    public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm2 registerOwnerForm2, BindingResult bindingResult,
+    @PostMapping(value = "/owner/registerOwner")
+    public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm registerOwnerForm, BindingResult bindingResult,
                                 RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -50,8 +50,8 @@ public class RegistrationOwnerController {
             return "pages/AdminHomePage";
         }
 //        Owner newOwner = ownerService.register(registerOwnerForm);
-        ownerService.register(registerOwnerForm2);
+        ownerService.register(registerOwnerForm);
 //        redirectAttributes.addAttribute("id", newOwner.getId());
-      return "redirect:/AdminHomePage";
+      return "redirect:/AdminOwnerPage";
     }
 }
