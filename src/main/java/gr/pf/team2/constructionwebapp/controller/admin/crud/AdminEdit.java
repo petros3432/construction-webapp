@@ -29,7 +29,7 @@ public class AdminEdit {
 
     @PostMapping(value = "/repair/edit")
     public String editBook(RepairModel repairModel) {
-
+        repairService.updateRepair(repairModel);
         return "redirect:/pages/AdminHomePage";
     }
 
