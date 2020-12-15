@@ -5,7 +5,7 @@
 <form action="/owner/search" method="post">
     <div class="mb-3">
         <label for="emailpicker">Email</label>
-       <div class="input-group">
+        <div class="input-group">
             <input type="email" class="form-control" id="emailpicker" name="email">
         </div>
     </div>
@@ -17,5 +17,6 @@
                 <input type="text" class="form-control" id="owner-afm" name="afm">
             </div>
         </div>
+    </div>
     <button class="btn btn-primary btn-lg mt-4" type="submit">Search</button>
 </form>

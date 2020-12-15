@@ -10,7 +10,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
-                <input type="text" class="form-control" id="scheduledDate" name="scheduledDate">
+                <input type="text" class="form-control" id="datepicker" name="scheduledDate">
             </div>
         </div>
 
