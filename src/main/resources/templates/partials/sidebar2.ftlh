@@ -20,7 +20,7 @@
                 <a class="nav-link" href="/owner/search"
                    style="border: none; background-color: inherit;">
                     <span data-feather="search"></span>
-                    Search Repair
+                    Search Owner
                 </a>
             </li>
 

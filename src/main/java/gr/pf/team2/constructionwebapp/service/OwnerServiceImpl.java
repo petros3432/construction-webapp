@@ -3,9 +3,9 @@ package gr.pf.team2.constructionwebapp.service;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
-import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -102,5 +102,38 @@ public class OwnerServiceImpl implements OwnerService {
         owner.setEmail(ownerModel.getEmail());
         Owner owner1 = ownerRepository.save(owner);
         return ownerMapper.ownerToModel(owner1);
+    }
+
+    @Override
+    public List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) {
+
+        if (!searchFormOwner.getAfm().equals("") && searchFormOwner.getEmail().equals(""))
+        {
+            return ownerRepository.advSearchAfm(searchFormOwner.getAfm())
+                    .orElseThrow()
+                    .stream()
+                    .map(owner -> ownerMapper.ownerToModel(owner))
+                    .collect(Collectors.toList());
+        }
+
+        if (searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
+        {
+            return ownerRepository.advSearchEmail(searchFormOwner.getEmail())
+                    .orElseThrow()
+                    .stream()
+                    .map(owner -> ownerMapper.ownerToModel(owner))
+                    .collect(Collectors.toList());
+        }
+
+        if (!searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
+        {
+            return ownerRepository.advSearchAfmEmail(searchFormOwner.getAfm(),searchFormOwner.getEmail())
+                    .orElseThrow()
+                    .stream()
+                    .map(owner -> ownerMapper.ownerToModel(owner))
+                    .collect(Collectors.toList());
+        }
+
+        return null;
     }
 }
