@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
+import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,8 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerMapper ownerMapper;
 
     @Override
-    public Optional<Owner> findOwnerById(Long id) {
-        return ownerRepository.findById(id);
+    public OwnerModel findOwnerById(Long id) {
+        return ownerMapper.ownerToModel(ownerRepository.findById(id).orElseThrow());
     }
 
     @Override
@@ -85,9 +86,10 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     public OwnerModel updateOwner(OwnerModel ownerModel) {
-        Owner owner = ownerRepository.findOwnerByAfmOwner(ownerModel.getAfm()).get();
+        Owner owner = ownerRepository.findById(ownerModel.getId()).get();
         owner.setAddress(ownerModel.getAddress());
         owner.setAfm(ownerModel.getAfm());
+        owner.setId(ownerModel.getId());
         owner.setName(ownerModel.getName());
         owner.setSurname(ownerModel.getSurname());
         owner.setTel(ownerModel.getTel());

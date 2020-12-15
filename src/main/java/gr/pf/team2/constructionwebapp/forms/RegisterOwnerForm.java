@@ -20,7 +20,7 @@ public class RegisterOwnerForm {
 
 
 
-//    @Pattern(regexp = PASSWORD_PATTERN, message = "{registerOwner.password.pattern.invalid}")
+    //    @Pattern(regexp = PASSWORD_PATTERN, message = "{registerOwner.password.pattern.invalid}")
 //    @Size(min = PASSWORD_MIN_SIZE, max = PASSWORD_MAX_SIZE, message = "{registerOwner.password.size.invalid}")
 //    @NotEmpty(message = "{registerOwner.password.not.null}")
     private String password;

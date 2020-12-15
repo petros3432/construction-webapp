@@ -30,10 +30,11 @@ public class AdminOwnerEdit {
     @Autowired
     private OwnerMapper ownerMapper;
 
-    @GetMapping(value = "/owner/{afm}/edit")
-    public String editGetByAfm(@PathVariable String afm, Model model) {
-        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(afm);
-        OwnerModel ownerModel = ownerMapper.ownerToModel(owner.get());
+    @GetMapping(value = "/owner/{id}/edit")
+    public String editGetByAfm(@PathVariable Long id, Model model) {
+//        Optional<Owner> owner = ownerService.findOwnerById(id);
+//        OwnerModel ownerModel = ownerMapper.ownerToModel(owner.get());
+        OwnerModel ownerModel = ownerService.findOwnerById(id);
         model.addAttribute(EDIT_SERVICE, ownerModel);
         model.addAttribute(PROPERTY_TYPE, TypeOfProperty.values());
         return "pages/owner_edit";

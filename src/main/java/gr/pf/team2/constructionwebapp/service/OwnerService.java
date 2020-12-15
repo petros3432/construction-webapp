@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface OwnerService {
 
-    Optional<Owner> findOwnerById(Long id);
+    OwnerModel findOwnerById(Long id);
 
     Optional<OwnerModel> findOwnerByAfm(String afm);
 

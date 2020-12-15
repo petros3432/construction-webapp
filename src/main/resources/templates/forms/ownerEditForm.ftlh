@@ -4,6 +4,7 @@
 
 
 <form id="createForm" action="/owner/edit" method="post">
+    <input type="hidden" name="id" value="${owner.id}">
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
@@ -46,6 +47,17 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
+            <label for="inputPassword3" class=" control-label">Password</label>
+            <div class="inputGroupContainer">
+                <input type="password" class="form-control" name="password"
+                       id="password" value="${owner.password}">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6 text-left">
             <label for="title">Telephone</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="tel" value="${owner.tel}" name="tel">
@@ -53,17 +65,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group col-md-6 text-left">
-            <label for="state">Type Of Property</label>
-            <div class="input-group">
-                <select class="custom-select d-block w-100" id="state" name="state">
-                    <#if PropertyTypes??>
-                        <#list PropertyTypes as type>
-                            <option value="${type}"<#if owner.typeOfProperty == type> selected</#if>>${type}</option>                    </#list>
-                    </#if>
-                </select>
-            </div>
+    <div class="form-group col-md-6 text-left">
+        <label for="state">Type Of Property</label>
+        <div class="input-group">
+            <select class="custom-select d-block w-100" id="state" name="state">
+                <#if PropertyTypes??>
+                    <#list PropertyTypes as type>
+                        <option value="${type}"<#if owner.typeOfProperty == type> selected</#if>>${type}</option>                    </#list>
+                </#if>
+            </select>
         </div>
     </div>
 

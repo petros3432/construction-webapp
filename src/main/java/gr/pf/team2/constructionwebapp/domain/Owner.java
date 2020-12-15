@@ -62,6 +62,8 @@ public class Owner {
         this.surname = surname;
     }
 
+
+
     public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
         this.afm = afm;
         this.name = name;
@@ -74,7 +76,9 @@ public class Owner {
         this.userType = userType;
     }
 
-
+    public void setId(Long id) {
+        this.id = id;
+    }
     public void setAddress(String address) {
         this.address = address;
     }
