@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,9 +15,10 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+@Controller
 public class AdvanceSearch {
 
-    private static final String SEARCH = "search";
+    private static final String SEARCH = "top10rep";
 
     @Autowired
     private RepairService repairService;
@@ -26,7 +28,7 @@ public class AdvanceSearch {
     @GetMapping(value = "/repair/search")
     public String searchDynamic(Model model) {
         model.addAttribute(SEARCH, new SearchForm());
-        return "pages/search";
+        return "pages/repair_search";
     }
 
     @PostMapping(value = "/repair/search")
@@ -38,6 +40,6 @@ public class AdvanceSearch {
             return "redirect:/AdminHomePage";
         }
         model.addAttribute(SEARCH,repairs);
-        return "pages/searchpage";
+        return "pages/AdminHomePage";
     }
 }

@@ -17,9 +17,11 @@
             </li>
 
             <li class="nav-item">
-                <div class="md-form mt-0">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                </div>
+                <a class="nav-link" href="/repair/search"
+                   style="border: none; background-color: inherit;">
+                    <span data-feather="search"></span>
+                    Search Repair
+                </a>
             </li>
 
             <li class="nav-item">
