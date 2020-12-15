@@ -38,7 +38,7 @@
                             <tr>
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
-                                <td>${rep.cost}</td>
+                                <td>${rep.cost} € </td>
                                 <td>${rep.state}</td>
                                 <td>${rep.scheduledDate}</td>
                                 <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span

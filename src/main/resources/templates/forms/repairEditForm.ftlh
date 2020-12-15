@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Cost</label>
+            <label for="cost">Cost € </label>
             <div class="input-group">
                 <input type="text" class="form-control" value="${rep.cost}" id="cost" name="cost">
             </div>
