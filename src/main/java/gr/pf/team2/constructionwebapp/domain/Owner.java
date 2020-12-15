@@ -127,6 +127,42 @@ public class Owner {
         return repairs;
     }
 
+    public void setAfm(String afm) {
+        this.afm = afm;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public void setTypeOfProperty(TypeOfProperty typeOfProperty) {
+        this.typeOfProperty = typeOfProperty;
+    }
+
+    public void setRepairs(List<Repair> repairs) {
+        this.repairs = repairs;
+    }
+
 
     @Override
     public String toString() {

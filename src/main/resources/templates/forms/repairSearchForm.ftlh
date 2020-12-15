@@ -4,24 +4,24 @@
 
 <form action="/repair/search" method="post">
 
-<#--    <div class="mb-3">-->
-<#--        <label for="datepicker">Starting Date</label>-->
-<#--        <div class="input-group">-->
-<#--            <div class="input-group-prepend">-->
-<#--                <span class="input-group-text"><span data-feather="calendar"></span></span>-->
-<#--            </div>-->
-<#--            <input type="text" class="form-control" id="datepicker" name="scheduledDateStart">-->
-<#--        </div>-->
-<#--    </div>-->
-<#--    <div class="mb-3">-->
-<#--        <label for="datepicker">Ending Date</label>-->
-<#--        <div class="input-group">-->
-<#--            <div class="input-group-prepend">-->
-<#--                <span class="input-group-text"><span data-feather="calendar"></span></span>-->
-<#--            </div>-->
-<#--            <input type="text" class="form-control" id="datepicker" name="scheduledDateEnd">-->
-<#--        </div>-->
-<#--    </div>-->
+   <div class="mb-3">
+        <label for="datepicker">Starting Date</label>
+       <div class="input-group">
+            <div class="input-group-prepend">
+               <span class="input-group-text"><span data-feather="calendar"></span></span>
+            </div>
+            <input type="text" class="form-control" id="datepicker" name="scheduledDateStart">
+        </div>
+    </div>
+   <div class="mb-3">
+        <label for="datepicker">Ending Date</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+               <span class="input-group-text"><span data-feather="calendar"></span></span>
+            </div>
+           <input type="text" class="form-control" id="datepicker" name="scheduledDateEnd">
+       </div>
+    </div>
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
