@@ -2,6 +2,7 @@
 <h2 class="hello-title">Add Owner</h2>
 
 <form class="well form-horizontal" action="/owner/create" name="registerOwnerForm" method="POST">
+    <input type="hidden" name="userType" value="OWNER">
     <div class="row">
         <div class="form-group col-md-6 text-left">
             <label for="name" class="control-label">Name</label>

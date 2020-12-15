@@ -29,6 +29,11 @@ public class AdminRepairEdit {
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
         return "pages/repair_edit";
     }
+    @PostMapping(value = "/repair/{id}/delete")
+    public String deleteRepair(@PathVariable Long id) {
+        repairService.deleteById(id);
+        return "redirect:/repair";
+    }
 
     @PostMapping(value = "/repair/edit")
     public String editBook(RepairModel repairModel) {

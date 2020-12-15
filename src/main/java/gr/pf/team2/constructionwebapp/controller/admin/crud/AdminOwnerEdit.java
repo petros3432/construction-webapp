@@ -40,6 +40,12 @@ public class AdminOwnerEdit {
         return "pages/owner_edit";
     }
 
+    @PostMapping(value = "/owner/{id}/delete")
+    public String deleteOwner(@PathVariable Long id) {
+        ownerService.deleteById(id);
+        return "redirect:/owner";
+    }
+
     @PostMapping(value = "/owner/edit")
     public String editBook(OwnerModel ownerModel) {
         ownerService.updateOwner(ownerModel);

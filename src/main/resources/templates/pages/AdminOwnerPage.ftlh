@@ -38,39 +38,60 @@
                     <#if top10owners??>
                         <#list top10owners as owner>
                             <#if owner.userType == "OWNER">
-                            <tr>
-                                <td>${owner.afm}</td>
-                                <td>${owner.name}</td>
-                                <td>${owner.surname}</td>
-                                <td>${owner.address}</td>
-                                <td>${owner.tel}</td>
-                                <td>${owner.email}</td>
-                                <td>${owner.typeOfProperty}</td>
-                                <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span data-feather="tool"></span></a></td>
-                                <td class="text-center">
+                                <tr>
+                                    <td>${owner.afm}</td>
+                                    <td>${owner.name}</td>
+                                    <td>${owner.surname}</td>
+                                    <td>${owner.address}</td>
+                                    <td>${owner.tel}</td>
+                                    <td>${owner.email}</td>
+                                    <td>${owner.typeOfProperty}</td>
+                                    <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
+                                                    data-feather="tool"></span></a></td>
+                                    <td class="text-center">
 
-                                    <button
-                                            class="btn btn-link"
-                                            data-toggle="modal"
-                                            data-target="#modal"
-                                            data-id="${owner.afm}"
-                                    >
-                                        <span data-feather="x"></span>
-                                    </button>
+                                        <button
+                                                class="btn btn-link"
+                                                data-toggle="modal"
+                                                data-target="#modal"
+                                                data-id="${owner.id}"
+                                        >
+                                            <span data-feather="x"></span>
+                                        </button>
 
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
                             </#if>
                         </#list>
                     </#if>
-
                     </tbody>
                 </table>
+                <div id="modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Owner</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 </div>
-<#include "../partials/scripts.ftlh">
+<#include "../partials/scripts_owner.ftlh">
 </body>
 
 </html>

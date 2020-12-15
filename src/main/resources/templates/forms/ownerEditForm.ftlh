@@ -2,7 +2,6 @@
 
 <h4 class="mb-3">Edit Owner</h4>
 
-
 <form id="createForm" action="/owner/edit" method="post">
     <input type="hidden" name="id" value="${owner.id}">
 
