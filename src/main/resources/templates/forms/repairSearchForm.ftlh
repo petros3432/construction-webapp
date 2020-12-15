@@ -3,7 +3,6 @@
 <h4 class="mb-3">Search Repair</h4>
 
 <form action="/repair/search" method="post">
-
    <div class="mb-3">
         <label for="datepicker">Starting Date</label>
        <div class="input-group">

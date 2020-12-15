@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-public class AdvanceSearch {
+public class AdvanceSearchRepair {
 
     private static final String SEARCH = "top10rep";
 

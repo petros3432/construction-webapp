@@ -22,32 +22,5 @@ public class OwnerMapper {
         return ownerModel;
     }
 
-//    public Repair repairFormToRepair(RepairForm repairForm){
-//        Repair repair = new Repair();
-//        repair.setScheduledDate(repairForm.getScheduledDate());
-//        repair.setTextDesc(repairForm.getTextDesc());
-//        repair.setTypeOfRepair(repairForm.getTypeOfRepair());
-//        repair.setState(repairForm.getState());
-//
-//        repair.setCost(repairForm.getCost());
-//        repair.setAddress(repairForm.getAddress());
-//
-//        return repair;
-//    }
-//
-//    public RepairModelByAfm repairToModelByAfm(Repair repair){
-//        RepairModelByAfm repairModelByAfm = new RepairModelByAfm();
-//
-//        repairModelByAfm.setScheduledDate(repair.getScheduledDate());
-//        repairModelByAfm.setState(repair.getState());
-//        repairModelByAfm.setTypeOfRepair(repair.getTypeOfRepair());
-//        repairModelByAfm.setCost(repair.getCost());
-//        repairModelByAfm.setTextDesc(repair.getTextDesc());
-//        repairModelByAfm.setAddress(repair.getAddress());
-//        repairModelByAfm.setOwner(repair.getOwner());
-//
-//        return repairModelByAfm;
-//
-//    }
 
 }

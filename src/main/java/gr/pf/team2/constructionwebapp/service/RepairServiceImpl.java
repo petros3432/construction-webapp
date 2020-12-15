@@ -73,7 +73,6 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public List<RepairModel> searchAdvanced(SearchForm searchForm) {
-        List<Repair> repairs;
 
         if (!searchForm.getAfm().equals("") && searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
