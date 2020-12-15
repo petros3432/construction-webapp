@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
+
 public class OwnerModel {
     private String afm;
 
@@ -28,7 +30,7 @@ public class OwnerModel {
 
     private Long id;
 
-    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, TypeOfProperty typeOfProperty, Long id) {
+    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, TypeOfProperty typeOfProperty, Long id, UserType userType) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -38,6 +40,7 @@ public class OwnerModel {
         this.password = password;
         this.typeOfProperty = typeOfProperty;
         this.id = id;
+        this.userType = OWNER;
     }
     public OwnerModel(){
 

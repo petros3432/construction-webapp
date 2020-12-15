@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-light sticky-top flex-md-nowrap p-0" >
-    <img class="navbar-brand" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="AdminHomePage.html" style="width:4%;display:block">
-    <a class="navbar-brand" href="AdminHomePage.html" >BoBiToMastori.gr</a>
+    <img class="navbar-brand" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="/AdminHomePage" style="width:4%;display:block">
+    <a class="navbar-brand" href="/AdminHomePage" >BoBiToMastori.gr</a>
 
     <ul class="navbar-nav px-3">
         <li class="nav-item active">

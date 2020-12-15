@@ -46,7 +46,7 @@
                                 <td>${owner.tel}</td>
                                 <td>${owner.email}</td>
                                 <td>${owner.typeOfProperty}</td>
-                                <td class="text-center"><a class="btn btn-link" href="/owner/${owner.afm}/edit"><span data-feather="tool"></span></a></td>
+                                <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span data-feather="tool"></span></a></td>
                                 <td class="text-center">
 
                                     <button

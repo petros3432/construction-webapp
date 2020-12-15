@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring />
 <h2 class="hello-title">Add Owner</h2>
 
-<form class="well form-horizontal" action="/registerOwner" name="registerOwner" method="POST">
+<form class="well form-horizontal" action="/owner/create" name="registerOwnerForm" method="POST">
     <div class="row">
         <div class="form-group col-md-6 text-left">
             <label for="name" class="control-label">Name</label>
@@ -41,7 +41,7 @@
             <label for="address" class=" control-label">Address</label>
             <div class="inputGroupContainer">
                 <#--                <@spring.bind "registerOwnerForm.address"/>-->
-                <input type="text" class="form-control" name="address" id="address"
+                <input type="text" class="form-control"  id="address" name="address"
                        placeholder="Address" required>
                 <#--                <#if spring.status.error>-->
                 <#--                    <ul>-->

@@ -12,6 +12,8 @@ public class OwnerMapper {
         ownerModel.setName(owner.getName());
         ownerModel.setSurname(owner.getSurname());
         ownerModel.setAfm(owner.getAfm());
+        ownerModel.setId(owner.getId());
+        ownerModel.setPassword((owner.getPassword()));
         ownerModel.setAddress(owner.getAddress());
         ownerModel.setTel(owner.getTel());
         ownerModel.setEmail(owner.getEmail());

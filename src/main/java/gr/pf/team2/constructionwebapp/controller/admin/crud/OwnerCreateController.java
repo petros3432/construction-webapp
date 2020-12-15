@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
@@ -25,33 +26,35 @@ public class OwnerCreateController {
 
     @Autowired
     private OwnerService ownerService;
+
     @Autowired
     private RegistrationOwnerValidator registrationOwnerValidator;
+
     @InitBinder(REGISTER_FORM)
     protected void initBinder(final WebDataBinder binder) {
         binder.addValidators(registrationOwnerValidator);
     }
 
 
-    @GetMapping(value = "/owner/registerOwner")
+    @GetMapping(value = "/owner/create")
     public String register(Model model) {
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
         model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
         return "pages/owner_create";
     }
 
-    @PostMapping(value = "/owner/registerOwner")
+    @PostMapping(value = "/owner/create")
     public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm registerOwnerForm, BindingResult bindingResult,
                                 RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            return "pages/AdminHomePage";
+            return "pages/AdminOwnerPage";
         }
 //        Owner newOwner = ownerService.register(registerOwnerForm);
-        //ownerService.register(registerOwnerForm);
-//        redirectAttributes.addAttribute("id", newOwner.getId());
-      return "redirect:/AdminOwnerPage";
+        ownerService.register(registerOwnerForm);
+        //redirectAttributes.addAttribute("id", owner.getId());
+        return "redirect:/AdminOwnerPage";
     }
 }

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-
 public class AdminOwnerControllerHome {
 
 
@@ -25,8 +24,8 @@ public class AdminOwnerControllerHome {
 
     @GetMapping({"/AdminOwnerPage", "/owner"})
     public String OwnersShowoff(Model model) {
-        //List<OwnerModel> owners = ownerService.firstTenOwners();
-        //odel.addAttribute(TOP_10_OWNERS, owners);
+        List<OwnerModel> owners = ownerService.firstTenOwners();
+        model.addAttribute(TOP_10_OWNERS, owners);
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
         return "pages/AdminOwnerPage";
     }

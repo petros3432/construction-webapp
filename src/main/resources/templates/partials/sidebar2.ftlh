@@ -2,14 +2,14 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column mt-4">
             <li class="nav-item">
-                <a class="nav-link" href="/owners">
+                <a class="nav-link" href="/owner">
                     <span data-feather="home"></span>
                     Home
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="owner/registerOwner"
+                <a class="nav-link" href="owner/create"
                    style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
                     Add Owner
