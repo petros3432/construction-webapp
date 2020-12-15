@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
@@ -29,6 +30,6 @@ public interface OwnerService {
     OwnerModel updateOwner(OwnerModel ownerModel);
     //List<String> findAllNames();
 
-    List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner);
+    List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) throws ExceptionsHandling;
 
 }

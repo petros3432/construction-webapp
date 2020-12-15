@@ -1,11 +1,9 @@
 package gr.pf.team2.constructionwebapp.controller.admin.search;
 
-import gr.pf.team2.constructionwebapp.forms.SearchForm;
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
-import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +18,6 @@ import java.util.List;
 public class AdvanceSearchOwner {
     private static final String SEARCH = "top10owners";
 
-
     @Autowired
     private OwnerService ownerService;
 
@@ -33,7 +30,13 @@ public class AdvanceSearchOwner {
     @PostMapping(value = "/owner/search")
     public String searchAll(Model model, @Valid @ModelAttribute(SEARCH) SearchFormOwner searchFormOwner){
 
-        List<OwnerModel> owners = ownerService.searchAdvanced(searchFormOwner);
+        List<OwnerModel> owners = null;
+        try {
+            owners = ownerService.searchAdvanced(searchFormOwner);
+        } catch (ExceptionsHandling exceptionsHandling) {
+            model.addAttribute("error",exceptionsHandling.getMessage());
+            return "pages/AdminOwnerPage";
+        }
 
         if(owners.isEmpty()){
             return "redirect:/AdminOwnerPage";

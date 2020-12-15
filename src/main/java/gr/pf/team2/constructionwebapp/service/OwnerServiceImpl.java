@@ -2,6 +2,7 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
@@ -99,12 +100,12 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) {
+    public List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) throws ExceptionsHandling {
 
         if (!searchFormOwner.getAfm().equals("") && searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchAfm(searchFormOwner.getAfm())
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("AFM not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());
@@ -113,7 +114,7 @@ public class OwnerServiceImpl implements OwnerService {
         if (searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchEmail(searchFormOwner.getEmail())
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("Email not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());
@@ -122,7 +123,7 @@ public class OwnerServiceImpl implements OwnerService {
         if (!searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchAfmEmail(searchFormOwner.getAfm(),searchFormOwner.getEmail())
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("AFM and Email not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());

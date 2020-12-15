@@ -3,6 +3,7 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;
@@ -72,12 +73,12 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
-    public List<RepairModel> searchAdvanced(SearchForm searchForm) {
+    public List<RepairModel> searchAdvanced(SearchForm searchForm) throws ExceptionsHandling {
 
         if (!searchForm.getAfm().equals("") && searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchAfm(searchForm.getAfm())
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("AFM not in Database"))
                     .stream()
                     .map(repair -> repairMapper.repairToModel(repair))
                     .collect(Collectors.toList());
@@ -87,7 +88,7 @@ public class RepairServiceImpl implements RepairService {
         {
             return repairRepository.advSearchAfmDate(searchForm.getAfm(),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("AFM and Date not in Database"))
                     .stream()
                     .map(repair -> repairMapper.repairToModel(repair))
                     .collect(Collectors.toList());
@@ -98,7 +99,7 @@ public class RepairServiceImpl implements RepairService {
             return repairRepository.advSearchAfmDateBandwidth(searchForm.getAfm(),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateEnd()))
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("AFM and Dates not in Database"))
                     .stream()
                     .map(repair -> repairMapper.repairToModel(repair))
                     .collect(Collectors.toList());
@@ -107,7 +108,7 @@ public class RepairServiceImpl implements RepairService {
         if (searchForm.getAfm().equals("") && !searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchDate(repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("Date not in Database"))
                     .stream()
                     .map(repair -> repairMapper.repairToModel(repair))
                     .collect(Collectors.toList());
@@ -118,7 +119,7 @@ public class RepairServiceImpl implements RepairService {
             return repairRepository.advSearchDateBandwidth(
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateEnd()))
-                    .orElseThrow()
+                    .orElseThrow(()->new ExceptionsHandling("Dates not in Database"))
                     .stream()
                     .map(repair -> repairMapper.repairToModel(repair))
                     .collect(Collectors.toList());

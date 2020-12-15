@@ -1,8 +1,8 @@
 package gr.pf.team2.constructionwebapp.controller.admin.search;
 
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
-import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class AdvanceSearchRepair {
@@ -22,8 +21,6 @@ public class AdvanceSearchRepair {
 
     @Autowired
     private RepairService repairService;
-
-    private OwnerService ownerService;
 
     @GetMapping(value = "/repair/search")
     public String searchDynamic(Model model) {
@@ -34,7 +31,14 @@ public class AdvanceSearchRepair {
     @PostMapping(value = "/repair/search")
     public String searchAll(Model model, @Valid @ModelAttribute(SEARCH) SearchForm searchForm){
 
-        List<RepairModel> repairs = repairService.searchAdvanced(searchForm);
+
+        List<RepairModel> repairs = null;
+        try {
+            repairs = repairService.searchAdvanced(searchForm);
+        } catch (ExceptionsHandling exceptionsHandling) {
+            model.addAttribute("error",exceptionsHandling.getMessage());
+            return "pages/AdminHomePage";
+        }
 
         if(repairs.isEmpty()){
             return "redirect:/AdminHomePage";
