@@ -8,9 +8,9 @@ INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone
 INSERT INTO Owner (Email,Password, Type_of_User) VALUES ('admin@gmail.com','adminadmin','ADMIN');
 
 
-INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair , Description ,Type_Of_Repair , Owner_id) VALUES ('Meroglou 1' , '150' , '2021-1-10 13:00:00' , 'DEFAULT' , 'First floor , The owner is not available on Mondays' , 'PAINTING' , '1');
+INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair , Description ,Type_Of_Repair , Owner_id) VALUES ('Meroglou 1' , '150' , '2021-01-10 13:00:00' , 'DEFAULT' , 'First floor , The owner is not available on Mondays' , 'PAINTING' , '1');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Kolokotroni 9' , '300' , '2020-12-15 10:00:00' , 'IN_PROGRESS'  , 'INSULATION' , '2');
-INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Thrakomakedonwn 35' , '200' , '2020-10-5 11:30:00' , 'COMPLETED'  , 'FRAMES' , '3');
+INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Thrakomakedonwn 35' , '200' , '2020-10-05 11:30:00' , 'COMPLETED'  , 'FRAMES' , '3');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Mouratidou 12' , '170' , '2020-10-25 12:00:00' , 'COMPLETED'  , 'PLUMBING' , '4');
-INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Kiriakou 5' , '120' , '2021-1-5 9:00:00' , 'DEFAULT'  , 'ELECTRICAL' , '5');
+INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Kiriakou 5' , '120' , '2021-01-05 9:00:00' , 'DEFAULT'  , 'ELECTRICAL' , '5');
 

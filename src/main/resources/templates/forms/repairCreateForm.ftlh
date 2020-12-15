@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="author-first-name">Cost</label>
+            <label for="author-first-name">Cost €</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="cost" name="cost">
             </div>
@@ -73,6 +73,6 @@
                 <input type="text" class="form-control" id="owner-afm" name="afmOwner">
             </div>
         </div>
-
+    </div>
     <button class="btn btn-primary btn-lg mt-4" type="submit">Create</button>
 </form>

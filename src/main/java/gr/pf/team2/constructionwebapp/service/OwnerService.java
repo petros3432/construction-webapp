@@ -2,6 +2,7 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
 
 import java.util.List;
@@ -23,9 +24,13 @@ public interface OwnerService {
 
     List<Owner> getAllOwners();
 
+    void deleteById(Long id);
+
     Owner register(RegisterOwnerForm registerOwnerForm);
 
     OwnerModel updateOwner(OwnerModel ownerModel);
     //List<String> findAllNames();
+
+    List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner);
 
 }

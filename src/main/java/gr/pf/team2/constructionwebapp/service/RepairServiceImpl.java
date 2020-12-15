@@ -73,9 +73,8 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public List<RepairModel> searchAdvanced(SearchForm searchForm) {
-        List<Repair> repairs;
 
-        if (!searchForm.getAfm().equals(null) && searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        if (!searchForm.getAfm().equals("") && searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchAfm(searchForm.getAfm())
                     .orElseThrow()
@@ -84,7 +83,7 @@ public class RepairServiceImpl implements RepairService {
                     .collect(Collectors.toList());
         }
 
-        if (!searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        if (!searchForm.getAfm().equals("") && !searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchAfmDate(searchForm.getAfm(),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
@@ -94,7 +93,7 @@ public class RepairServiceImpl implements RepairService {
                     .collect(Collectors.toList());
         }
 
-        if (!searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && !searchForm.getScheduledDateEnd().equals(null))
+        if (!searchForm.getAfm().equals("") && !searchForm.getScheduledDateStart().equals("") && !searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchAfmDateBandwidth(searchForm.getAfm(),
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
@@ -105,7 +104,7 @@ public class RepairServiceImpl implements RepairService {
                     .collect(Collectors.toList());
         }
 
-        if (searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && searchForm.getScheduledDateEnd().equals(null))
+        if (searchForm.getAfm().equals("") && !searchForm.getScheduledDateStart().equals("") && searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchDate(repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()))
                     .orElseThrow()
@@ -114,7 +113,7 @@ public class RepairServiceImpl implements RepairService {
                     .collect(Collectors.toList());
         }
 
-        if (searchForm.getAfm().equals(null) && !searchForm.getScheduledDateStart().equals(null) && !searchForm.getScheduledDateEnd().equals(null))
+        if (searchForm.getAfm().equals("") && !searchForm.getScheduledDateStart().equals("") && !searchForm.getScheduledDateEnd().equals(""))
         {
             return repairRepository.advSearchDateBandwidth(
                     repairMapper.parseLocalDateFromString(searchForm.getScheduledDateStart()),
