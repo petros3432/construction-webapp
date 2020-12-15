@@ -9,7 +9,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="owner/create"
+                <a class="nav-link" href="/owner/create"
                    style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
                     Add Owner
