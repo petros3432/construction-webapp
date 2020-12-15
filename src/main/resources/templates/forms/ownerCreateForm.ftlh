@@ -6,32 +6,32 @@
         <div class="form-group col-md-6 text-left">
             <label for="name" class="control-label">Name</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.firstName"/>-->
+                                <@spring.bind "registerOwnerForm.name"/>
                 <input type="text" class="form-control" name="name" id="name"
-                       placeholder="Name" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="Name" value="${registerOwnerForm.name!''}">
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
 
         <div class="form-group col-md-6 text-left">
             <label for="surname" class=" control-label">Surname</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.lastName"/>-->
+                                <@spring.bind "registerOwnerForm.surname"/>
                 <input type="text" class="form-control" name="surname" id="surname"
-                       placeholder="Surname" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="Surname" required value="${registerOwnerForm.surname!''}">
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
     </div>
@@ -40,32 +40,32 @@
         <div class="form-group col-md-6 text-left">
             <label for="address" class=" control-label">Address</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.address"/>-->
+                                <@spring.bind "registerOwnerForm.address"/>
                 <input type="text" class="form-control"  id="address" name="address"
-                       placeholder="Address" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="Address" required value="${registerOwnerForm.address!''}">
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
 
         <div class="form-group col-md-6 text-left">
             <label for="AFM" class="control-label">AFM</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.afm"/>-->
+                                <@spring.bind "registerOwnerForm.afm"/>
                 <input type="text" class="form-control" id="Afm" name="afm"
-                       placeholder="AFM" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="AFM" value="${registerOwnerForm.afm!''}" required>
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
     </div>
@@ -74,31 +74,35 @@
         <div class="form-group col-md-6 text-left">
             <label for="inputEmail3" class="control-label">Email</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.email"/>-->
+                                <@spring.bind "registerOwnerForm.email"/>
                 <input type="email" class="form-control" id="inputEmail3" name="email"
-                       placeholder="Email" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="Email" value="${registerOwnerForm.email!''}" required>
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
+
+                    <@spring.bind "registerOwnerForm.userType"/>
+                    <input type="hidden" name="userType" value="OWNER">
+
         <div class="form-group col-md-6 text-left">
             <label for="" class="control-label">Telephone</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.tel"/>-->
+                                <@spring.bind "registerOwnerForm.tel"/>
                 <input type="tel" class="form-control" id="tel" name="tel"
-                       placeholder="Telephone" pattern="[0-9]{10}" required>
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       placeholder="Telephone" pattern="[0-9]{10}" value="${registerOwnerForm.tel!''}" required>
+                               <#if spring.status.error>
+                                   <ul>
+                                       <#list spring.status.errorMessages as error>
+                                           <li style="color: #dc3545">${error}</li>
+                                       </#list>
+                                    </ul>
+                              </#if>
             </div>
             <small id="telHelpBlock" class="form-text text-muted">
                 *Numbers Only*
@@ -111,31 +115,73 @@
         <div class="form-group col-md-6 text-left">
             <label for="inputPassword3" class=" control-label">Password</label>
             <div class="inputGroupContainer">
-                <#--                <@spring.bind "registerOwnerForm.password"/>-->
+                                <@spring.bind "registerOwnerForm.password"/>
                 <input type="password" class="form-control" name="password"
-                       id="inputPassword3" placeholder="Password">
-                <#--                <#if spring.status.error>-->
-                <#--                    <ul>-->
-                <#--                        <#list spring.status.errorMessages as error>-->
-                <#--                            <li style="color: #dc3545">${error}</li>-->
-                <#--                        </#list>-->
-                <#--                    </ul>-->
-                <#--                </#if>-->
+                       id="inputPassword3" placeholder="Password" value="${registerOwnerForm.password!''}">
+                                <#if spring.status.error>
+                                    <ul>
+                                        <#list spring.status.errorMessages as error>
+                                            <li style="color: #dc3545">${error}</li>
+                                        </#list>
+                                    </ul>
+                                </#if>
             </div>
         </div>
-
+        <#if typeOfProperties??>
         <div class="form-group col-md-6 text-left">
             <label for="typeOfProperty">Type Of Property</label>
             <div class="input-group">
-                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty">
-                    <#if typeOfProperties??>
+                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >
+
                         <#list typeOfProperties as type>
-                            <option value="${type}">${type}</option>
+
+                            <option  value="${type}" >${type}</option>
+
                         </#list>
-                    </#if>
+
                 </select>
             </div>
         </div>
+                    <#else>
+                        <div class="form-group col-md-6 text-left">
+                            <label for="typeOfProperty">Type Of Property</label>
+                            <div class="input-group">
+                                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >
+                                    <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
+                                                            <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>
+                                                            <option value="MEZONETA"  >MEZONETA"</option>
+                                                             </select>
+                                                            <ul>
+                                                            <li style="color: #dc3545">Please pick again the type of property</li>
+                                                            </ul>
+                        </select>
+                        </div>
+                        </div>
+
+
+
+
+        </#if>
+
+
+<#--        <#if typeOfProperties??>-->
+<#--        <#else>-->
+<#--        <div class="form-group col-md-6 text-left">-->
+<#--            <label for="typeOfProperty">Type Of Property</label>-->
+<#--            <div class="input-group">-->
+<#--                        <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >-->
+<#--                        <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
+<#--                        <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>-->
+<#--                        <option value="MEZONETA"  >MEZONETA"</option>-->
+<#--                         </select>-->
+<#--                        <ul>-->
+<#--                        <li style="color: #dc3545">Please pick again the type of property</li>-->
+<#--                        </ul>-->
+
+
+<#--            </div>-->
+<#--        </div>-->
+<#--        </#if>-->
     </div>
     <button class="btn btn-primary btn-lg mt-4" type="submit">Create</button>
 </form>

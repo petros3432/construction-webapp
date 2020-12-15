@@ -50,7 +50,7 @@ public class OwnerCreateController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            return "pages/AdminOwnerPage";
+            return "pages/owner_create";
         }
 //        Owner newOwner = ownerService.register(registerOwnerForm);
         ownerService.register(registerOwnerForm);
