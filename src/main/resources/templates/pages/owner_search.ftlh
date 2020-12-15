@@ -24,7 +24,7 @@
         </main>
     </div>
 </div>
-<#include "../partials/scripts.ftlh">
+<#include "../partials/scripts_owner.ftlh">
 </body>
 
 </html>
