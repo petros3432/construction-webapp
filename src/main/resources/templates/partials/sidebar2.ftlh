@@ -1,12 +1,6 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column mt-4">
-            <li class="nav-item">
-                <a class="nav-link" href="/owner">
-                    <span data-feather="home"></span>
-                    Home
-                </a>
-            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/owner/create"
@@ -24,12 +18,6 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/repair">
-                    <span data-feather="settings"></span>
-                    Repairs
-                </a>
-            </li>
         </ul>
         <h6
                 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
