@@ -6,3 +6,4 @@
     feather.replace();
 </script>
 <script src="/js/main_owner.js"></script>
+<script src="https://kit.fontawesome.com/bc8ed54276.js" crossorigin="anonymous"></script>

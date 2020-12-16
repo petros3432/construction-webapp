@@ -1,6 +1,9 @@
 <#import "/spring.ftl" as spring />
 
-<h4 class="mb-3">Search Owner</h4>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-user-tag"></i>
+            </span></i> Search Owner</h3>
 
 <form action="/owner/search" method="post">
     <div class="mb-3">

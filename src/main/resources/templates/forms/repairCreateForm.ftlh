@@ -1,6 +1,9 @@
 <#import "/spring.ftl" as spring />
 
-<h4 class="mb-3">Create Repair</h4>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-plus-circle"></i>
+            </span></i> Add Repair</h3>
 
 <form id="createForm" action="/repair/create" method="post">
 

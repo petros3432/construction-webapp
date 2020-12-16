@@ -14,8 +14,11 @@
 <#include "../partials/topnavbarowner.ftlh">
 
 <div class="container-fluid">
-    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4">
-        <h3 class="mb-3">Your Repairs</h3>
+    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 mt-4">
+        <h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-tools"></i>
+            </span></i> Your Repairs</h3>
         <div class="table-responsive ">
             <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
                    id="empTable">
@@ -48,6 +51,7 @@
     </main>
 </div>
 </div>
+<#include "../partials/scripts_repair.ftlh">
 </body>
 
 </html>

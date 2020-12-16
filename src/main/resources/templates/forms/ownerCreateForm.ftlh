@@ -1,5 +1,8 @@
 <#import "/spring.ftl" as spring />
-<h2 class="hello-title">Add Owner</h2>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-user-plus"></i>
+            </span></i> Add Owner</h3>
 
 <form class="well form-horizontal" action="/owner/create" name="registerOwnerForm" method="POST">
     <input type="hidden" name="userType" value="OWNER">

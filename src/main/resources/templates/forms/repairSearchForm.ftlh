@@ -1,6 +1,9 @@
 <#import "/spring.ftl" as spring />
 
-<h4 class="mb-3">Search Repair</h4>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-search"></i>
+            </span></i> Search Repairs</h3>
 
 <form id="createForm" action="/repair/search" method="post">
 
