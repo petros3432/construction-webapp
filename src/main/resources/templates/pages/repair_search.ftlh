@@ -25,6 +25,7 @@
     </div>
 </div>
 <#include "../partials/scripts_repair.ftlh">
+<#include "../partials/script-datepicker.ftlh">
 </body>
 
 </html>

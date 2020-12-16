@@ -25,6 +25,7 @@
     </div>
 </div>
 <#include "../partials/scripts_owner.ftlh">
+
 </body>
 
 </html>
