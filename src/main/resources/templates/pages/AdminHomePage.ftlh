@@ -4,6 +4,7 @@
 <head>
     <title>Admin Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/../css/main2.css" rel="stylesheet"/>
     <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
 </head>
@@ -13,14 +14,11 @@
 <#include "../partials/topnavbar1.ftlh">
 
 <div class="container-fluid">
-    <div class="row mt-4">
-        <#include "../partials/sidebar1.ftlh">
-        <#--Table for the repair items-->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h3 class="mb-3">Repairs</h3>
-            <div class="table-responsive">
-                <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
-                       id="empTable">
+    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4">
+        <h3 class="mb-3">Repairs</h3>
+        <div class="table-responsive ">
+            <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
+                   id="empTable">
                     <thead>
                     <tr>
                         <th scope="col">Type</th>
@@ -87,6 +85,7 @@
     </div>
 </div>
 <#include "../partials/scripts_repair.ftlh">
+<#include "../partials/script-datepicker.ftlh">
 </body>
 
 </html>

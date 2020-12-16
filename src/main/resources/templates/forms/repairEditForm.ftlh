@@ -6,6 +6,7 @@
 <form id="createForm" action="/repair/edit" method="post">
 
     <input type="hidden" name="id" value="${rep.id}">
+
     <div class="row">
         <div class="form-group col-md-6 text-left">
             <label for="datepicker">Date</label>
@@ -13,7 +14,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
-                <input type="text" class="form-control" value="${rep.scheduledDate}" id="datepicker"
+                <input type="text" class="form-control datepicker" value="${rep.scheduledDate}"
                        name="scheduledDate">
             </div>
         </div>

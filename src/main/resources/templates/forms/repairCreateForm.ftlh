@@ -3,15 +3,16 @@
 <h4 class="mb-3">Create Repair</h4>
 
 <form id="createForm" action="/repair/create" method="post">
+
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="scheduledDate">Date</label>
+            <label for="datepicker">Date</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
                 <@spring.bind "repairCreateForm.scheduledDate"/>
-                <input type="text" class="form-control" id="datepicker"  name="scheduledDate">
+                <input type="text" class="form-control datepicker"  name="scheduledDate">
 
             </div>
             <#if spring.status.error>

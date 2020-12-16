@@ -1,7 +1,7 @@
 feather.replace();
 
 jQuery(function ($) {
-    var $datePicker = $('#datepicker');
+    var $datePicker = $('.datepicker');
     if ($datePicker.datepicker) {
         $datePicker.datepicker({format: 'yyyy-mm-dd'});
     }
