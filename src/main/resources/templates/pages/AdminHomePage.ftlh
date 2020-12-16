@@ -73,7 +73,7 @@
                             </div>
                             <div class="modal-footer">
                                 <form method="post" id="deleteForm">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-logout">Delete</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 </form>
                             </div>

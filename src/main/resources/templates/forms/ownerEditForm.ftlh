@@ -84,5 +84,5 @@
     <#--    </div>-->
 
 
-    <button class="btn btn-primary btn-lg mt-4" type="submit">Submit</button>
+    <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>

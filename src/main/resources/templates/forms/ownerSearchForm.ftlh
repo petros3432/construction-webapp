@@ -16,5 +16,5 @@
             <input type="text" class="form-control" id="owner-afm" name="afm">
         </div>
     </div>
-    <button class="btn btn-primary btn-lg mt-4" type="submit">Search</button>
+    <button class="btn btn-lg mt-4 btnblue" type="submit">Search</button>
 </form>

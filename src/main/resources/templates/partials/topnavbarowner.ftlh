@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="/repair">
         <img class="img-fluid" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="/OwnerHomePage" style="width:60px; padding:nopadding">
         BoBiToMastori.gr
@@ -12,7 +12,7 @@
         </ul>
         <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Logout</a>
+                <button type="button" class="btn btn-logout">Logout</button>
             </li>
         </ul>
     </div>
