@@ -5,7 +5,6 @@
     <title>Admin Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="/../css/main2.css" rel="stylesheet"/>
     <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
 </head>
@@ -24,29 +23,58 @@
         <div class="table-responsive">
             <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
                    id="empTable">
-                <thead>
-                <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">State</th>
-                    <th scope="col">Scheduled Date</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Remove</th>
-                </tr>
-                </thead>
-                <tbody>
-                <#if top10rep??>
-                    <#list top10rep as rep>
-                        <tr>
-                            <td>${rep.typeOfRepair}</td>
-                            <td>${rep.address}</td>
-                            <td>${rep.cost} €</td>
-                            <td>${rep.state}</td>
-                            <td>${rep.scheduledDate}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span
-                                            data-feather="tool"></span></a></td>
-                            <td class="text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Scheduled Date</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <#if repairSearchForm??>
+                        <#list repairSearchForm as rep>
+                            <tr>
+                                <td>${rep.typeOfRepair}</td>
+                                <td>${rep.address}</td>
+                                <td>${rep.cost} € </td>
+                                <td>${rep.state}</td>
+                                <td>${rep.scheduledDate}</td>
+                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span
+                                                data-feather="tool"></span></a></td>
+                                <td class="text-center">
+
+                                    <button
+                                            class="btn btn-link"
+                                            data-toggle="modal"
+                                            data-target="#modal"
+                                            data-id="${rep.id}"
+                                    >
+                                        <span data-feather="x"></span>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </#list>
+                    </#if>
+
+
+
+
+                    <#if top10rep??>
+                        <#list top10rep as rep>
+                            <tr>
+                                <td>${rep.typeOfRepair}</td>
+                                <td>${rep.address}</td>
+                                <td>${rep.cost} € </td>
+                                <td>${rep.state}</td>
+                                <td>${rep.scheduledDate}</td>
+                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span
+                                                data-feather="tool"></span></a></td>
+                                <td class="text-center">
 
                                 <button
                                         class="btn btn-link"
@@ -57,12 +85,17 @@
                                     <span data-feather="x"></span>
                                 </button>
 
-                            </td>
-                        </tr>
-                    </#list>
-                </#if>
-                </tbody>
-            </table>
+                                </td>
+                            </tr>
+                        </#list>
+                    </#if>
+
+
+
+
+
+                    </tbody>
+                </table>
 
             <div id="modal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">

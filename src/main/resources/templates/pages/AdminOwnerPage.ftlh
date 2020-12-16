@@ -66,6 +66,40 @@
                             </#if>
                         </#list>
                     </#if>
+
+
+                    <#if ownerSearchForm??>
+                        <#list ownerSearchForm as owner>
+                            <#if owner.userType == "OWNER">
+                                <tr>
+                                    <td>${owner.afm}</td>
+                                    <td>${owner.name}</td>
+                                    <td>${owner.surname}</td>
+                                    <td>${owner.address}</td>
+                                    <td>${owner.tel}</td>
+                                    <td>${owner.email}</td>
+                                    <td>${owner.typeOfProperty}</td>
+                                    <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
+                                                    data-feather="tool"></span></a></td>
+                                    <td class="text-center">
+
+                                        <button
+                                                class="btn btn-link"
+                                                data-toggle="modal"
+                                                data-target="#modal"
+                                                data-id="${owner.id}"
+                                        >
+                                            <span data-feather="x"></span>
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </#if>
+                        </#list>
+                    </#if>
+
+
+
                     </tbody>
                 </table>
                 <div id="modal" class="modal" tabindex="-1" role="dialog">
