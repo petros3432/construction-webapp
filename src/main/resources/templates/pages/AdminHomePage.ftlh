@@ -31,6 +31,35 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <#if repairSearchForm??>
+                        <#list repairSearchForm as rep>
+                            <tr>
+                                <td>${rep.typeOfRepair}</td>
+                                <td>${rep.address}</td>
+                                <td>${rep.cost} € </td>
+                                <td>${rep.state}</td>
+                                <td>${rep.scheduledDate}</td>
+                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span
+                                                data-feather="tool"></span></a></td>
+                                <td class="text-center">
+
+                                    <button
+                                            class="btn btn-link"
+                                            data-toggle="modal"
+                                            data-target="#modal"
+                                            data-id="${rep.id}"
+                                    >
+                                        <span data-feather="x"></span>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </#list>
+                    </#if>
+
+
+
+
                     <#if top10rep??>
                         <#list top10rep as rep>
                             <tr>
@@ -56,6 +85,11 @@
                             </tr>
                         </#list>
                     </#if>
+
+
+
+
+
                     </tbody>
                 </table>
 

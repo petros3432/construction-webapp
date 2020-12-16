@@ -22,6 +22,7 @@ public class RepairForm {
     private StateOfRepair state;
 
     private TypeOfRepair typeOfRepair;
+
     @Positive(message = "{repairCreate.cost.not.negative}")
     @NotNull(message = "{repairCreate.cost.not.null")
     @Max(value=COST_MAX_VALUE,message = "{cost cannot be over 1000000000 }")

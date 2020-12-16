@@ -143,46 +143,10 @@
                 </select>
             </div>
         </div>
-                    <#else>
-                        <div class="form-group col-md-6 text-left">
-                            <label for="typeOfProperty">Type Of Property</label>
-                            <div class="input-group">
-                                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >
-                                    <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
-                                                            <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>
-                                                            <option value="MEZONETA"  >MEZONETA"</option>
-                                                             </select>
-                                                            <ul>
-                                                            <li style="color: #dc3545">Please pick again the type of property</li>
-                                                            </ul>
-                        </select>
-                        </div>
-                        </div>
-
-
-
-
         </#if>
 
 
-<#--        <#if typeOfProperties??>-->
-<#--        <#else>-->
-<#--        <div class="form-group col-md-6 text-left">-->
-<#--            <label for="typeOfProperty">Type Of Property</label>-->
-<#--            <div class="input-group">-->
-<#--                        <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >-->
-<#--                        <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
-<#--                        <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>-->
-<#--                        <option value="MEZONETA"  >MEZONETA"</option>-->
-<#--                         </select>-->
-<#--                        <ul>-->
-<#--                        <li style="color: #dc3545">Please pick again the type of property</li>-->
-<#--                        </ul>-->
 
-
-<#--            </div>-->
-<#--        </div>-->
-<#--        </#if>-->
     </div>
     <button class="btn btn-primary btn-lg mt-4" type="submit">Create</button>
 </form>

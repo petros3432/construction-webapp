@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.forms;
 
 
+
 public class SearchForm {
     private String scheduledDateStart;
 

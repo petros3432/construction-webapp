@@ -1,6 +1,5 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
@@ -44,17 +43,15 @@ public class OwnerCreateController {
     }
 
     @PostMapping(value = "/owner/create")
-    public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm registerOwnerForm, BindingResult bindingResult,
-                                RedirectAttributes redirectAttributes) {
+    public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm registerOwnerForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
+            model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
             return "pages/owner_create";
         }
-//        Owner newOwner = ownerService.register(registerOwnerForm);
         ownerService.register(registerOwnerForm);
-        //redirectAttributes.addAttribute("id", owner.getId());
         return "redirect:/AdminOwnerPage";
     }
 }

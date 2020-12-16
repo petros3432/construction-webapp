@@ -1,19 +1,24 @@
 package gr.pf.team2.constructionwebapp.validators;
 
 
-
-
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
+import gr.pf.team2.constructionwebapp.service.OwnerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import java.util.List;
+import java.util.Optional;
+
 @Component
 public class RegistrationOwnerValidator implements Validator {
 
-//    @Autowired
-//    private UserService userService;
+    @Autowired
+    private OwnerService ownerService;
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -23,13 +28,18 @@ public class RegistrationOwnerValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         RegisterOwnerForm registerOwnerForm = (RegisterOwnerForm)  target;
-        // Here we add our custom validation logic
-//        List<UserModel> usersWithGivenEmail = userService.findByEmail(registrationForm.getEmail());
-//        if (!usersWithGivenEmail.isEmpty()) {
-//            errors.rejectValue("email", "register.email.taken.error");
-//        }
-        // Or use reject if empty or whitespace
-       ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "registerOwner.name.not.null");
+
+        Optional<Owner> ownersWithTheGivenEmail = ownerService.findOwnerByEmail(registerOwnerForm.getEmail());
+        if(!ownersWithTheGivenEmail.isEmpty()){
+            errors.rejectValue("email", "ownerCreate.Existing.Email");
+        }
+
+        Optional<Owner> ownersWithTheGivenAFM = ownerService.findOwnerByAfmOwner(registerOwnerForm.getAfm());
+        if(!ownersWithTheGivenAFM.isEmpty()){
+            errors.rejectValue("afm", "ownerCreate.Existing.AFM");
+        }
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "registerOwner.name.not.null");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "surname", "registerOwner.name.not.null");
     }
 }
