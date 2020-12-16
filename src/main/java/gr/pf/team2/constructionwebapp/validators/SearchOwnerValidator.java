@@ -19,7 +19,7 @@ public class SearchOwnerValidator implements Validator {
         SearchFormOwner ownerSearchForm = (SearchFormOwner)  target;
 
         if(ownerSearchForm.getAfm().equals("")&&ownerSearchForm.getEmail().equals("")){
-            errors.rejectValue("email", "ownerSearch.All.Attributes.AreNull");
+            errors.rejectValue("afm", "ownerSearch.All.Attributes.AreNull");
         }
     }
 

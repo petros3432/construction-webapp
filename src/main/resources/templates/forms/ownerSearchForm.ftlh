@@ -11,6 +11,7 @@
         <div class="input-group">
             <@spring.bind "ownerSearchForm.email"/>
             <input type="email" class="form-control" id="emailpicker" name="email">
+        </div>
             <#if spring.status.error>
                 <ul>
                     <#list spring.status.errorMessages as error>
@@ -18,7 +19,7 @@
                     </#list>
                 </ul>
             </#if>
-        </div>
+
     </div>
 
     <div class="mb-3">
@@ -26,6 +27,7 @@
         <div class="input-group">
             <@spring.bind "ownerSearchForm.afm"/>
             <input type="text" class="form-control" id="owner-afm" name="afm">
+        </div>
             <#if spring.status.error>
                 <ul>
                     <#list spring.status.errorMessages as error>
@@ -33,7 +35,7 @@
                     </#list>
                 </ul>
             </#if>
-        </div>
+
     </div>
     <button class="btn btn-lg mt-4 btnblue" type="submit">Search</button>
 </form>
