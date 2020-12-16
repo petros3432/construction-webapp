@@ -51,6 +51,12 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
+    public void deleteById(Long id) {
+//        repairRepository.deleteBy(ow)
+        ownerRepository.deleteById(id);
+    }
+
+    @Override
     public Owner register(RegisterOwnerForm registerOwnerForm){
         Owner owner = new Owner(
                 registerOwnerForm.getAfm(),

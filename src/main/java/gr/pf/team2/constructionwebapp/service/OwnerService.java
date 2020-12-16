@@ -25,6 +25,8 @@ public interface OwnerService {
 
     List<Owner> getAllOwners();
 
+    void deleteById(Long id);
+
     Owner register(RegisterOwnerForm registerOwnerForm);
 
     OwnerModel updateOwner(OwnerModel ownerModel);

@@ -4,26 +4,41 @@ import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 public class RepairForm {
+    private static final int COST_MIN_VALUE = 0;
+    private static final int COST_MAX_VALUE = 1000000000;
+    private static final String AFM_PATTERN = "^[0-9]*$";
+    private static final int AFM_SIZE=9;
 
+
+
+    @NotEmpty(message = "{repairCreate.scheduledDate.not.null}")
     private String scheduledDate;
+
 
     private StateOfRepair state;
 
     private TypeOfRepair typeOfRepair;
-
+    @Positive(message = "{repairCreate.cost.not.negative}")
+    @NotNull(message = "{repairCreate.cost.not.null")
+    @Max(value=COST_MAX_VALUE,message = "{cost cannot be over 1000000000 }")
+    @Min(value=COST_MIN_VALUE,message = "{cost cannot be over 1000000000 }")
     private double cost;
-
+    @NotEmpty(message="{repairCreate.address.not.null}")
     private String address;
+
 
     private String textDesc;
 
     private String ownerFirstName;
 
     private String ownerLastName;
-
+    @Pattern(regexp = AFM_PATTERN,message = "{repairCreate.afmOwner.pattern.invalid}")
+    @NotEmpty(message = "{repairCreate.afmOwner.not.null}")
+    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{repairCreate.afmOwner.size.invalid}")
     private String afmOwner;
 
     private Owner owner;

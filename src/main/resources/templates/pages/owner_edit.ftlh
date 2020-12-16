@@ -15,9 +15,8 @@
 
 <div class="container-fluid">
     <div class="row mt-4">
-        <#include "../partials/sidebar2.ftlh">
         <#--Table for the repair items-->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4">
             <div class="row">
                 <div class="col-md-12 order-md-1">
                     <#include "../forms/ownerEditForm.ftlh">
@@ -27,7 +26,7 @@
     </div>
 </div>
 
-<#include "../partials/scripts.ftlh">
+<#include "../partials/scripts_owner.ftlh">
 <#include "../partials/script-datepicker.ftlh">
 </body>
 </html>

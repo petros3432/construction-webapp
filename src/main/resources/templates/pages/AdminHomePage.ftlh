@@ -4,6 +4,7 @@
 <head>
     <title>Admin Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/../css/main2.css" rel="stylesheet"/>
     <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
 </head>
@@ -13,17 +14,11 @@
 <#include "../partials/topnavbar1.ftlh">
 
 <div class="container-fluid">
-    <div class="row mt-4">
-        <#include "../partials/sidebar1.ftlh">
-        <#--Table for the repair items-->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h3 class="mb-3">10 Most Recent Repairs</h3>
-            <div class="table-responsive">
-            <#if error??>
-               ${error}
-            </#if>
-                <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
-                       id="empTable">
+    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4">
+        <h3 class="mb-3">Repairs</h3>
+        <div class="table-responsive ">
+            <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
+                   id="empTable">
                     <thead>
                     <tr>
                         <th scope="col">Type</th>
@@ -41,10 +36,11 @@
                             <tr>
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
-                                <td>${rep.cost}</td>
+                                <td>${rep.cost} € </td>
                                 <td>${rep.state}</td>
                                 <td>${rep.scheduledDate}</td>
-                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span data-feather="tool"></span></a></td>
+                                <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span
+                                                data-feather="tool"></span></a></td>
                                 <td class="text-center">
 
                                     <button
@@ -58,23 +54,38 @@
 
                                 </td>
                             </tr>
-
                         </#list>
                     </#if>
-
-
-
-
-
-
-
                     </tbody>
                 </table>
+
+                <div id="modal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Repair</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form method="post" id="deleteForm">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 </div>
-<#include "../partials/scripts.ftlh">
+<#include "../partials/scripts_repair.ftlh">
+<#include "../partials/script-datepicker.ftlh">
 </body>
 
 </html>

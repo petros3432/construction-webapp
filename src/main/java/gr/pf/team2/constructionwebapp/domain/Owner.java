@@ -50,7 +50,7 @@ public class Owner {
     @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
 
-    @OneToMany(mappedBy = "owner", targetEntity = Repair.class)
+    @OneToMany(mappedBy = "owner", targetEntity = Repair.class, orphanRemoval = true )
     private List<Repair> repairs;
 
 
