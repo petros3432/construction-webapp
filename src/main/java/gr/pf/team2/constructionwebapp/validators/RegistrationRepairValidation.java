@@ -1,11 +1,8 @@
 package gr.pf.team2.constructionwebapp.validators;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
-import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -13,7 +10,6 @@ import org.springframework.validation.Validator;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Optional;
 
 @Component
