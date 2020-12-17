@@ -18,7 +18,7 @@
         <h3>
             <span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-exclamation-circle"></i>
-            </span> No Repairs Found<span style="font-size: 1em; color: #E63946;">
+            </span> No Results Found<span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-exclamation-circle"></i>
             </span></h3>
         <button type="button" class="btn btnblue" style="margin-top: 10%;margin-left:4%" onclick="goBack()">Return Back</button>

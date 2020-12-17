@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+@Controller
 public class AppErrorController implements ErrorController {
 
     @RequestMapping("error")
-    @ResponseBody
     public String handleError(HttpServletRequest request) {
 
         return "pages/error";
