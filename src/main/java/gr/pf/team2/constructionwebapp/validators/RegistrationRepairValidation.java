@@ -39,13 +39,13 @@ public class RegistrationRepairValidation implements Validator {
 
         LocalDate today = LocalDate.now();
         String inputdate = repairForm.getScheduledDate();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
-        LocalDate sd = LocalDate.parse(inputdate, formatter);
-
-        if(today.isAfter(sd)){
-            errors.rejectValue("scheduledDate", "create.repair.sceduled.date.isInThePast");
+        if(!inputdate.isEmpty()) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
+            LocalDate sd = LocalDate.parse(inputdate, formatter);
+            if (today.isAfter(sd)) {
+                errors.rejectValue("scheduledDate", "create.repair.sceduled.date.isInThePast");
+            }
         }
-
 
 
 
