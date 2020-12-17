@@ -14,7 +14,7 @@ public class RepairMapper {
     public RepairModel repairToModel(Repair repair){
         RepairModel repairModel = new RepairModel();
 
-        repairModel.setScheduledDate(repair.getScheduledDate());
+        repairModel.setScheduledDate(parseStringFromLocalDate(repair.getScheduledDate()));
         repairModel.setState(repair.getState());
         repairModel.setTypeOfRepair(repair.getTypeOfRepair());
         repairModel.setAddress(repair.getAddress());
@@ -44,6 +44,11 @@ public class RepairMapper {
     public LocalDate parseLocalDateFromString(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
         return LocalDate.parse(date, formatter);
+    }
+
+    public String parseStringFromLocalDate(LocalDate date) {
+        return date.toString();
+
     }
 
 }

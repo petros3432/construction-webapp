@@ -43,7 +43,7 @@ public class RepairServiceImpl implements RepairService {
         repair.setCost(repairModel.getCost());
         repair.setState(repairModel.getState());
         repair.setTypeOfRepair(repairModel.getTypeOfRepair());
-        repair.setScheduledDate(repairModel.getScheduledDate());
+        repair.setScheduledDate(repairMapper.parseLocalDateFromString(repairModel.getScheduledDate()));
         repair.setTextDesc(repairModel.getTextDesc());
         Repair repair1 = repairRepository.save(repair);
         return repairMapper.repairToModel(repair);

@@ -75,14 +75,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
 
-    /* @Override
-     public List<String> findAllNames() {
-         return ownerRepository
-                 .findAll()
-                 .stream()
-                 .map(owner -> ownerMapper.ownerToName(owner))
-                 .collect(Collectors.toList());
-     }*/
+
     @Autowired
     public List<OwnerModel> firstTenOwners() {
         return ownerRepository

@@ -17,9 +17,17 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
+                <@spring.bind "rep.scheduledDate"/>
                 <input type="text" class="form-control datepicker" value="${rep.scheduledDate}"
                        name="scheduledDate">
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
 
 
@@ -29,7 +37,9 @@
                 <select class="custom-select d-block w-100" id="state" name="state">
                     <#if repairStates??>
                         <#list repairStates as state>
-                            <option value="${state}"<#if rep.state == state> selected</#if>>${state}</option>                    </#list>
+                            <option value="${state}"<#if rep.state == state> selected</#if>>${state}
+                            </option>
+                        </#list>
                     </#if>
                 </select>
             </div>
@@ -53,8 +63,16 @@
         <div class="form-group col-md-6 text-left">
             <label for="cost">Cost € </label>
             <div class="input-group">
+                <@spring.bind "rep.cost"/>
                 <input type="text" class="form-control" value="${rep.cost}" id="cost" name="cost">
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
 
@@ -62,8 +80,16 @@
         <div class="form-group col-md-6 text-left">
             <label for="title">Address</label>
             <div class="input-group">
+                <@spring.bind "rep.address"/>
                 <input type="text" class="form-control" id="address" value="${rep.address}" name="address">
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
 
         <div class="form-group col-md-6 text-left">
@@ -78,12 +104,6 @@
         </div>
     </div>
 
-    <#--    <div class="mb-3">-->
-    <#--        <label for="ownersName">Owner's Name</label>-->
-    <#--        <div class="input-group">-->
-    <#--            <input type="text" class="form-control" id="owner-first-name" value="${rep.ownersName}"name="ownerFirstName">-->
-    <#--        </div>-->
-    <#--    </div>-->
 
 
     <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>

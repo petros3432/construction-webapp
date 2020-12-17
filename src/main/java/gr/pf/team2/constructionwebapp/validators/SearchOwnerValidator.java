@@ -8,6 +8,8 @@ import org.springframework.validation.Validator;
 
 @Component
 public class SearchOwnerValidator implements Validator {
+//    private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
+//    private static final String AFM_PATTERN = "^[0-9]*$";
 
     @Override
     public boolean supports(Class<?> aClass) {

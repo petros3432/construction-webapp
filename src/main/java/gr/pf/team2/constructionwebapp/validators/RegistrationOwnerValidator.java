@@ -39,7 +39,5 @@ public class RegistrationOwnerValidator implements Validator {
             errors.rejectValue("afm", "ownerCreate.Existing.AFM");
         }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "registerOwner.name.not.null");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "surname", "registerOwner.name.not.null");
     }
 }

@@ -33,7 +33,7 @@ public class RegistrationRepairValidation implements Validator {
 
         String inputAFM = repairForm.getAfmOwner();
         Optional<Owner> ownersWithTheGivenAFM = ownerService.findOwnerByAfmOwner(inputAFM);
-        if (ownersWithTheGivenAFM.isEmpty()) {
+        if (ownersWithTheGivenAFM.isEmpty()&&!inputAFM.isEmpty()) {
             errors.rejectValue("afmOwner", "create.repair.afm.IsNot.Exists");
         }
 

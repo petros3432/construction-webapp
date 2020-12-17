@@ -5,19 +5,27 @@ import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
 public class RepairModel {
 
+    private static final String COST_PATTERN = "(?!0\\.00)[1-9]\\d{0,9}(\\.(\\d|\\d\\d))?";
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate scheduledDate;
+    @NotEmpty(message = "{repairCreate.scheduledDate.not.null}")
+    private String scheduledDate;
 
     private StateOfRepair state;
 
     private TypeOfRepair typeOfRepair;
 
+    @Pattern(regexp = COST_PATTERN, message = "{repairCreate.cost.pattern.invalid}")
+    @NotEmpty(message = "{repairCreate.cost.not.null}")
     private String cost;
 
+    @NotEmpty(message = "{repairCreate.address.not.null}")
     private String address;
 
     private String textDesc;
@@ -27,7 +35,7 @@ public class RepairModel {
     private String ownersName;
 
 
-    public RepairModel(LocalDate scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
+    public RepairModel(String scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
         this.scheduledDate = scheduledDate;
         this.state = state;
         this.typeOfRepair = typeOfRepair;
@@ -61,7 +69,7 @@ public class RepairModel {
     private String ownersAFM;
 
 
-    public LocalDate getScheduledDate() {
+    public String getScheduledDate() {
         return scheduledDate;
     }
 
@@ -89,7 +97,7 @@ public class RepairModel {
         return id;
     }
 
-    public void setScheduledDate(LocalDate scheduledDate) {
+    public void setScheduledDate(String scheduledDate) {
         this.scheduledDate = scheduledDate;
     }
 

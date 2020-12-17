@@ -7,15 +7,21 @@ import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class AdminRepairEdit {
     private static final String EDIT_SERVICE = "rep";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
+    private static final String ERROR_MESSAGE = "errormessage";
+
 
     @Autowired
     private RepairService repairService;
@@ -29,6 +35,7 @@ public class AdminRepairEdit {
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
         return "pages/repair_edit";
     }
+
     @PostMapping(value = "/repair/{id}/delete")
     public String deleteRepair(@PathVariable Long id) {
         repairService.deleteById(id);
@@ -36,7 +43,16 @@ public class AdminRepairEdit {
     }
 
     @PostMapping(value = "/repair/edit")
-    public String editBook(RepairModel repairModel) {
+    public String editBook(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
+
+        if (bindingResult.hasErrors()) {
+            //have some error handling here, perhaps add extra error messages to the model
+
+            model.addAttribute(REPAIR_STATE, StateOfRepair.values());
+            model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
+            model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
+            return "pages/repair_edit";
+        }
         repairService.updateRepair(repairModel);
         return "redirect:/AdminHomePage";
     }
