@@ -52,11 +52,9 @@ public class OwnerModel {
 
     private UserType userType;
 
-    private TypeOfProperty typeOfProperty;
-
     private Long id;
 
-    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, TypeOfProperty typeOfProperty, Long id, UserType userType) {
+    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, Long id, UserType userType) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -64,7 +62,6 @@ public class OwnerModel {
         this.tel = tel;
         this.email = email;
         this.password = password;
-        this.typeOfProperty = typeOfProperty;
         this.id = id;
         this.userType = OWNER;
     }
@@ -141,13 +138,5 @@ public class OwnerModel {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public TypeOfProperty getTypeOfProperty() {
-        return typeOfProperty;
-    }
-
-    public void setTypeOfProperty(TypeOfProperty typeOfProperty) {
-        this.typeOfProperty = typeOfProperty;
     }
 }

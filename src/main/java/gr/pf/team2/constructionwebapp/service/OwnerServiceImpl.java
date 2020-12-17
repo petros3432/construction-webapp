@@ -65,10 +65,7 @@ public class OwnerServiceImpl implements OwnerService {
                 registerOwnerForm.getAddress(),
                 registerOwnerForm.getTel(),
                 registerOwnerForm.getEmail(),
-                registerOwnerForm.getPassword(),
-                TypeOfProperty.valueOf(registerOwnerForm.getTypeOfProperty()),
-                OWNER
-
+                registerOwnerForm.getPassword()
         );
         Owner savedOwner = ownerRepository.save(owner);
         return savedOwner;
@@ -76,7 +73,6 @@ public class OwnerServiceImpl implements OwnerService {
 
 
 
-    @Autowired
     public List<OwnerModel> firstTenOwners() {
         return ownerRepository
                 .firstTenOwners()

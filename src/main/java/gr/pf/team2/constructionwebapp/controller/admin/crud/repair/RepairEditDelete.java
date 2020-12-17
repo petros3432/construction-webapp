@@ -1,4 +1,4 @@
-package gr.pf.team2.constructionwebapp.controller.admin.crud;
+package gr.pf.team2.constructionwebapp.controller.admin.crud.repair;
 
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 
 @Controller
-public class AdminRepairEdit {
+public class RepairEditDelete {
     private static final String EDIT_SERVICE = "rep";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";

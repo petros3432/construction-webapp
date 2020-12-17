@@ -1,4 +1,4 @@
-package gr.pf.team2.constructionwebapp.controller.admin.crud;
+package gr.pf.team2.constructionwebapp.controller.admin.crud.owner;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
 @Controller
-public class OwnerCreateController {
+public class OwnerCreate {
     private static final String REGISTER_FORM = "registerOwnerForm";
     private static final String TYPE_OF_PROPERTIES = "typeOfProperties";
     private static final String ERROR_MESSAGE = "errorMessage";

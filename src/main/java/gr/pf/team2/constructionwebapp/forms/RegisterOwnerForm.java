@@ -29,11 +29,9 @@ public class RegisterOwnerForm {
     private String email;
 
 
-
     @Pattern(regexp = TELEPHONE_PATTERN, message = "{registerOwner.tel.pattern.invalid}")
     @Size( min = TELEPHONE_SIZE, max= TELEPHONE_SIZE, message = "{register.tel.size.invalid}")
     private String tel;
-
 
 
     @Pattern(regexp = AFM_PATTERN, message = "{registerOwner.afm.pattern.invalid}")
@@ -46,6 +44,9 @@ public class RegisterOwnerForm {
 
     @NotEmpty(message = "{registerOwner.lastName.not.null}")
     private String surname;
+
+
+
 
     private String userType;
 
@@ -77,7 +78,7 @@ public class RegisterOwnerForm {
         this.surname = surname;
     }
 
-    private String typeOfProperty;
+
 
     public String getPassword() {
         return password;
@@ -112,13 +113,6 @@ public class RegisterOwnerForm {
         this.tel = tel;
     }
 
-    public String getTypeOfProperty() {
-        return typeOfProperty;
-    }
-
-    public void setTypeOfProperty(String typeOfProperty) {
-        this.typeOfProperty = typeOfProperty;
-    }
 
     public String getAddress() {
         return address;

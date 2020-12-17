@@ -1,14 +1,9 @@
-package gr.pf.team2.constructionwebapp.controller.admin.crud;
+package gr.pf.team2.constructionwebapp.controller.admin.crud.owner;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
-import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
-public class AdminOwnerEdit {
+public class OwnerEditDelete {
 
     private static final String EDIT_SERVICE = "owner";
     private static final String PROPERTY_TYPE = "PropertyTypes";

@@ -51,20 +51,17 @@ public class Owner {
     private TypeOfProperty typeOfProperty;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class, orphanRemoval = true )
-    private List<Repair> repairs;
+    private List<Property> property;
 
+    public List<Property> getProperty() { return property; }
+
+    public void setProperty(List<Property> property) { this.property = property; }
 
     public Owner() {
     }
 
-    public Owner(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
-
-
-
-    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
+    public Owner(String afm, String name, String surname, String address
+            , String tel, String email, String password) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -72,13 +69,12 @@ public class Owner {
         this.tel = tel;
         this.email = email;
         this.password = password;
-        this.typeOfProperty = typeOfProperty;
-        this.userType = userType;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -123,9 +119,6 @@ public class Owner {
         return typeOfProperty;
     }
 
-    public List<Repair> getRepairs() {
-        return repairs;
-    }
 
     public void setAfm(String afm) {
         this.afm = afm;
@@ -159,9 +152,6 @@ public class Owner {
         this.typeOfProperty = typeOfProperty;
     }
 
-    public void setRepairs(List<Repair> repairs) {
-        this.repairs = repairs;
-    }
 
 
     @Override

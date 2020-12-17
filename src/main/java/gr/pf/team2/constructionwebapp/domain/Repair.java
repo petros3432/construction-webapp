@@ -2,9 +2,7 @@ package gr.pf.team2.constructionwebapp.domain;
 
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -38,12 +36,13 @@ public class Repair {
     @Column(name = "Address")
     private String address;
 
+    @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "Property_id")
+    private Property property;
+
     @Column(name = "Description")
     private String textDesc;
 
-    @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name = "Owner_id")
-    private Owner owner;
 
     public Long getId() {
         return id;
@@ -99,13 +98,6 @@ public class Repair {
         this.textDesc = textDesc;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
 
     @Override
     public String toString() {
@@ -117,7 +109,6 @@ public class Repair {
         sb.append(",Cost='").append(cost).append('\'');
         sb.append(",Address='").append(address).append('\'');
         sb.append(",Description='").append(textDesc).append('\'');
-        sb.append(",owner='").append(owner).append('\'');
         sb.append('}');
         return sb.toString();
     }

@@ -1,4 +1,4 @@
-package gr.pf.team2.constructionwebapp.controller.admin.crud;
+package gr.pf.team2.constructionwebapp.controller.admin.crud.repair;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
@@ -19,12 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 
-import java.util.List;
 import java.util.Optional;
 
-import static gr.pf.team2.constructionwebapp.utils.GlobalVariables.ERROR_MESSAGE;
 @Controller
-public class AdminCreate {
+public class RepairCreate {
 
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
@@ -62,12 +60,12 @@ public class AdminCreate {
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
-        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner());
-        if(owner.isPresent()){
-            repairCreateForm.setOwner(owner.get());
+        //Optional<Owner> owner = ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner());
+        //if(owner.isPresent()){
+          //  repairCreateForm.setOwner(owner.get());
             repairService.createRepair(repairCreateForm);
-            return "redirect:/AdminHomePage";
-        }
+           // return "redirect:/AdminHomePage";
+       // }
         return "redirect:/AdminHomePage";
     }
 }

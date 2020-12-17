@@ -1,11 +1,11 @@
 package gr.pf.team2.constructionwebapp.forms;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 
 import javax.validation.constraints.*;
-import java.time.LocalDate;
 
 public class RepairForm {
 
@@ -42,15 +42,6 @@ public class RepairForm {
     @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{repairCreate.afmOwner.size.invalid}")
     private String afmOwner;
 
-    private Owner owner;
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
 
 
     public String getAfmOwner() {

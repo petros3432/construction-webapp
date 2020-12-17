@@ -33,10 +33,8 @@ public class RepairMapper {
         repair.setTextDesc(repairForm.getTextDesc());
         repair.setTypeOfRepair(repairForm.getTypeOfRepair());
         repair.setState(repairForm.getState());
-        repair.setOwner(repairForm.getOwner());
         repair.setCost(repairForm.getCost());
         repair.setAddress(repairForm.getAddress());
-
         return repair;
     }
 
