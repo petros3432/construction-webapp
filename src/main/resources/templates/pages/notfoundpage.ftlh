@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <title>Admin Home Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,15 +13,21 @@
 <body>
 <#include "../partials/topnavbar1.ftlh">
 
-<div class="container-fluid">
-    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 mt-4">
-        <h3 class="mb-3">
+<div class="container-fluid mt-5">
+    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 ">
+        <h3>
             <span style="font-size: 1em; color: #E63946;">
-            <i class="fas fa-tools"></i>
-            </span></i> Repairs</h3>
-            <h2>No results found...</h2>
+            <i class="fas fa-exclamation-circle"></i>
+            </span> No Repairs Found<span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-exclamation-circle"></i>
+            </span></h3>
+        <button type="button" class="btn btnblue" style="margin-top: 10%;margin-left:4%" onclick="goBack()">Return Back</button>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </main>
-</div>
 </div>
 <#include "../partials/scripts_repair.ftlh">
 <#include "../partials/script-datepicker.ftlh">
