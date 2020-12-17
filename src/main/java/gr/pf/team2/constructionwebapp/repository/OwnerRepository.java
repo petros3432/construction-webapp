@@ -30,12 +30,12 @@ public interface OwnerRepository extends JpaRepository<Owner,Long> {
 
 
     @Query(value = "SELECT * FROM Owner WHERE Owner.AFM=(:afm)", nativeQuery = true)
-    Optional<List<Owner>> advSearchAfm(String afm);
+    List<Owner> advSearchAfm(String afm);
 
     @Query(value = "SELECT * FROM Owner WHERE Owner.Email=(:email)", nativeQuery = true)
-    Optional<List<Owner>> advSearchEmail(String email);
+    List<Owner> advSearchEmail(String email);
 
     @Query(value = "SELECT * FROM Owner WHERE Owner.AFM=(:afm) AND Owner.Email=(:email)", nativeQuery = true)
-    Optional<List<Owner>> advSearchAfmEmail(String afm,String email);
+    List<Owner> advSearchAfmEmail(String afm,String email);
 
 }

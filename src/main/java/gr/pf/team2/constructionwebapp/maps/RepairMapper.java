@@ -1,10 +1,8 @@
 package gr.pf.team2.constructionwebapp.maps;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
-import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -42,20 +40,6 @@ public class RepairMapper {
         return repair;
     }
 
-    public RepairModelByAfm repairToModelByAfm(Repair repair){
-        RepairModelByAfm repairModelByAfm = new RepairModelByAfm();
-
-        repairModelByAfm.setScheduledDate(repair.getScheduledDate());
-        repairModelByAfm.setState(repair.getState());
-        repairModelByAfm.setTypeOfRepair(repair.getTypeOfRepair());
-        repairModelByAfm.setCost(repair.getCost());
-        repairModelByAfm.setTextDesc(repair.getTextDesc());
-        repairModelByAfm.setAddress(repair.getAddress());
-        repairModelByAfm.setOwner(repair.getOwner());
-
-        return repairModelByAfm;
-
-    }
 
     public LocalDate parseLocalDateFromString(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //ex: '1939-01-01'
