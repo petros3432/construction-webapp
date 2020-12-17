@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.search;
 
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
@@ -49,19 +50,18 @@ public class AdvanceSearchOwner {
     }
 
     @PostMapping(value = "/owner/search")
-    public String searchAll(Model model, @Valid @ModelAttribute(SEARCHFORM) SearchFormOwner ownerSearchForm, BindingResult bindingResult){
-
-        List<OwnerModel> owners = ownerService.searchAdvanced(ownerSearchForm);
-
-//        if(owners.isEmpty()){
-//            return "redirect:/AdminOwnerPage";
-//        }
-
+    public String searchAll(Model model, @Valid @ModelAttribute(SEARCHFORM) SearchFormOwner ownerSearchForm, BindingResult bindingResult) throws ExceptionsHandling {
 
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/owner_search";
+        }
+
+        List<OwnerModel> owners = ownerService.searchAdvanced(ownerSearchForm);
+
+        if(owners.isEmpty()){
+            return "pages/notfoundpage";
         }
 
 

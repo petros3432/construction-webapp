@@ -106,12 +106,11 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) throws ExceptionsHandling {
+    public List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) {
 
         if (!searchFormOwner.getAfm().equals("") && searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchAfm(searchFormOwner.getAfm())
-                    .orElseThrow(()->new ExceptionsHandling("AFM not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());
@@ -120,7 +119,6 @@ public class OwnerServiceImpl implements OwnerService {
         if (searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchEmail(searchFormOwner.getEmail())
-                    .orElseThrow(()->new ExceptionsHandling("Email not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());
@@ -129,7 +127,6 @@ public class OwnerServiceImpl implements OwnerService {
         if (!searchFormOwner.getAfm().equals("") && !searchFormOwner.getEmail().equals(""))
         {
             return ownerRepository.advSearchAfmEmail(searchFormOwner.getAfm(),searchFormOwner.getEmail())
-                    .orElseThrow(()->new ExceptionsHandling("AFM and Email not in Database"))
                     .stream()
                     .map(owner -> ownerMapper.ownerToModel(owner))
                     .collect(Collectors.toList());

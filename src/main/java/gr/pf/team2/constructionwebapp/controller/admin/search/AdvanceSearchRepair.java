@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.controller.admin.search;
 
+import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
@@ -47,7 +48,7 @@ public class AdvanceSearchRepair {
 
 
     @PostMapping(value = "/repair/search")
-    public String searchAll(Model model, @Valid  @ModelAttribute(SEARCHFORM) SearchForm repairSearchForm, BindingResult bindingResult){
+    public String searchAll(Model model, @Valid  @ModelAttribute(SEARCHFORM) SearchForm repairSearchForm, BindingResult bindingResult) throws ExceptionsHandling {
 
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
@@ -56,6 +57,10 @@ public class AdvanceSearchRepair {
         }
 
         List<RepairModel> repairs = repairService.searchAdvanced(repairSearchForm);
+
+        if(repairs.isEmpty()){
+            return "pages/notfoundpage";
+        }
 
 
         model.addAttribute(SEARCHFORM,repairs);
