@@ -13,7 +13,7 @@ public class RepairForm {
     private static final String AFM_PATTERN = "^[0-9]*$";
     private static final int AFM_SIZE=9;
 //  private static final String COST_PATTERN = "^[?!0\.00][1-9]\d{0,2}[,\d{3}]*[\.\d\d]?$"
-    private static final String COST_PATTERN = "^(?!0\\.00)[1-9]\\d{0,2}(,\\d{3})*(\\.\\d\\d)?$";
+    private static final String COST_PATTERN = "(?!0\\.00)[1-9]\\d{0,9}(\\.(\\d|\\d\\d))?";
 
 
 
