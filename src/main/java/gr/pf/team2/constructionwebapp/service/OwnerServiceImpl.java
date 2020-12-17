@@ -2,7 +2,7 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
+import gr.pf.team2.constructionwebapp.enums.UserRole;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
@@ -15,7 +15,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
+import static gr.pf.team2.constructionwebapp.enums.UserRole.USER;
+
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -41,7 +42,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Optional<Owner> findOwnerByEmail(String email) {
+    public Owner findOwnerByEmail(String email) {
         return ownerRepository.findOwnerByEmail(email);
     }
 
@@ -52,7 +53,6 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     public void deleteById(Long id) {
-//        repairRepository.deleteBy(ow)
         ownerRepository.deleteById(id);
     }
 
@@ -67,7 +67,7 @@ public class OwnerServiceImpl implements OwnerService {
                 registerOwnerForm.getEmail(),
                 registerOwnerForm.getPassword(),
                 TypeOfProperty.valueOf(registerOwnerForm.getTypeOfProperty()),
-                OWNER
+                USER
 
         );
         Owner savedOwner = ownerRepository.save(owner);

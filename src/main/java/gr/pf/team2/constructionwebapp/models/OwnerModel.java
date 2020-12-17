@@ -1,16 +1,12 @@
 package gr.pf.team2.constructionwebapp.models;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.UserType;
+import gr.pf.team2.constructionwebapp.enums.UserRole;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
 
 public class OwnerModel {
     private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
@@ -50,13 +46,13 @@ public class OwnerModel {
     @NotEmpty(message = "{registerOwner.password.not.null}")
     private String password;
 
-    private UserType userType;
+    private UserRole role;
 
     private TypeOfProperty typeOfProperty;
 
     private Long id;
 
-    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, TypeOfProperty typeOfProperty, Long id, UserType userType) {
+    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, TypeOfProperty typeOfProperty, Long id, UserRole role) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -66,7 +62,7 @@ public class OwnerModel {
         this.password = password;
         this.typeOfProperty = typeOfProperty;
         this.id = id;
-        this.userType = OWNER;
+        this.role = role;
     }
     public OwnerModel(){
 
@@ -83,13 +79,6 @@ public class OwnerModel {
         this.id = id;
     }
 
-    public UserType getUserType() {
-        return userType;
-    }
-
-    public void setUserType(UserType userType) {
-        this.userType = userType;
-    }
 
     public void setAfm(String afm) {
         this.afm = afm;
@@ -137,6 +126,14 @@ public class OwnerModel {
 
     public String getPassword() {
         return password;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
     public void setPassword(String password) {

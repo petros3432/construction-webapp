@@ -29,8 +29,8 @@ public class RegistrationOwnerValidator implements Validator {
     public void validate(Object target, Errors errors) {
         RegisterOwnerForm registerOwnerForm = (RegisterOwnerForm)  target;
 
-        Optional<Owner> ownersWithTheGivenEmail = ownerService.findOwnerByEmail(registerOwnerForm.getEmail());
-        if(!ownersWithTheGivenEmail.isEmpty()){
+        Owner ownersWithTheGivenEmail = ownerService.findOwnerByEmail(registerOwnerForm.getEmail());
+        if(ownersWithTheGivenEmail != null){
             errors.rejectValue("email", "ownerCreate.Existing.Email");
         }
 
@@ -41,3 +41,4 @@ public class RegistrationOwnerValidator implements Validator {
 
     }
 }
+

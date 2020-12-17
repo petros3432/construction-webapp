@@ -20,14 +20,12 @@ public interface OwnerRepository extends JpaRepository<Owner,Long> {
     Optional<Owner> findOwnerByAfmOwner(String afm);
 
     @Query(value = "SELECT * FROM Owner WHERE Email = (:email)", nativeQuery = true)
-    Optional<Owner> findOwnerByEmail(String email);
+    Owner findOwnerByEmail(String email);
 
     @Query(value = "SELECT * FROM Owner ORDER BY Name DESC", nativeQuery = true)
     List<Owner> firstTenOwners();
 
     Optional<Owner> findById(Long id);
-
-
 
     @Query(value = "SELECT * FROM Owner WHERE Owner.AFM=(:afm)", nativeQuery = true)
     List<Owner> advSearchAfm(String afm);

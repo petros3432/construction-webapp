@@ -30,5 +30,9 @@ public class AdminOwnerControllerHome {
         return "pages/AdminOwnerPage";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "pages/login";
+    }
 
 }

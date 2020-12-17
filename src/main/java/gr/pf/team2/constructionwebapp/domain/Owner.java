@@ -1,10 +1,8 @@
 package gr.pf.team2.constructionwebapp.domain;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.UserType;
-import lombok.AllArgsConstructor;
+import gr.pf.team2.constructionwebapp.enums.UserRole;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -15,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name="Owner")
 public class Owner {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,13 +41,14 @@ public class Owner {
     @Column(name = "Password")
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "Type_of_User")
-    private UserType userType;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Role")
+    private UserRole role;
 
     @OneToMany(mappedBy = "owner", targetEntity = Repair.class, orphanRemoval = true )
     private List<Repair> repairs;
@@ -64,7 +64,7 @@ public class Owner {
 
 
 
-    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty, UserType userType) {
+    public Owner(String afm, String name, String surname, String address, String tel, String email, String password , TypeOfProperty typeOfProperty , UserRole role) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -73,7 +73,8 @@ public class Owner {
         this.email = email;
         this.password = password;
         this.typeOfProperty = typeOfProperty;
-        this.userType = userType;
+        this.role = role;
+
     }
 
     public void setId(Long id) {
@@ -115,10 +116,6 @@ public class Owner {
         return password;
     }
 
-    public UserType getUserType() {
-        return userType;
-    }
-
     public TypeOfProperty getTypeOfProperty() {
         return typeOfProperty;
     }
@@ -151,9 +148,6 @@ public class Owner {
         this.password = password;
     }
 
-    public void setUserType(UserType userType) {
-        this.userType = userType;
-    }
 
     public void setTypeOfProperty(TypeOfProperty typeOfProperty) {
         this.typeOfProperty = typeOfProperty;
@@ -161,6 +155,15 @@ public class Owner {
 
     public void setRepairs(List<Repair> repairs) {
         this.repairs = repairs;
+    }
+
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
 
@@ -175,8 +178,8 @@ public class Owner {
         sb.append(",Telephone_Number='").append(address).append('\'');
         sb.append(",Email='").append(email).append('\'');
         sb.append(",Password='").append(password).append('\'');
-        sb.append(",Type_of_User='").append(userType).append('\'');
         sb.append(",Type_of_Property='").append(typeOfProperty.getFullName()).append('\'');
+        sb.append(",Role='").append(role).append('\'');
         sb.append('}');
         return sb.toString();
     }
