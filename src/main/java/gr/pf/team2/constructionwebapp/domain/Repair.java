@@ -43,6 +43,9 @@ public class Repair {
     @Column(name = "Description")
     private String textDesc;
 
+    public Property getProperty() { return property; }
+
+    public void setProperty(Property property) { this.property = property; }
 
     public Long getId() {
         return id;

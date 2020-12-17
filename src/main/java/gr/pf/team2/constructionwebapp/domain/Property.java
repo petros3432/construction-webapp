@@ -26,6 +26,9 @@ public class Property {
     @Column(name = "Year")
     private int year;
 
+    @Column(name = "Afm")
+    private String afm;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "Type_of_Property")
     private TypeOfProperty typeOfProperty;
@@ -37,5 +40,67 @@ public class Property {
     @OneToMany(mappedBy = "Property", targetEntity = Property.class, orphanRemoval = true )
     private List<Repair> repairs;
 
+    public String getAfm() {
+        return afm;
+    }
 
+    public void setAfm(String afm) {
+        this.afm = afm;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPropertyE9() {
+        return propertyE9;
+    }
+
+    public void setPropertyE9(String propertyE9) {
+        this.propertyE9 = propertyE9;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public TypeOfProperty getTypeOfProperty() {
+        return typeOfProperty;
+    }
+
+    public void setTypeOfProperty(TypeOfProperty typeOfProperty) {
+        this.typeOfProperty = typeOfProperty;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public List<Repair> getRepairs() {
+        return repairs;
+    }
+
+    public void setRepairs(List<Repair> repairs) {
+        this.repairs = repairs;
+    }
 }

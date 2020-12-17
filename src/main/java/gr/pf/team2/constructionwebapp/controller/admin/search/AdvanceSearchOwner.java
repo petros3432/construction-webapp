@@ -28,9 +28,6 @@ public class AdvanceSearchOwner {
     private static final String SEARCHFORM = "ownerSearchForm";
     private static final String ERROR_MESSAGE = "errormessage";
 
-
-
-
     @Autowired
     private OwnerService ownerService;
 

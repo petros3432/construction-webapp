@@ -35,6 +35,7 @@ public class RepairMapper {
         repair.setState(repairForm.getState());
         repair.setCost(repairForm.getCost());
         repair.setAddress(repairForm.getAddress());
+        repair.setProperty(repairForm.getProperty());
         return repair;
     }
 

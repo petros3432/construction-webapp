@@ -1,10 +1,12 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.repair;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
+import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import gr.pf.team2.constructionwebapp.validators.RegistrationRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class RepairCreate {
     private OwnerService ownerService;
 
     @Autowired
+    private PropertyService propertyService;
+
+    @Autowired
     private RegistrationRepairValidation registrationRepairValidation;
 
     @InitBinder(REPAIR_CREATE_FORM)
@@ -60,12 +65,13 @@ public class RepairCreate {
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
-        //Optional<Owner> owner = ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner());
-        //if(owner.isPresent()){
-          //  repairCreateForm.setOwner(owner.get());
+        Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
+        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
+        if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
+            repairCreateForm.setProperty(property.get());
             repairService.createRepair(repairCreateForm);
-           // return "redirect:/AdminHomePage";
-       // }
+            return "redirect:/AdminHomePage";
+        }
         return "redirect:/AdminHomePage";
     }
 }

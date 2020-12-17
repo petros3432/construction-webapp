@@ -42,7 +42,17 @@ public class RepairForm {
     @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{repairCreate.afmOwner.size.invalid}")
     private String afmOwner;
 
+    private Property property;
 
+    private Owner owner;
+
+    public Owner getOwner() { return owner; }
+
+    public void setOwner(Owner owner) { this.owner = owner; }
+
+    public Property getProperty() { return property; }
+
+    public void setProperty(Property property) { this.property = property; }
 
     public String getAfmOwner() {
         return afmOwner;
