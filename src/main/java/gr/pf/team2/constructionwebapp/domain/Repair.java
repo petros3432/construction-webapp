@@ -33,7 +33,7 @@ public class Repair {
     private TypeOfRepair typeOfRepair;
 
     @Column(name = "Cost")
-    private double cost;
+    private String cost;
 
     @Column(name = "Address")
     private String address;
@@ -75,11 +75,11 @@ public class Repair {
         this.typeOfRepair = typeOfRepair;
     }
 
-    public double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 

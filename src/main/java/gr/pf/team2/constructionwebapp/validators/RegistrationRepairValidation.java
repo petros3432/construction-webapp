@@ -3,7 +3,7 @@ package gr.pf.team2.constructionwebapp.validators;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
-import gr.pf.team2.constructionwebapp.models.RepairModelByAfm;
+
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +29,11 @@ public class RegistrationRepairValidation implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        RepairForm repairForm = (RepairForm)  target;
+        RepairForm repairForm = (RepairForm) target;
 
         String inputAFM = repairForm.getAfmOwner();
         Optional<Owner> ownersWithTheGivenAFM = ownerService.findOwnerByAfmOwner(inputAFM);
-        if(ownersWithTheGivenAFM.isEmpty()){
+        if (ownersWithTheGivenAFM.isEmpty()) {
             errors.rejectValue("afmOwner", "create.repair.afm.IsNot.Exists");
         }
 
@@ -46,6 +46,8 @@ public class RegistrationRepairValidation implements Validator {
             if (today.isAfter(sd)) {
                 errors.rejectValue("scheduledDate", "create.repair.sceduled.date.isInThePast");
             }
+
+
         }
     }
 }

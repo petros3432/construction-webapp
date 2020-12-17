@@ -16,7 +16,7 @@ public class RepairModel {
 
     private TypeOfRepair typeOfRepair;
 
-    private double cost;
+    private String cost;
 
     private String address;
 
@@ -27,7 +27,7 @@ public class RepairModel {
     private String ownersName;
 
 
-    public RepairModel(LocalDate scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, double cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
+    public RepairModel(LocalDate scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
         this.scheduledDate = scheduledDate;
         this.state = state;
         this.typeOfRepair = typeOfRepair;
@@ -73,7 +73,7 @@ public class RepairModel {
         return typeOfRepair;
     }
 
-    public double getCost() {
+    public String getCost() {
         return cost;
     }
 
@@ -101,7 +101,7 @@ public class RepairModel {
         this.typeOfRepair = typeOfRepair;
     }
 
-    public void setCost(double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 

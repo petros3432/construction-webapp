@@ -8,10 +8,12 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 public class RepairForm {
-    private static final int COST_MIN_VALUE = 0;
-    private static final int COST_MAX_VALUE = 1000000000;
+//    private static final int COST_MIN_VALUE = 0;
+//    private static final int COST_MAX_VALUE = 1000000000;
     private static final String AFM_PATTERN = "^[0-9]*$";
     private static final int AFM_SIZE=9;
+//  private static final String COST_PATTERN = "^[?!0\.00][1-9]\d{0,2}[,\d{3}]*[\.\d\d]?$"
+    private static final String COST_PATTERN = "^(?!0\\.00)[1-9]\\d{0,2}(,\\d{3})*(\\.\\d\\d)?$";
 
 
 
@@ -23,11 +25,12 @@ public class RepairForm {
 
     private TypeOfRepair typeOfRepair;
 
-    @Positive(message = "{repairCreate.cost.not.negative}")
-    @NotNull(message = "{repairCreate.cost.not.null")
-    @Max(value=COST_MAX_VALUE,message = "{cost cannot be over 1000000000 }")
-    @Min(value=COST_MIN_VALUE,message = "{cost must be more than zero}")
-    private double cost;
+//    @Positive(message = "{repairCreate.cost.not.negative}")
+//    @NotNull(message = "{repairCreate.cost.not.null")
+//    @Max(value=COST_MAX_VALUE,message = "{cost cannot be over 1000000000 }")
+//    @Min(value=COST_MIN_VALUE,message = "{cost must be more than zero}")
+    @Pattern(regexp = COST_PATTERN, message = "{repairCreate.cost.pattern.invalid}")
+    private String cost;
     @NotEmpty(message="{repairCreate.address.not.null}")
     private String address;
 
@@ -85,11 +88,11 @@ public class RepairForm {
         this.typeOfRepair = typeOfRepair;
     }
 
-    public double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
