@@ -1,6 +1,9 @@
 <#import "/spring.ftl" as spring />
 
-<h4 class="mb-3">Edit Owner</h4>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-user-edit"></i>
+            </span></i> Edit User</h3>
 
 <form id="createForm" action="/owner/edit" method="post">
     <input type="hidden" name="id" value="${owner.id}">
@@ -84,5 +87,5 @@
     <#--    </div>-->
 
 
-    <button class="btn btn-primary btn-lg mt-4" type="submit">Submit</button>
+    <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>

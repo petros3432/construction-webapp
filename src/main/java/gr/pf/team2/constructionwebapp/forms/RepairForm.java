@@ -22,10 +22,11 @@ public class RepairForm {
     private StateOfRepair state;
 
     private TypeOfRepair typeOfRepair;
+
     @Positive(message = "{repairCreate.cost.not.negative}")
     @NotNull(message = "{repairCreate.cost.not.null")
     @Max(value=COST_MAX_VALUE,message = "{cost cannot be over 1000000000 }")
-    @Min(value=COST_MIN_VALUE,message = "{cost cannot be over 1000000000 }")
+    @Min(value=COST_MIN_VALUE,message = "{cost must be more than zero}")
     private double cost;
     @NotEmpty(message="{repairCreate.address.not.null}")
     private String address;

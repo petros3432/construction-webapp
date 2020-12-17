@@ -6,11 +6,14 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
+import gr.pf.team2.constructionwebapp.validators.RegistrationRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -23,7 +26,6 @@ import static gr.pf.team2.constructionwebapp.utils.GlobalVariables.ERROR_MESSAGE
 @Controller
 public class AdminCreate {
 
-    private static final String REPAIR_FORM = "repairForm";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
     private static final String REPAIR_CREATE_FORM = "repairCreateForm";
@@ -34,6 +36,14 @@ public class AdminCreate {
 
     @Autowired
     private OwnerService ownerService;
+
+    @Autowired
+    private RegistrationRepairValidation registrationRepairValidation;
+
+    @InitBinder(REPAIR_CREATE_FORM)
+    protected void initBinder(final WebDataBinder binder) {
+        binder.addValidators(registrationRepairValidation);
+    }
 
     @GetMapping(value = "/repair/create")
     public String repairDynamic(Model model) {
@@ -48,6 +58,8 @@ public class AdminCreate {
 //
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
+            model.addAttribute(REPAIR_STATE, StateOfRepair.values());
+            model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner());

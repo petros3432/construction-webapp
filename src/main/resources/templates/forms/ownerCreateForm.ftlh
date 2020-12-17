@@ -1,5 +1,8 @@
 <#import "/spring.ftl" as spring />
-<h2 class="hello-title">Add Owner</h2>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-user-plus"></i>
+            </span></i> Add Owner</h3>
 
 <form class="well form-horizontal" action="/owner/create" name="registerOwnerForm" method="POST">
     <input type="hidden" name="userType" value="OWNER">
@@ -143,46 +146,10 @@
                 </select>
             </div>
         </div>
-                    <#else>
-                        <div class="form-group col-md-6 text-left">
-                            <label for="typeOfProperty">Type Of Property</label>
-                            <div class="input-group">
-                                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >
-                                    <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
-                                                            <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>
-                                                            <option value="MEZONETA"  >MEZONETA"</option>
-                                                             </select>
-                                                            <ul>
-                                                            <li style="color: #dc3545">Please pick again the type of property</li>
-                                                            </ul>
-                        </select>
-                        </div>
-                        </div>
-
-
-
-
         </#if>
 
 
-<#--        <#if typeOfProperties??>-->
-<#--        <#else>-->
-<#--        <div class="form-group col-md-6 text-left">-->
-<#--            <label for="typeOfProperty">Type Of Property</label>-->
-<#--            <div class="input-group">-->
-<#--                        <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >-->
-<#--                        <option value="MONOKATOIKIA" selected="selected"  >MONOKATOIKIA</option>-->
-<#--                        <option value="POLIKATOIKIA"  >POLIKATOIKIA</option>-->
-<#--                        <option value="MEZONETA"  >MEZONETA"</option>-->
-<#--                         </select>-->
-<#--                        <ul>-->
-<#--                        <li style="color: #dc3545">Please pick again the type of property</li>-->
-<#--                        </ul>-->
 
-
-<#--            </div>-->
-<#--        </div>-->
-<#--        </#if>-->
     </div>
-    <button class="btn btn-primary btn-lg mt-4" type="submit">Create</button>
+    <button class="btn btn-lg mt-4 btnblue"type="submit">Create</button>
 </form>

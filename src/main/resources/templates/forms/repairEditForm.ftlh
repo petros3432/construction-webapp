@@ -1,6 +1,9 @@
 <#import "/spring.ftl" as spring />
 
-<h4 class="mb-3">Edit Repair</h4>
+<h3 class="mb-3">
+            <span style="font-size: 1em; color: #E63946;">
+            <i class="fas fa-edit"></i>
+            </span></i> Edit Repair</h3>
 
 
 <form id="createForm" action="/repair/edit" method="post">
@@ -83,5 +86,5 @@
     <#--    </div>-->
 
 
-    <button class="btn btn-primary btn-lg mt-4" type="submit">Submit</button>
+    <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>
