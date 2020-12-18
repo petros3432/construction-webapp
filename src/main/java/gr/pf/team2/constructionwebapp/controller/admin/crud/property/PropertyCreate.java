@@ -1,7 +1,5 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.property;
 
-import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
-import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.validators.RegistrationRepairValidation;
@@ -20,8 +18,9 @@ import javax.validation.Valid;
 @Controller
 public class PropertyCreate {
 
-    private static final String PROPERTY_CREATE_FORM = "propertyCreateForm";
+    private static final String PROPERTY_CREATE_FORM = "repairCreateForm";
     private static final String ERROR_MESSAGE = "errorMessage";
+
 
     @Autowired
     private PropertyService propertyService;
@@ -35,21 +34,20 @@ public class PropertyCreate {
     }
 
     @GetMapping(value = "/property/create")
-    public  String propertyDynamic(Model model){
-        model.addAttribute(PROPERTY_CREATE_FORM,new CreatePropertyForm());
+    public String propertyDynamic(Model model) {
+        model.addAttribute(PROPERTY_CREATE_FORM, new CreatePropertyForm());
         return "pages/property_create";
     }
 
-    @PostMapping(value = "/property/create")
-    public String createProperty(Model model, @Valid @ModelAttribute(PROPERTY_CREATE_FORM) CreatePropertyForm createPropertyForm, BindingResult bindingResult){
-
+    @PostMapping(value = "/propertycreate")
+    public String createProperty(Model model, @Valid @ModelAttribute(PROPERTY_CREATE_FORM)CreatePropertyForm createPropertyForm, BindingResult bindingResult) {
+//
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repair_create";
+            return "pages/property_create";
         }
 
         propertyService.createProperty(createPropertyForm);
-        return "pages/property_create";
+        return "redirect:/AdminPropertyPage";
     }
-
 }
