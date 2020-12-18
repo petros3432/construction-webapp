@@ -20,9 +20,6 @@ public interface PropertyRepository extends JpaRepository<Property,Long> {
     @Query(value = "SELECT * FROM Property WHERE Afm = (:afm)", nativeQuery = true)
     Optional<Property> findPropertyByAfm(String afm);
 
-    @Query(value = "DELETE * FROM Property,Repair WHERE Property.Property_id=Repair.Property_id AND Property.Property_id = (:id)", nativeQuery = true)
-    void deletePropertyById(Long id);
-
     @Query(value="SELECT * FROM Property WHERE Property.PropertyE9=(:propertyE9)", nativeQuery = true)
     List<Property> advSearchE9(String propertyE9);
 
