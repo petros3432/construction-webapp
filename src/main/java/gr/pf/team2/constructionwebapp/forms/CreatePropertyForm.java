@@ -17,6 +17,16 @@ public class CreatePropertyForm {
 
     private String afm;
 
+    private Owner owner;
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     private TypeOfProperty typeOfProperty;
 
     public String getPropertyE9() {

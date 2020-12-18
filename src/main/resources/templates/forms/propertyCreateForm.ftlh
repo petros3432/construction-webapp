@@ -30,7 +30,7 @@
             <label for="cost">E9 Property</label>
             <div class="input-group">
 <#--                <@spring.bind "propertyCreateForm.cost"/>-->
-                <input type="text" class="form-control" id="propertyE9" value="${propertyCreateForm.propertyE9!''}" name="propertyE9">
+                <input type="text" class="form-control" id="propertyE9"  name="propertyE9">
 
             </div>
 <#--            <#if spring.status.error>-->
@@ -49,8 +49,7 @@
             <label for="address">Address</label>
             <div class="input-group">
 <#--                <@spring.bind "propertyCreateForm.address"/>-->
-                <input type="text" class="form-control" id="title" value="${propertyCreateForm.address!''}"
-                       name="address">
+                <input type="text" class="form-control" id="title" name="address">
 
             </div>
 <#--            <#if spring.status.error>-->
@@ -75,7 +74,7 @@
             <label for="ownersAfm">Owner's AFM</label>
             <div class="input-group">
 <#--                <@spring.bind "propertyCreateForm.afmOwner"/>-->
-                <input type="text" class="form-control" id="afm" value="${propertyCreateForm.afm!''}"
+                <input type="text" class="form-control" id="afm"
                        name="afm">
 
             </div>
