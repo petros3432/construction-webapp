@@ -17,6 +17,9 @@
                 <a class="nav-link" id="OwnerZone"href="/owner">Owner Zone</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="PropertyZone" href="/property">Property Zone</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/owner/create"><span data-feather="plus-circle"></span>Add Owner</a>
             </li>
             <li class="nav-item">

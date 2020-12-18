@@ -10,13 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="ml-1 mr-auto navbar-nav mt-2 mt-lg-0">
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" id="RepairZone" href="/repair">Repair Zone</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="OwnerZone" href="/owner">Owner Zone</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                  <a class="nav-link" id="PropertyZone" href="/property">Property Zone</a>
             </li>
             <li class="nav-item">

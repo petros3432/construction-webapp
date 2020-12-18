@@ -48,8 +48,7 @@ public class PropertyCreate {
             return "pages/repair_create";
         }
 
-
-
+        propertyService.createProperty(createPropertyForm);
         return "pages/property_create";
     }
 

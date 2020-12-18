@@ -3,7 +3,9 @@ package gr.pf.team2.constructionwebapp.maps;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PropertyMapper {
 
     public Property propertyFormToProperty(CreatePropertyForm createPropertyForm){

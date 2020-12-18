@@ -17,22 +17,22 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
 
     Optional<Repair> findById(Long id);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND Owner.AFM=(:afm)", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND Property.Afm=(:afm)", nativeQuery = true)
     List<Repair> findByAfm(String afm);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND Owner.AFM=(:afm)", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND Property.Afm=(:afm)", nativeQuery = true)
     List<Repair> advSearchAfm(String afm);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND Owner.AFM=(:afm) AND Repair.Scheduled_Date_Of_Repair=(:startDate)", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND Property.Afm=(:afm) AND Repair.Scheduled_Date_Of_Repair=(:startDate)", nativeQuery = true)
     List<Repair> advSearchAfmDate(String afm, LocalDate startDate);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND Owner.AFM=(:afm) AND (Repair.Scheduled_Date_Of_Repair>=(:startDate) AND Repair.Scheduled_Date_Of_Repair<=(:endDate))", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND Property.Afm=(:afm) AND (Repair.Scheduled_Date_Of_Repair>=(:startDate) AND Repair.Scheduled_Date_Of_Repair<=(:endDate))", nativeQuery = true)
     List<Repair> advSearchAfmDateBandwidth(String afm, LocalDate startDate, LocalDate endDate);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND Repair.Scheduled_Date_Of_Repair=(:startDate)", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND Repair.Scheduled_Date_Of_Repair=(:startDate)", nativeQuery = true)
     List<Repair> advSearchDate(LocalDate startDate);
 
-    @Query(value="SELECT * FROM Repair,Owner WHERE Repair.Owner_id=Owner.Owner_id AND (Repair.Scheduled_Date_Of_Repair>=(:startDate) AND Repair.Scheduled_Date_Of_Repair<=(:endDate))", nativeQuery = true)
+    @Query(value="SELECT * FROM Repair,Property WHERE Repair.Property_id=Property.Property_id AND (Repair.Scheduled_Date_Of_Repair>=(:startDate) AND Repair.Scheduled_Date_Of_Repair<=(:endDate))", nativeQuery = true)
     List<Repair> advSearchDateBandwidth(LocalDate startDate, LocalDate endDate);
 
 }
