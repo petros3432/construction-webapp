@@ -34,19 +34,19 @@ public class PropertyEditDelete {
         return "pages/property_edit";
     }
 
-    @PostMapping(value = "/repair/{id}/delete")
+    @PostMapping(value = "/property/{id}/delete")
     public String deleteProperty(@PathVariable Long id) {
        propertyService.deleteById(id);
-        return "redirect:/repair";
+        return "redirect:/property";
     }
 
 
-    @PostMapping(value = "/repair/edit")
+    @PostMapping(value = "/property/edit")
     public String editProperty(@Valid @ModelAttribute(EDIT_PROPERTY) PropertyModel propertyModel , BindingResult bindingResult , Model model) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            return "pages/repair_edit";
+            return "pages/property_edit";
         }
         Optional<Property> property = propertyService.findPropertyByAddress(propertyModel.getAddress());
 

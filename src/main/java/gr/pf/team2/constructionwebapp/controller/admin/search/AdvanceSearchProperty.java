@@ -37,15 +37,15 @@ public class AdvanceSearchProperty {
     }
 
 
-    @GetMapping(value = "/repair/search")
+    @GetMapping(value = "/property/search")
     public String searchDynamic(Model model) {
         model.addAttribute(SEARCHFORM, new SearchFormProperty());
-        return "pages/repair_search";
+        return "pages/property_search";
     }
 
 
 
-    @PostMapping(value = "/repair/search")
+    @PostMapping(value = "/property/search")
     public String searchAll(Model model, @Valid @ModelAttribute(SEARCHFORM) SearchFormProperty searchFormProperty, BindingResult bindingResult) throws ExceptionsHandling {
 
         if (bindingResult.hasErrors()) {
