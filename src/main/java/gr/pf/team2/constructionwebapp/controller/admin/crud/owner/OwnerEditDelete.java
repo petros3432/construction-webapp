@@ -30,7 +30,7 @@ public class OwnerEditDelete {
     private OwnerMapper ownerMapper;
 
     @GetMapping(value = "/owner/{id}/edit")
-    public String editGetByAfm(@PathVariable Long id, Model model) {
+    public String editOwnerById(@PathVariable Long id, Model model) {
 
         OwnerModel ownerModel = ownerService.findOwnerById(id);
         model.addAttribute(EDIT_SERVICE, ownerModel);
@@ -44,7 +44,7 @@ public class OwnerEditDelete {
     }
 
     @PostMapping(value = "/owner/edit")
-    public String editBook( @Valid @ModelAttribute(EDIT_SERVICE) OwnerModel ownerModel, BindingResult bindingResult , Model model) {
+    public String editOwner( @Valid @ModelAttribute(EDIT_SERVICE) OwnerModel ownerModel, BindingResult bindingResult , Model model) {
 
 
         if (bindingResult.hasErrors()) {

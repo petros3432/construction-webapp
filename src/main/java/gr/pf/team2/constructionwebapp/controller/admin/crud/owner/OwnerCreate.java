@@ -1,9 +1,8 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.owner;
 
-import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.validators.RegistrationOwnerValidator;
+import gr.pf.team2.constructionwebapp.validators.RegistrationOwnerValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +25,11 @@ public class OwnerCreate {
     private OwnerService ownerService;
 
     @Autowired
-    private RegistrationOwnerValidator registrationOwnerValidator;
+    private RegistrationOwnerValidation registrationOwnerValidation;
 
     @InitBinder(REGISTER_FORM)
     protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators(registrationOwnerValidator);
+        binder.addValidators(registrationOwnerValidation);
     }
 
 

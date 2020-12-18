@@ -7,7 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
-public class SearchOwnerValidator implements Validator {
+public class SearchOwnerValidation implements Validator {
 //    private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
 //    private static final String AFM_PATTERN = "^[0-9]*$";
 

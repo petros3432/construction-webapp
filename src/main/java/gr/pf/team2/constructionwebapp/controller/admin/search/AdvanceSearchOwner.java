@@ -1,14 +1,10 @@
 package gr.pf.team2.constructionwebapp.controller.admin.search;
 
 import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
-import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
-import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.service.RepairService;
-import gr.pf.team2.constructionwebapp.validators.SearchOwnerValidator;
-import gr.pf.team2.constructionwebapp.validators.SearchRepairValidation;
+import gr.pf.team2.constructionwebapp.validators.SearchOwnerValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,11 +29,11 @@ public class AdvanceSearchOwner {
 
 
     @Autowired
-    private SearchOwnerValidator searchOwnerValidator;
+    private SearchOwnerValidation searchOwnerValidation;
 
     @InitBinder(SEARCHFORM)
     protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators(searchOwnerValidator);
+        binder.addValidators(searchOwnerValidation);
     }
 
     @GetMapping(value = "/owner/search")

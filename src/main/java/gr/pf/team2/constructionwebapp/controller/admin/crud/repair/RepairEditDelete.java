@@ -34,9 +34,9 @@ public class RepairEditDelete {
 
 
     @GetMapping(value = "/repair/{id}/edit")
-    public String editGetById(@PathVariable Long id, Model model) {
+    public String editRepairById(@PathVariable Long id, Model model) {
         RepairModel repairModel = repairService.findRepairById(id);
-        model.addAttribute(EDIT_SERVICE,repairModel);
+        model.addAttribute(EDIT_SERVICE, repairModel);
         model.addAttribute(REPAIR_STATE, StateOfRepair.values());
         model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
         return "pages/repair_edit";
@@ -49,7 +49,7 @@ public class RepairEditDelete {
     }
 
     @PostMapping(value = "/repair/edit")
-    public String editBook(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
+    public String editRepair(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute(REPAIR_STATE, StateOfRepair.values());

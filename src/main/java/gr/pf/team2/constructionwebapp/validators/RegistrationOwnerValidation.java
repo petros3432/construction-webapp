@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class RegistrationOwnerValidator implements Validator {
+public class RegistrationOwnerValidation implements Validator {
 
     @Autowired
     private OwnerService ownerService;
