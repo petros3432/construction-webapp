@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.repository;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -10,6 +11,8 @@ import java.util.Optional;
 
 @Repository
 public interface PropertyRepository extends JpaRepository<Property,Long> {
+    @Query(value = "SELECT * FROM Property ", nativeQuery = true)
+    List<Property> firstTenProperties();
 
     @Query(value = "SELECT * FROM Property WHERE Address = (:address)", nativeQuery = true)
     Optional<Property> findPropertyByAddress(String address);

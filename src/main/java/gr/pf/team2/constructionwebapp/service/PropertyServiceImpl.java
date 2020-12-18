@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormProperty;
 import gr.pf.team2.constructionwebapp.maps.PropertyMapper;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,13 @@ public class PropertyServiceImpl implements PropertyService{
         property.setAddress(propertyModel.getAddress());
         return null;
     }
-
+    public List<PropertyModel> firstTenProperties() {
+        return propertyRepository
+                .firstTenProperties()
+                .stream()
+                .map(property -> propertyMapper.propertyToModel(property))
+                .collect(Collectors.toList());
+    }
     @Override
     public List<PropertyModel> searchAdvanced(SearchFormProperty searchFormProperty) throws ExceptionsHandling {
 

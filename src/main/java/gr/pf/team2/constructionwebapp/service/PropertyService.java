@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormProperty;
+import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 
@@ -20,6 +21,8 @@ public interface PropertyService {
     PropertyModel findPropertyById(Long id);
 
     PropertyModel createProperty(CreatePropertyForm createPropertyForm);
+
+    List<PropertyModel> firstTenProperties();
 
     void deleteById(Long id);
 
