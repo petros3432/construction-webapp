@@ -48,7 +48,8 @@ public class PropertyEditDelete {
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/property_edit";
         }
-        Optional<Property> property = propertyService.findPropertyByAddress(propertyModel.getAddress());
+        Optional<Property> propertyAddress = propertyService.findPropertyByAddress(propertyModel.getAddress());
+        Optional<Property> propertyAfm = propertyService.findPropertyByAfm(propertyModel.getAfm());
 
 
         return "redirect:/AdminHomePage";
