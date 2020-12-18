@@ -25,7 +25,10 @@
         </ul>
         <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">
             <li class="nav-item active">
-                <button type="button" class="btn btn-logout">Logout</button>
+                <a class="btn btn-logout" href="/logout">
+                    <span data-feather="log-out"></span>
+                    Logout
+                </a>
             </li>
         </ul>
     </div>

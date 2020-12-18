@@ -10,7 +10,7 @@ INSERT INTO Owner (Email,Password, Role) VALUES ('admin@gmail.com','$2a$10$FfXLO
 --
 --
 --
--- INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair , Description ,Type_Of_Repair , Owner_id) VALUES ('Meroglou 1' , '150' , '2021-01-10 13:00:00' , 'DEFAULT' , 'First floor , The owner is not available on Mondays' , 'PAINTING' , '1');
+INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair , Description ,Type_Of_Repair , Owner_id) VALUES ('Meroglou 1' , '150' , '2021-01-10 13:00:00' , 'DEFAULT' , 'First floor , The owner is not available on Mondays' , 'PAINTING' , '1');
 -- INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Kolokotroni 9' , '300' , '2020-12-15 10:00:00' , 'IN_PROGRESS'  , 'INSULATION' , '2');
 -- INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Thrakomakedonwn 35' , '200' , '2020-10-05 11:30:00' , 'COMPLETED'  , 'FRAMES' , '3');
 -- INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Owner_id) VALUES ('Mouratidou 12' , '170' , '2020-10-25 12:00:00' , 'COMPLETED'  , 'PLUMBING' , '4');

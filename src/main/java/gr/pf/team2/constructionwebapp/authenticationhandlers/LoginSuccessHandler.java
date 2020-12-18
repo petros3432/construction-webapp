@@ -31,7 +31,11 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 
-        String redirectUrl = USER_HOME_PAGE_URL+"/"+authentication.getName();
+        String redirectUrl = USER_HOME_PAGE_URL;
+
+
+//        RedirectAttributes attributes = new RedirectAttributesModelMap();
+//        attributes.addFlashAttribute(USER_HOME_PAGE_URL , authentication.getName());
 
 
 

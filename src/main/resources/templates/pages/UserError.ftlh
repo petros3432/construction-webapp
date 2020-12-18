@@ -37,7 +37,7 @@
             <div class="col-md-auto pl-5 pr-5 align-self-center">
                 OR
             </div>
-            <a class="btn btnhome" href="/admin/home" role="button">Go Home</a>
+            <a class="btn btnhome" href="/user/home" role="button">Go Home</a>
         </div>
     </main>
 </div>

@@ -6,6 +6,7 @@ import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,11 +31,12 @@ public class HomeController {
 
     @GetMapping(path = "/")
     public String home() {
+
         if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().contains("ADMIN"))) {
-            return "Admin/AdminHomePage";
+            return "redirect:/admin/home";
         }
-        return "User/OwnerHomePage";
+        return "redirect:/user/home";
     }
 
     @GetMapping(path = "/admin/home")
@@ -46,8 +48,9 @@ public class HomeController {
     }
 
 
-    @GetMapping("/user/home/{email}")
-    public String OwnerByEmail(Model model,@PathVariable String email ) {
+    @GetMapping("/user/home")
+    public String OwnerByEmail(Model model) {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
         Owner owner = ownerService.findOwnerByEmail(email);
         model.addAttribute(OWNERS_REPAIRS, owner.getRepairs());
         return "User/OwnerHomePage";
