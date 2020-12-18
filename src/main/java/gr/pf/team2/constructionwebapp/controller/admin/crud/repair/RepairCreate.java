@@ -58,19 +58,20 @@ public class RepairCreate {
 
     @PostMapping(value = "/repair/create")
     public String createRepair(Model model, @Valid @ModelAttribute(REPAIR_CREATE_FORM) RepairForm repairCreateForm, BindingResult bindingResult) {
-//
+
         if (bindingResult.hasErrors()) {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             model.addAttribute(REPAIR_STATE, StateOfRepair.values());
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
-//        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
-//        if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
-//            repairCreateForm.setProperty(property.get());
-//            repairService.createRepair(repairCreateForm);
-//            return "redirect:/AdminHomePage";
-//        }
+        Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
+        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
+        if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
+            repairCreateForm.setProperty(property.get());
+            repairService.createRepair(repairCreateForm);
+            return "redirect:/AdminHomePage";
+        }
         return "redirect:/AdminHomePage";
     }
 }
