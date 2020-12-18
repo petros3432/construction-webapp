@@ -65,7 +65,6 @@ public class RepairCreate {
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
-        Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
         if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
             repairCreateForm.setProperty(property.get());
