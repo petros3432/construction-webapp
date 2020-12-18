@@ -37,7 +37,7 @@ public class Property {
     @JoinColumn(name = "Owner_id")
     private Owner owner;
 
-    @OneToMany(mappedBy = "Property", targetEntity = Property.class, orphanRemoval = true )
+    @OneToMany(mappedBy = "property", targetEntity = Repair.class, orphanRemoval = true )
     private List<Repair> repairs;
 
     public String getAfm() {

@@ -131,25 +131,6 @@
                                 </#if>
             </div>
         </div>
-        <#if typeOfProperties??>
-        <div class="form-group col-md-6 text-left">
-            <label for="typeOfProperty">Type Of Property</label>
-            <div class="input-group">
-                <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty" >
-
-                        <#list typeOfProperties as type>
-
-                            <option  value="${type}" >${type}</option>
-
-                        </#list>
-
-                </select>
-            </div>
-        </div>
-        </#if>
-
-
-
     </div>
     <button class="btn btn-lg mt-4 btnblue"type="submit">Create</button>
 </form>

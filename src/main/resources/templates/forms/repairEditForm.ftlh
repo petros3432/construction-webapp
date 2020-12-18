@@ -102,6 +102,17 @@
                 </#if>
             </div>
         </div>
+
+        <div class="form-group col-md-6 text-left">
+            <label for="ownersAFM">Owner's AFM</label>
+            <div class="input-group">
+                   <#if rep.ownersAFM??>
+                      <input type="text" class="form-control" id="ownersAFM" value="${rep.ownersAFM}" name="ownersAFM">
+                   <#else>
+                      <input type="text" class="form-control" id="ownersAFM" name="ownersAFM">
+                  </#if>
+            </div>
+        </div>
     </div>
 
 

@@ -45,9 +45,6 @@ public class RegisterOwnerForm {
     @NotEmpty(message = "{registerOwner.lastName.not.null}")
     private String surname;
 
-
-
-
     private String userType;
 
     private String address;

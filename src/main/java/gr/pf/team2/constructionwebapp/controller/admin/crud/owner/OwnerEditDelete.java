@@ -34,7 +34,6 @@ public class OwnerEditDelete {
 
         OwnerModel ownerModel = ownerService.findOwnerById(id);
         model.addAttribute(EDIT_SERVICE, ownerModel);
-        model.addAttribute(PROPERTY_TYPE, TypeOfProperty.values());
         return "pages/owner_edit";
     }
 
@@ -49,9 +48,6 @@ public class OwnerEditDelete {
 
 
         if (bindingResult.hasErrors()) {
-            //have some error handling here, perhaps add extra error messages to the model
-
-            model.addAttribute(PROPERTY_TYPE, TypeOfProperty.values());
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/owner_edit";
         }

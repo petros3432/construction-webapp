@@ -37,7 +37,6 @@ public class OwnerCreate {
     @GetMapping(value = "/owner/create")
     public String register(Model model) {
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
-        model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
         return "pages/owner_create";
     }
 
@@ -45,9 +44,7 @@ public class OwnerCreate {
     public String registerOwner(Model model, @Valid @ModelAttribute(REGISTER_FORM) RegisterOwnerForm registerOwnerForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            model.addAttribute(TYPE_OF_PROPERTIES, TypeOfProperty.values());
             return "pages/owner_create";
         }
         ownerService.register(registerOwnerForm);

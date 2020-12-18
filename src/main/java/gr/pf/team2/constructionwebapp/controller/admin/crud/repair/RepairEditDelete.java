@@ -1,8 +1,10 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.repair;
 
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
+import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 public class RepairEditDelete {
@@ -25,6 +28,9 @@ public class RepairEditDelete {
 
     @Autowired
     private RepairService repairService;
+
+    @Autowired
+    private PropertyService propertyService;
 
 
     @GetMapping(value = "/repair/{id}/edit")
@@ -46,13 +52,14 @@ public class RepairEditDelete {
     public String editBook(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
 
         if (bindingResult.hasErrors()) {
-            //have some error handling here, perhaps add extra error messages to the model
-
             model.addAttribute(REPAIR_STATE, StateOfRepair.values());
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/repair_edit";
         }
+        Optional<Property> property = propertyService.findPropertyByAddress(repairModel.getAddress());
+        if (property.isPresent())
+            repairModel.setProperty(property.get());
         repairService.updateRepair(repairModel);
         return "redirect:/AdminHomePage";
     }

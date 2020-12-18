@@ -46,11 +46,7 @@ public class Owner {
     @Column(name = "Type_of_User")
     private UserType userType;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "Type_of_Property")
-    private TypeOfProperty typeOfProperty;
-
-    @OneToMany(mappedBy = "owner", targetEntity = Repair.class, orphanRemoval = true )
+    @OneToMany(mappedBy = "owner", targetEntity = Property.class, orphanRemoval = true )
     private List<Property> property;
 
     public List<Property> getProperty() { return property; }
@@ -115,9 +111,6 @@ public class Owner {
         return userType;
     }
 
-    public TypeOfProperty getTypeOfProperty() {
-        return typeOfProperty;
-    }
 
 
     public void setAfm(String afm) {
@@ -148,10 +141,6 @@ public class Owner {
         this.userType = userType;
     }
 
-    public void setTypeOfProperty(TypeOfProperty typeOfProperty) {
-        this.typeOfProperty = typeOfProperty;
-    }
-
 
 
     @Override
@@ -166,7 +155,6 @@ public class Owner {
         sb.append(",Email='").append(email).append('\'');
         sb.append(",Password='").append(password).append('\'');
         sb.append(",Type_of_User='").append(userType).append('\'');
-        sb.append(",Type_of_Property='").append(typeOfProperty.getFullName()).append('\'');
         sb.append('}');
         return sb.toString();
     }

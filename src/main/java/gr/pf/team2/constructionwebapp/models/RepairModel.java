@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.models;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -34,6 +35,12 @@ public class RepairModel {
 
     private String ownersName;
 
+    private String ownersAFM;
+
+
+
+    private Property Property;
+
 
     public RepairModel(String scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
         this.scheduledDate = scheduledDate;
@@ -66,7 +73,13 @@ public class RepairModel {
         this.ownersAFM = ownersAFM;
     }
 
-    private String ownersAFM;
+    public Property getProperty() {
+        return Property;
+    }
+
+    public void setProperty(Property property) {
+        Property = property;
+    }
 
 
     public String getScheduledDate() {
