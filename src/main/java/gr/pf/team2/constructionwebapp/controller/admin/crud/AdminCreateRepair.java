@@ -12,10 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -24,7 +21,8 @@ import java.util.Optional;
 
 import static gr.pf.team2.constructionwebapp.utils.GlobalVariables.ERROR_MESSAGE;
 @Controller
-public class AdminCreate {
+@RequestMapping("admin")
+public class AdminCreateRepair {
 
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
@@ -66,8 +64,8 @@ public class AdminCreate {
         if(owner.isPresent()){
             repairCreateForm.setOwner(owner.get());
             repairService.createRepair(repairCreateForm);
-            return "redirect:/AdminHomePage";
+            return "redirect:/admin/home";
         }
-        return "redirect:/AdminHomePage";
+        return "pages/repair_create";
     }
 }

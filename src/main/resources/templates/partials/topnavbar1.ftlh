@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/repair">
+    <a class="navbar-brand" href="/admin/home">
         <img class="img-fluid" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="/AdminHomePage" style="width:60px; padding:nopadding">
         BoBiToMastori.gr
     </a>
@@ -11,16 +11,16 @@
         <ul class="ml-1 mr-auto navbar-nav mt-2 mt-lg-0">
 
             <li class="nav-item active">
-                <a class="nav-link" id="RepairZone" href="/repair">Repair Zone</a>
+                <a class="nav-link" id="RepairZone" href="/admin/home">Repair Zone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="OwnerZone" href="/owner">Owner Zone</a>
+                <a class="nav-link" id="OwnerZone" href="/admin/owner">Owner Zone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/repair/create"><span data-feather="plus-circle"></span>Add Repair</a>
+                <a class="nav-link" href="/admin/repair/create"><span data-feather="plus-circle"></span>Add Repair</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/repair/search"><span data-feather="search"></span>Search Repair</a>
+                <a class="nav-link" href="/admin/repair/search"><span data-feather="search"></span>Search Repair</a>
             </li>
         </ul>
         <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">

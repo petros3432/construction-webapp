@@ -23,7 +23,7 @@ import java.util.List;
 class ConstructionWebappApplicationTests {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ConstructionWebappApplicationTests.class);
-	List<String> passwordsToBeHased = Arrays.asList("1234","pass456","pass789");
+	List<String> passwordsToBeHased = Arrays.asList("1234","1234","pass789");
 
 	@Autowired
 	private SecurityConfig securityConfig;

@@ -8,15 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @Controller
-public class AdminRepairEdit {
+@RequestMapping("admin")
+public class AdminRepairEdit_Delete {
     private static final String EDIT_SERVICE = "rep";
     private static final String REPAIR_STATE = "repairStates";
     private static final String REPAIR_TYPE = "repairTypes";
@@ -39,11 +37,11 @@ public class AdminRepairEdit {
     @PostMapping(value = "/repair/{id}/delete")
     public String deleteRepair(@PathVariable Long id) {
         repairService.deleteById(id);
-        return "redirect:/repair";
+        return "redirect:/admin/home";
     }
 
     @PostMapping(value = "/repair/edit")
-    public String editBook(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
+    public String editRepair(@Valid @ModelAttribute(EDIT_SERVICE) RepairModel repairModel , BindingResult bindingResult , Model model) {
 
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
@@ -54,7 +52,7 @@ public class AdminRepairEdit {
             return "pages/repair_edit";
         }
         repairService.updateRepair(repairModel);
-        return "redirect:/AdminHomePage";
+        return "redirect:/admin/home";
     }
 
 }

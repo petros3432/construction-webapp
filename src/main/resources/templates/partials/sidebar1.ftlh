@@ -2,7 +2,7 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column mt-4">
             <li class="nav-item">
-                <a class="nav-link" href="/repair/create"
+                <a class="nav-link" href="/admin/repair/create"
                         style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
                     Add Repair
@@ -10,7 +10,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/repair/search"
+                <a class="nav-link" href="/admin/repair/search"
                    style="border: none; background-color: inherit;">
                     <span data-feather="search"></span>
                     Search Repair

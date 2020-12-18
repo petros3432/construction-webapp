@@ -3,7 +3,7 @@
         <ul class="nav flex-column mt-4">
 
             <li class="nav-item">
-                <a class="nav-link" href="/owner/create"
+                <a class="nav-link" href="/admin/owner/create"
                    style="border: none; background-color: inherit;">
                     <span data-feather="plus-circle"></span>
                     Add Owner
@@ -11,7 +11,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/owner/search"
+                <a class="nav-link" href="/admin/owner/search"
                    style="border: none; background-color: inherit;">
                     <span data-feather="search"></span>
                     Search Owner

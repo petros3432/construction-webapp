@@ -6,7 +6,7 @@
             </span></i> Edit Repair</h3>
 
 
-<form id="createForm" action="/repair/edit" method="post">
+<form id="createForm" action="/admin/repair/edit" method="post">
 
     <input type="hidden" name="id" value="${rep.id}">
 

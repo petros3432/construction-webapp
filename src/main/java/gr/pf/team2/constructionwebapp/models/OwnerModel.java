@@ -13,7 +13,7 @@ public class OwnerModel {
     private static final String AFM_PATTERN = "^[0-9]*$";
     private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9@#$%^&]*$";
     private static final int PASSWORD_MIN_SIZE = 6;
-    private static final int PASSWORD_MAX_SIZE = 20;
+    private static final int PASSWORD_MAX_SIZE = 100;
     private static final int AFM_SIZE = 9;
     private static final int TELEPHONE_SIZE = 10;
     private static final String TELEPHONE_PATTERN = "^[0-9]*$";

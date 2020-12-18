@@ -6,6 +6,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +30,12 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         response.addCookie(generateTimestampCookie());
 
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        String redirectUrl = USER_HOME_PAGE_URL;
+
+        String redirectUrl = USER_HOME_PAGE_URL+"/"+authentication.getName();
+
+
+
+
         for (GrantedAuthority grantedAuthority: authorities) {
             if (grantedAuthority.getAuthority().equals("ADMIN")) {
                 redirectUrl = ADMIN_HOME_PAGE_URL;

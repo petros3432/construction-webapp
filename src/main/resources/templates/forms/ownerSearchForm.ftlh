@@ -5,7 +5,7 @@
             <i class="fas fa-user-tag"></i>
             </span></i> Search Owner</h3>
 
-<form action="/owner/search" name="ownerSearchForm" method="post" >
+<form action="/admin/owner/search" name="ownerSearchForm" method="post" >
     <div class="mb-3">
         <label for="emailpicker">Email</label>
         <div class="input-group">

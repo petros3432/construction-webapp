@@ -5,7 +5,7 @@
             <i class="fas fa-search"></i>
             </span></i> Search Repairs</h3>
 
-<form id="createForm" action="/repair/search" name="repairSearchForm" method="post">
+<form id="createForm" action="/admin/repair/search" name="repairSearchForm" method="post">
 
     <div class="mb-3">
         <label for="datepicker">Starting Date</label>
