@@ -2,6 +2,7 @@ package gr.pf.team2.constructionwebapp.controller.admin.crud.property;
 
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
+import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
@@ -22,6 +23,7 @@ import java.util.Optional;
 public class PropertyEditDelete {
 
     private static final String EDIT_PROPERTY = "editProperty";
+    private static final String PROPERTY_TYPES = "propertyTypes";
     private static final String ERROR_MESSAGE = "errormessage";
 
     @Autowired
@@ -31,6 +33,7 @@ public class PropertyEditDelete {
     public String editPropertyById(@PathVariable Long id, Model model){
         PropertyModel propertyModel = propertyService.findPropertyById(id);
         model.addAttribute(EDIT_PROPERTY, propertyModel);
+        model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
         return "pages/property_edit";
     }
 
