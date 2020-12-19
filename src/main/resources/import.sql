@@ -1,7 +1,7 @@
 
 
 INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Petros', 'Salepis' , 'psalepis@hotmail.com' , '111145306' ,  'Thessalonikis 14' , 'qwer1234', '2108053044' , 'OWNER');
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number , Type_of_User) VALUES ('Manolis', 'Souflakis' , 'msouflakis@gmail.com' , '123148359' , 'Trikalwn 27' , 'qwerty1234!' ,'2108053044' , 'OWNER');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number , Type_of_User) VALUES ('Manolis', 'Souflakis' , 'msouflakis@gmail.com' , '123148359' , 'Trikalwn 27' , 'qwerty1234' ,'2108053044' , 'OWNER');
 INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Vangelis', 'Skoutelis' , 'vskoutelis@hotmail.com' , '305145603' , 'Viktorias 33' ,'passw0rd' , '2108047204' , 'OWNER');
 INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Spyros', 'Spanos' , 's.spanos@hotmail.com' , '112257914' , 'Naupliotwn 5' , 'myPassword' , '2102435672' , 'OWNER');
 INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Maria', 'Konstantinidi' , 'mkonstantinidi@gmail.com' , '345179835' , 'Kavalas 44' , '1995a' , '2105582209' , 'OWNER');

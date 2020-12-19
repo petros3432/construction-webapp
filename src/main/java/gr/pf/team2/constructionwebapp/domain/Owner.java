@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.enums.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Owner {
     private Long id;
 
     @Column(name = "AFM")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private String afm;
 
     @Column(name = "Name")
@@ -46,7 +48,7 @@ public class Owner {
     @Column(name = "Type_of_User")
     private UserType userType;
 
-    @OneToMany(mappedBy = "owner", targetEntity = Property.class, orphanRemoval = true )
+    @OneToMany(mappedBy = "owner", targetEntity = Property.class, orphanRemoval = true)
     private List<Property> property;
 
     public List<Property> getProperty() { return property; }

@@ -19,6 +19,7 @@ public interface RepairService {
 
     void deleteById(Long id);
 
+    void updateAddressFromProperty(Long id, String address);
 
     List<RepairModel> searchAdvanced(SearchForm searchForm) throws ExceptionsHandling;
 
