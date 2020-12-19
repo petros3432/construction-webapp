@@ -9,26 +9,25 @@
     <input type="hidden" name="id" value="${property.id}">
 
     <div class="row">
+
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Name</label>
+            <label for="typeOfRepair">Type of Repair</label>
             <div class="input-group">
-                <@spring.bind "owner.name"/>
-                <input type="text" class="form-control" value="${owner.name!''}" id="name" name="name">
+               <select class="custom-select d-block w-100" id="propertyTypes" name="propertyTypes">
+                    <#if propertyTypes??>
+                        <#list propertyTypes as type>
+                             <option value="${type}"<#if editProperty.typeOfProperty == type> selected</#if>>${type}</option>
+                        </#list>
+                   </#if>
+               </select>
             </div>
-            <#if spring.status.error>
-                <ul>
-                    <#list spring.status.errorMessages as error>
-                        <li style="color: #dc3545">${error}</li>
-                    </#list>
-                </ul>
-            </#if>
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Surname</label>
+            <label for="cost">Property E9</label>
             <div class="input-group">
-                <@spring.bind "owner.surname"/>
-                <input type="text" class="form-control" value="${owner.surname}" id="surname" name="surname">
+                <@spring.bind "editProperty.propertyE9"/>
+                <input type="text" class="form-control" value="${editProperty.propertyE9}" id="propertyE9" name="propertyE9">
             </div>
             <#if spring.status.error>
                 <ul>
