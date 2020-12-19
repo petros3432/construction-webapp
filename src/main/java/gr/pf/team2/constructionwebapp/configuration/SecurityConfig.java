@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //LOGIN Configuration
                 .formLogin()
-                .loginPage("/login")
+//                .loginPage("/login")
                 //.usernameParameter()
                 //.passwordParameter()
                 .successHandler(loginSuccessHandler)
