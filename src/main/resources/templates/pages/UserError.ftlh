@@ -12,6 +12,25 @@
 
 <body>
 
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+
+
+    <div  class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="btn btn-logout" href="/logout">
+                    <span data-feather="log-out"></span>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
 <div class="container-fluid">
     <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4" style="margin-top: 8%;">
         <div class="row justify-content-md-center">

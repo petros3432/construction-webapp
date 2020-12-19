@@ -71,6 +71,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/").permitAll()
                 .antMatchers("login").anonymous()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+
                 .anyRequest().authenticated()
 
                 //ERROR HANDLING FOR ACCESS DENIED

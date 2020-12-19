@@ -81,21 +81,20 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="inputPassword3" class=" control-label">Password</label>
-            <div class="inputGroupContainer">
-                <@spring.bind "owner.password"/>
-                <input type="password" class="form-control" name="password"
-                       id="password" value="${owner.password}">
+            <label for="state">Type Of Property</label>
+            <div class="input-group">
+                <select class="custom-select d-block w-100" id="state" name="typeOfProperty">
+                    <#if PropertyTypes??>
+                        <#list PropertyTypes as type>
+                            <option value="${type}"<#if owner.typeOfProperty == type> selected</#if>>${type}</option>
+                        </#list>
+                    </#if>
+                </select>
             </div>
-            <#if spring.status.error>
-                <ul>
-                    <#list spring.status.errorMessages as error>
-                        <li style="color: #dc3545">${error}</li>
-                    </#list>
-                </ul>
-            </#if>
         </div>
     </div>
+
+
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
@@ -113,19 +112,24 @@
             </#if>
         </div>
 
-        <div class="form-group col-md-6 text-left">
-            <label for="state">Type Of Property</label>
-            <div class="input-group">
-                <select class="custom-select d-block w-100" id="state" name="typeOfProperty">
-                    <#if PropertyTypes??>
-                        <#list PropertyTypes as type>
-                            <option value="${type}"<#if owner.typeOfProperty == type> selected</#if>>${type}</option>
-                        </#list>
-                    </#if>
-                </select>
+        <div style="display: none;" class="form-group col-md-6 text-left">
+            <#--            <label for="inputPassword3" class=" control-label">Password</label>-->
+            <div class="inputGroupContainer">
+                <@spring.bind "owner.password"/>
+                <input type="hidden" class="form-control" name="password"
+                       id="password">
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
+
+
 
     <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>
