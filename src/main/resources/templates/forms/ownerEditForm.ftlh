@@ -3,7 +3,7 @@
 <h3 class="mb-3">
             <span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-user-edit"></i>
-            </span></i> Edit User</h3>
+            </span></i> Edit Owner </h3>
 
 <form id="createForm" action="/admin/owner/edit" method="post">
     <input type="hidden" name="id" value="${owner.id}">
