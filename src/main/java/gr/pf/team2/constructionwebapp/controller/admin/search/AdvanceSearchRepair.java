@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
+import gr.pf.team2.constructionwebapp.validators.SearchPropertyValidation;
 import gr.pf.team2.constructionwebapp.validators.SearchRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,18 +25,18 @@ import java.util.Optional;
 public class AdvanceSearchRepair {
 
     private static final String ERROR_MESSAGE = "errormessage";
-    private static final String SEARCHFORM = "repairSearchForm";
+    private static final String SEARCHFORM = "PropertySearchForm";
 
     @Autowired
     private RepairService repairService;
 
 
     @Autowired
-    private SearchRepairValidation searchRepairValidation;
+    private SearchPropertyValidation searchPropertyValidation;
 
     @InitBinder(SEARCHFORM)
     protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators(searchRepairValidation);
+        binder.addValidators(searchPropertyValidation);
     }
 
 

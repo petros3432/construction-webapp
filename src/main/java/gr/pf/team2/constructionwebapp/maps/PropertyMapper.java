@@ -16,7 +16,7 @@ public class PropertyMapper {
         property.setPropertyE9(createPropertyForm.getPropertyE9());
         property.setYear(createPropertyForm.getYear());
         property.setTypeOfProperty(createPropertyForm.getTypeOfProperty());
-
+        property.setOwner(createPropertyForm.getOwner());
         return property;
     }
 
