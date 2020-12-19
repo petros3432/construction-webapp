@@ -22,7 +22,7 @@ import java.util.List;
 public class AdvanceSearchProperty {
 
     private static final String ERROR_MESSAGE = "errormessage";
-    private static final String SEARCHFORM = "repairSearchForm";
+    private static final String SEARCHFORM = "propertySearchForm";
 
     @Autowired
     private PropertyService propertyService;
@@ -31,10 +31,10 @@ public class AdvanceSearchProperty {
     @Autowired
     private SearchRepairValidation searchRepairValidation;
 
-    @InitBinder(SEARCHFORM)
-    protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators(searchRepairValidation);
-    }
+//    @InitBinder(SEARCHFORM)
+//    protected void initBinder(final WebDataBinder binder) {
+//        binder.addValidators(searchRepairValidation);
+//    }
 
 
     @GetMapping(value = "/property/search")
@@ -47,11 +47,11 @@ public class AdvanceSearchProperty {
 
     @PostMapping(value = "/property/search")
     public String searchAll(Model model, @Valid @ModelAttribute(SEARCHFORM) SearchFormProperty searchFormProperty, BindingResult bindingResult) throws ExceptionsHandling {
-
-        if (bindingResult.hasErrors()) {
-            model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
-            return "pages/property_search";
-        }
+//
+//        if (bindingResult.hasErrors()) {
+//            model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
+//            return "pages/property_search";
+//        }
 
         List<PropertyModel> properties = propertyService.searchAdvanced(searchFormProperty);
 
@@ -60,6 +60,6 @@ public class AdvanceSearchProperty {
         }
 
         model.addAttribute(SEARCHFORM,properties);
-        return "pages/AdminHomePage";
+        return "pages/AdminPropertyPage";
     }
 }
