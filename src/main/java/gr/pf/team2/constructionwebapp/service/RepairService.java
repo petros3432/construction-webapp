@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.service;
 
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
@@ -19,6 +20,7 @@ public interface RepairService {
 
     void deleteById(Long id);
 
+    List<RepairModel> findRepairByProperty(List<Property> propertys);
 
     List<RepairModel> searchAdvanced(SearchForm searchForm) throws ExceptionsHandling;
 

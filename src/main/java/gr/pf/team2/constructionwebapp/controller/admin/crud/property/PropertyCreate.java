@@ -12,15 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("admin")
 public class PropertyCreate {
 
     private static final String PROPERTY_CREATE_FORM = "repairCreateForm";
@@ -35,11 +33,11 @@ public class PropertyCreate {
     private OwnerService ownerService;
 
 //    @Autowired
-//    private RegistrationRepairValidation registrationRepairValidation;
+//    private RegistrationPropertyValidation registrationPropertyValidation;
 
 //    @InitBinder(PROPERTY_CREATE_FORM)
 //    protected void initBinder(final WebDataBinder binder) {
-//        binder.addValidators(registrationRepairValidation);
+//        binder.addValidators(registrationPropertyValidation);
 //    }
 
     @GetMapping(value = "/property/create")
@@ -53,6 +51,7 @@ public class PropertyCreate {
     public String createProperty(Model model, @Valid @ModelAttribute(PROPERTY_CREATE_FORM)CreatePropertyForm createPropertyForm, BindingResult bindingResult) {
 //
 //        if (bindingResult.hasErrors()) {
+//        model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
 //            model.addAttribute(ERROR_MESSAGE, "an error occurred");
 //            return "pages/property_create";
 //        }
@@ -60,8 +59,8 @@ public class PropertyCreate {
         if(owner.isPresent()){
             createPropertyForm.setOwner(owner.get());
             propertyService.createProperty(createPropertyForm);
-            return "redirect:/AdminPropertyPage";
+            return "redirect:/admin/home";
         }
-        return "redirect:/AdminPropertyPage";
+        return "pages/property_create";
     }
 }

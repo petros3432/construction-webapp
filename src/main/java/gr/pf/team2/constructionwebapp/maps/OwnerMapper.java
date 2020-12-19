@@ -17,7 +17,7 @@ public class OwnerMapper {
         ownerModel.setAddress(owner.getAddress());
         ownerModel.setTel(owner.getTel());
         ownerModel.setEmail(owner.getEmail());
-        ownerModel.setUserType(owner.getUserType());
+        ownerModel.setRole(owner.getRole());
         return ownerModel;
     }
 

@@ -1,6 +1,6 @@
 package gr.pf.team2.constructionwebapp.enums;
 
-public enum UserType {
+public enum Role {
     ADMIN,
-    OWNER;
+    USER;
 }

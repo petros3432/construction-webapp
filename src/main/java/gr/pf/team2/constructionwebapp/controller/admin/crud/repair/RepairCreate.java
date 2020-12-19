@@ -14,16 +14,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 import java.util.Optional;
 
 @Controller
+@RequestMapping("admin")
 public class RepairCreate {
 
     private static final String REPAIR_STATE = "repairStates";
@@ -65,13 +63,15 @@ public class RepairCreate {
             model.addAttribute(REPAIR_TYPE, TypeOfRepair.values());
             return "pages/repair_create";
         }
+
         Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
+
         if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
             repairCreateForm.setProperty(property.get());
             repairService.createRepair(repairCreateForm);
-            return "redirect:/AdminHomePage";
+            return "redirect:/admin/home";
         }
-        return "redirect:/AdminHomePage";
+        return "pages/repair_create";
     }
 }

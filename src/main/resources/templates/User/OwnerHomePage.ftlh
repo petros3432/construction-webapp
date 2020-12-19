@@ -41,7 +41,7 @@
                             <td>${rep.cost} € </td>
                             <td>${rep.state}</td>
                             <td>${rep.scheduledDate}</td>
-                            <td>${rep.textDesc}</td>
+                            <td>${rep.textDesc!''}</td>
                         </tr>
                     </#list>
                 </#if>

@@ -8,18 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("admin")
 public class OwnerEditDelete {
 
     private static final String EDIT_SERVICE = "owner";
-    private static final String PROPERTY_TYPE = "PropertyTypes";
+   // private static final String PROPERTY_TYPE = "PropertyTypes";
     private static final String ERROR_MESSAGE = "errormessage";
 
 
@@ -40,7 +38,7 @@ public class OwnerEditDelete {
     @PostMapping(value = "/owner/{id}/delete")
     public String deleteOwner(@PathVariable Long id) {
         ownerService.deleteById(id);
-        return "redirect:/owner";
+        return "redirect:/admin/owner";
     }
 
     @PostMapping(value = "/owner/edit")
@@ -53,7 +51,7 @@ public class OwnerEditDelete {
         }
 
         ownerService.updateOwner(ownerModel);
-        return "redirect:/AdminOwnerPage";
+        return "redirect:/admin/owner";
     }
 
 }

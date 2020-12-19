@@ -13,15 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("admin")
 public class PropertyEditDelete {
 
     private static final String EDIT_PROPERTY = "editProperty";
@@ -45,7 +43,7 @@ public class PropertyEditDelete {
     @PostMapping(value = "/property/{id}/delete")
     public String deleteProperty(@PathVariable Long id) {
        propertyService.deleteById(id);
-        return "redirect:/property";
+        return "redirect:/admin/property";
     }
 
 
@@ -62,6 +60,6 @@ public class PropertyEditDelete {
             propertyModel.setOwner(owner.get());
         propertyService.updateProperty(propertyModel);
 
-        return "redirect:/AdminPropertyPage";
+        return "redirect:/admin/property";
     }
 }

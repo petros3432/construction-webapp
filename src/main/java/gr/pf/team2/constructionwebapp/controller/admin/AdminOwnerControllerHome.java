@@ -22,12 +22,17 @@ public class AdminOwnerControllerHome {
     private OwnerService ownerService;
 
 
-    @GetMapping({"/AdminOwnerPage", "/owner"})
+    @GetMapping("/admin/owner")
     public String OwnersShowoff(Model model) {
         List<OwnerModel> owners = ownerService.firstTenOwners();
         model.addAttribute(TOP_10_OWNERS, owners);
         model.addAttribute(REGISTER_FORM, new RegisterOwnerForm());
-        return "pages/AdminOwnerPage";
+        return "Admin/AdminOwnerPage";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "pages/login";
     }
 
 

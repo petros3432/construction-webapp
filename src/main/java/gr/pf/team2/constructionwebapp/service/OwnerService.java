@@ -19,7 +19,7 @@ public interface OwnerService {
 
     List<OwnerModel> firstTenOwners();
 
-    Optional<Owner> findOwnerByEmail(String email);
+    Owner findOwnerByEmail(String email);
 
 //    Owner addOwnerProperty(Owner owner);
 

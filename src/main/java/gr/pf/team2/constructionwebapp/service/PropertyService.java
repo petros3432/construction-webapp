@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.service;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
@@ -25,6 +26,8 @@ public interface PropertyService {
     List<PropertyModel> firstTenProperties();
 
     void deleteById(Long id);
+
+    List<Property> findPropertyByOwner(Long id);
 
     PropertyModel updateProperty(PropertyModel propertyModel);
 

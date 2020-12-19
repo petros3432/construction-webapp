@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.service;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
@@ -46,6 +47,11 @@ public class PropertyServiceImpl implements PropertyService{
     public void deleteById(Long id) { propertyRepository.deleteById(id); }
 
     @Override
+    public List<Property> findPropertyByOwner(Long id) {
+        return propertyRepository.findPropertyByOwner(id);
+    }
+
+    @Override
     public PropertyModel updateProperty(PropertyModel propertyModel) {
         Property property = propertyRepository.findById(propertyModel.getId()).get();
         property.setTypeOfProperty(propertyModel.getTypeOfProperty());
@@ -89,4 +95,6 @@ public class PropertyServiceImpl implements PropertyService{
 
         return null;
     }
+
+
 }

@@ -1,11 +1,11 @@
 
 
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Petros', 'Salepis' , 'psalepis@hotmail.com' , '111145306' ,  'Thessalonikis 14' , 'qwer1234', '2108053044' , 'OWNER');
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number , Type_of_User) VALUES ('Manolis', 'Souflakis' , 'msouflakis@gmail.com' , '123148359' , 'Trikalwn 27' , 'qwerty1234!' ,'2108053044' , 'OWNER');
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Vangelis', 'Skoutelis' , 'vskoutelis@hotmail.com' , '305145603' , 'Viktorias 33' ,'passw0rd' , '2108047204' , 'OWNER');
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Spyros', 'Spanos' , 's.spanos@hotmail.com' , '112257914' , 'Naupliotwn 5' , 'myPassword' , '2102435672' , 'OWNER');
-INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Type_of_User)  VALUES ('Maria', 'Konstantinidi' , 'mkonstantinidi@gmail.com' , '345179835' , 'Kavalas 44' , '1995a' , '2105582209' , 'OWNER');
-INSERT INTO Owner (Email,Password, Type_of_User) VALUES ('admin@gmail.com','adminadmin','ADMIN');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Role)  VALUES ('Petros', 'Salepis' , 'psalepis@hotmail.com' , '111145306' ,  'Thessalonikis 14' , '$2a$10$iaXOGVfyLggjojNkEDWP2.dH/9Yd9bLc7P0bvsZpJu86naVVqnH7y', '2108053044' , 'USER');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number , Role) VALUES ('Manolis', 'Souflakis' , 'msouflakis@gmail.com' , '123148359' , 'Trikalwn 27' , '$2a$10$ibq9oSUhJxxsrGia6iq3A.EG.NJEzMP3E4UxxiSpVIctbqMlIaobu' ,'2108053044' , 'USER');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Role)  VALUES ('Vangelis', 'Skoutelis' , 'vskoutelis@hotmail.com' , '305145603' , 'Viktorias 33' ,'$2a$10$kWvLtqciNopqWWVhzPmY3ucJ8F9qVDIk41yB1bir0oeZHVe7ZtGUe' , '2108047204' , 'USER');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Role)  VALUES ('Spyros', 'Spanos' , 's.spanos@hotmail.com' , '112257914' , 'Naupliotwn 5' , '$2a$10$Wqs5DdF5H.wjMAfjsnw7DucYM0LbUvcCzBfEZRtE1yerS9BnleSK6' , '2102435672' , 'USER');
+INSERT INTO Owner (Name , Surname , Email , AFM  , Address, Password , Telephone_number ,Role)  VALUES ('Maria', 'Konstantinidi' , 'mkonstantinidi@gmail.com' , '345179835' , 'Kavalas 44' , '$2a$10$a4P.cqv10oai8DM8UgzYUeAlM5cMPubbASAXTDMYwYIoMmMSjbVAC' , '2105582209' , 'USER');
+INSERT INTO Owner (Email,Password, Role) VALUES ('admin@gmail.com','$2a$10$VjOsVlCvCkF6g8dPvBWZqu2o6oZfPN2DjWI0hFnT0H8whJXXZ.JKC','ADMIN');
 
 
 

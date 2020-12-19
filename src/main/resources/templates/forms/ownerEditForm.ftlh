@@ -5,7 +5,7 @@
             <i class="fas fa-user-edit"></i>
             </span></i> Edit User</h3>
 
-<form id="createForm" action="/owner/edit" method="post">
+<form id="createForm" action="/admin/owner/edit" method="post">
     <input type="hidden" name="id" value="${owner.id}">
 
     <div class="row">
@@ -80,24 +80,7 @@
             </#if>
         </div>
 
-        <div class="form-group col-md-6 text-left">
-            <label for="inputPassword3" class=" control-label">Password</label>
-            <div class="inputGroupContainer">
-                <@spring.bind "owner.password"/>
-                <input type="password" class="form-control" name="password"
-                       id="password" value="${owner.password}">
-            </div>
-            <#if spring.status.error>
-                <ul>
-                    <#list spring.status.errorMessages as error>
-                        <li style="color: #dc3545">${error}</li>
-                    </#list>
-                </ul>
-            </#if>
-        </div>
-    </div>
 
-    <div class="row">
         <div class="form-group col-md-6 text-left">
             <label for="title">Telephone</label>
             <div class="input-group">
@@ -112,7 +95,10 @@
                 </ul>
             </#if>
         </div>
+
+
     </div>
+
 
     <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>

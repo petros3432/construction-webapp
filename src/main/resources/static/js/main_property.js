@@ -8,7 +8,7 @@ jQuery(function ($) {
 
     $('#modal').on('show.bs.modal', function (event) {
         const id = event.relatedTarget.dataset.id;
-        $('#deleteForm').attr('action', `/property/${id}/delete`);
+        $('#deleteForm').attr('action', `/admin/property/${id}/delete`);
         $('.modal-title').text(function () {
             return `Property #${id}`;
         });

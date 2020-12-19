@@ -12,7 +12,7 @@ public class RegisterOwnerForm {
     private static final String AFM_PATTERN = "^[0-9]*$";
 
     private static final int PASSWORD_MIN_SIZE = 6;
-    private static final int PASSWORD_MAX_SIZE = 20;
+    private static final int PASSWORD_MAX_SIZE = 100;
     private static final int TELEPHONE_SIZE = 10;
     private static final int AFM_SIZE = 9;
 
@@ -45,16 +45,16 @@ public class RegisterOwnerForm {
     @NotEmpty(message = "{registerOwner.lastName.not.null}")
     private String surname;
 
-    private String userType;
+    private String role;
 
     private String address;
 
-    public String getUserType() {
-        return userType;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType ;
+    public void setRole(String role) {
+        this.role = role ;
     }
 
 

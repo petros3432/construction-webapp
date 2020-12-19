@@ -3,9 +3,9 @@
 <h3 class="mb-3">
             <span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-search"></i>
-            </span></i> Search Repairs</h3>
+            </span></i> Search Properties</h3>
 
-<form id="createForm" action="/property/search" name="propertySearchForm" method="post">
+<form id="createForm" action="/admin/property/search" name="propertySearchForm" method="post">
 
     <div class="mb-3">
         <label for="propertyE9">E9 Number</label>

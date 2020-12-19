@@ -1,7 +1,7 @@
 package gr.pf.team2.constructionwebapp.models;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.UserType;
+import gr.pf.team2.constructionwebapp.enums.Role;
 
 import javax.persistence.Column;
 import javax.persistence.EnumType;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import static gr.pf.team2.constructionwebapp.enums.UserType.OWNER;
+import static gr.pf.team2.constructionwebapp.enums.Role.USER;
 
 public class OwnerModel {
     private static final String MAIL_PATTERN = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$";
@@ -47,14 +47,14 @@ public class OwnerModel {
 
     @Pattern(regexp = PASSWORD_PATTERN, message = "{registerOwner.password.pattern.invalid}")
     @Size(min = PASSWORD_MIN_SIZE, max = PASSWORD_MAX_SIZE, message = "{registerOwner.password.size.invalid}")
-    @NotEmpty(message = "{registerOwner.password.not.null}")
+//    @NotEmpty(message = "{registerOwner.password.not.null}")
     private String password;
 
-    private UserType userType;
+    private Role role;
 
     private Long id;
 
-    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, Long id, UserType userType) {
+    public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, Long id, Role role) {
         this.afm = afm;
         this.name = name;
         this.surname = surname;
@@ -63,7 +63,7 @@ public class OwnerModel {
         this.email = email;
         this.password = password;
         this.id = id;
-        this.userType = OWNER;
+        this.role = USER;
     }
     public OwnerModel(){
 
@@ -80,12 +80,12 @@ public class OwnerModel {
         this.id = id;
     }
 
-    public UserType getUserType() {
-        return userType;
+    public Role getRole() {
+        return role;
     }
 
-    public void setUserType(UserType userType) {
-        this.userType = userType;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public void setAfm(String afm) {

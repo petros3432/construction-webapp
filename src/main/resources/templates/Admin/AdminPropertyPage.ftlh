@@ -43,7 +43,7 @@
                             <td>${prop.year}</td>
                             <td>${prop.afm}</td>
                             <td>${prop.typeOfProperty}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/property/${prop.id}/edit"><span
+                            <td class="text-center"><a class="btn btn-link" href="/admin/property/${prop.id}/edit"><span
                                             data-feather="tool"></span></a></td>
                             <td class="text-center">
 
@@ -69,7 +69,7 @@
                             <td>${prop.year}</td>
                             <td>${prop.afm}</td>
                             <td>${prop.typeOfProperty}</td>
-                            <td class="text-center"><a class="btn btn-link" href="/property/${prop.id}/edit"><span
+                            <td class="text-center"><a class="btn btn-link" href="/admin/property/${prop.id}/edit"><span
                                             data-feather="tool"></span></a></td>
                             <td class="text-center">
 

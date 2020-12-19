@@ -1,6 +1,7 @@
 package gr.pf.team2.constructionwebapp.service;
 
 
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
@@ -10,6 +11,7 @@ import gr.pf.team2.constructionwebapp.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,6 +54,21 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public void deleteById(Long id) { repairRepository.deleteById(id); }
+
+    @Override
+    public List<RepairModel> findRepairByProperty(List<Property> propertys) {
+
+        List<RepairModel> repairModel = new ArrayList<>();
+        for (Property property : propertys) {
+            for (Repair propertyRepair : property.getRepairs()) {
+                RepairModel rm =repairMapper.repairToModel(propertyRepair);
+                repairModel.add(rm);
+
+            }
+        }
+
+        return repairModel;
+    }
 
     @Override
     public RepairModel createRepair(RepairForm repairForm) {

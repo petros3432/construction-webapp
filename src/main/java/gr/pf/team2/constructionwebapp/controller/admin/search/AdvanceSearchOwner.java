@@ -10,15 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+@RequestMapping("admin")
 public class AdvanceSearchOwner {
     private static final String SEARCH = "top10owners";
     private static final String SEARCHFORM = "ownerSearchForm";
@@ -59,6 +57,6 @@ public class AdvanceSearchOwner {
 
 
         model.addAttribute(SEARCHFORM,owners);
-        return "pages/AdminOwnerPage";
+        return "Admin/AdminOwnerPage";
     }
 }

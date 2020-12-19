@@ -38,7 +38,7 @@
                     <tbody>
                     <#if top10owners??>
                         <#list top10owners as owner>
-                            <#if owner.userType == "OWNER">
+                            <#if owner.role == "USER">
                                 <tr>
                                     <td>${owner.afm}</td>
                                     <td>${owner.name}</td>
@@ -46,7 +46,7 @@
                                     <td>${owner.address}</td>
                                     <td>${owner.tel}</td>
                                     <td>${owner.email}</td>
-                                    <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
+                                    <td class="text-center"><a class="btn btn-link" href="/admin/owner/${owner.id}/edit"><span
                                                     data-feather="tool"></span></a></td>
                                     <td class="text-center">
 
@@ -68,7 +68,7 @@
 
                     <#if ownerSearchForm??>
                         <#list ownerSearchForm as owner>
-                            <#if owner.userType == "OWNER">
+                            <#if owner.role == "USER">
                                 <tr>
                                     <td>${owner.afm}</td>
                                     <td>${owner.name}</td>
@@ -76,7 +76,7 @@
                                     <td>${owner.address}</td>
                                     <td>${owner.tel}</td>
                                     <td>${owner.email}</td>
-                                    <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
+                                    <td class="text-center"><a class="btn btn-link" href="/admin/owner/${owner.id}/edit"><span
                                                     data-feather="tool"></span></a></td>
                                     <td class="text-center">
 

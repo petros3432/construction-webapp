@@ -5,7 +5,7 @@
             <i class="fas fa-plus-circle"></i>
             </span></i> Add Repair</h3>
 
-<form id="createForm" action="/repair/create" name="repairCreateForm" method="post">
+<form id="createForm" action="/admin/repair/create" name="repairCreateForm" method="post">
 
     <div class="row">
         <div class="form-group col-md-6 text-left">

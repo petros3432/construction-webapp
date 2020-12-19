@@ -4,8 +4,8 @@
             <i class="fas fa-user-plus"></i>
             </span></i> Add Owner</h3>
 
-<form class="well form-horizontal" action="/owner/create" name="registerOwnerForm" method="POST">
-    <input type="hidden" name="userType" value="OWNER">
+<form class="well form-horizontal" action="/admin/owner/create" name="registerOwnerForm" method="POST">
+    <input type="hidden" name="role" value="USER">
     <div class="row">
         <div class="form-group col-md-6 text-left">
             <label for="name" class="control-label">Name</label>
@@ -91,8 +91,8 @@
             </div>
         </div>
 
-                    <@spring.bind "registerOwnerForm.userType"/>
-                    <input type="hidden" name="userType" value="OWNER">
+                    <@spring.bind "registerOwnerForm.role"/>
+                    <input type="hidden" name="role" value="USER">
 
         <div class="form-group col-md-6 text-left">
             <label for="" class="control-label">Telephone</label>

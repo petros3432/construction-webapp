@@ -5,7 +5,7 @@
             <i class="fas fa-plus-circle"></i>
             </span></i> Add Property</h3>
 
-<form id="createForm" action="/property/create" name="propertyCreateForm" method="post">
+<form id="createForm" action="/admin/property/create" name="propertyCreateForm" method="post">
 
     <div class="row">
         <#if propertyTypes??>

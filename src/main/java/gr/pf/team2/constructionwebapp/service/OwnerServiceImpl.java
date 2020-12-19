@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static gr.pf.team2.constructionwebapp.enums.Role.USER;
+
 
 @Service
 public class OwnerServiceImpl implements OwnerService {
@@ -40,7 +42,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Optional<Owner> findOwnerByEmail(String email) {
+    public Owner findOwnerByEmail(String email) {
         return ownerRepository.findOwnerByEmail(email);
     }
 
@@ -64,7 +66,8 @@ public class OwnerServiceImpl implements OwnerService {
                 registerOwnerForm.getAddress(),
                 registerOwnerForm.getTel(),
                 registerOwnerForm.getEmail(),
-                registerOwnerForm.getPassword()
+                registerOwnerForm.getPassword(),
+                USER
         );
         Owner savedOwner = ownerRepository.save(owner);
         return savedOwner;
