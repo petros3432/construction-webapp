@@ -25,18 +25,16 @@ import java.util.Optional;
 public class AdvanceSearchRepair {
 
     private static final String ERROR_MESSAGE = "errormessage";
-    private static final String SEARCHFORM = "PropertySearchForm";
+    private static final String SEARCHFORM = "repairSearchForm";
 
     @Autowired
     private RepairService repairService;
 
-
-    @Autowired
-    private SearchPropertyValidation searchPropertyValidation;
+    private SearchRepairValidation searchRepairValidation;
 
     @InitBinder(SEARCHFORM)
     protected void initBinder(final WebDataBinder binder) {
-        binder.addValidators(searchPropertyValidation);
+        binder.addValidators(searchRepairValidation);
     }
 
 
