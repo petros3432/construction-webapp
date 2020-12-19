@@ -5,6 +5,7 @@ import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 public class CreatePropertyForm {
@@ -15,6 +16,7 @@ public class CreatePropertyForm {
 
     private int year;
 
+    @NotEmpty(message = "{registerOwner.firstName.not.null}")
     private String afm;
 
     private Owner owner;

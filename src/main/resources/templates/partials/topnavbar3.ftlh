@@ -20,10 +20,10 @@
                  <a class="nav-link" id="PropertyZone" href="/property">Property Zone</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/repair/create"><span data-feather="plus-circle"></span>Add Repair</a>
+                <a class="nav-link" href="/property/create"><span data-feather="plus-circle"></span>Add Property</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/repair/search"><span data-feather="search"></span>Search Repair</a>
+                <a class="nav-link" href="/property/search"><span data-feather="search"></span>Search Property</a>
             </li>
         </ul>
         <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">
