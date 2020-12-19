@@ -11,7 +11,7 @@ public class PropertyModel {
 
     private String address;
 
-    private int year;
+    private String year;
 
     private String afm;
 
@@ -41,11 +41,11 @@ public class PropertyModel {
         this.address = address;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

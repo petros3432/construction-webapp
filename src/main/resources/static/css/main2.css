@@ -53,7 +53,7 @@ body {
     vertical-align: text-bottom;
 }
 
-#RepairZone, #OwnerZone{
+#RepairZone, #OwnerZone, #PropertyZone{
     font-weight: bold;
 
 }

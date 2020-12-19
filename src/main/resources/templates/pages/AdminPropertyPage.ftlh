@@ -17,7 +17,7 @@
     <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 mt-4">
         <h3 class="mb-3">
             <span style="font-size: 1em; color: #E63946;">
-            <i class="fas fa-tools"></i>
+            <i class="fas fa-home"></i>
             </span></i> Properties</h3>
 
         <div class="table-responsive">
@@ -25,11 +25,11 @@
                    id="empTable">
                 <thead>
                 <tr>
-                    <th scope="col">Type</th>
+                    <th scope="col">E9</th>
                     <th scope="col">Address</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">State</th>
-                    <th scope="col">Scheduled Date</th>
+                    <th scope="col">Year of Construction</th>
+                    <th scope="col">Owner's Afm</th>
+                    <th scope="col">Type of Propery</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Remove</th>
                 </tr>
@@ -69,7 +69,7 @@
                         <tr>
                             <td>${prop.propertyE9}</td>
                             <td>${prop.address}</td>
-                            <td>${prop.year} € </td>
+                            <td>${prop.year}</td>
                             <td>${prop.afm}</td>
                             <td>${prop.typeOfProperty}</td>
                             <td class="text-center"><a class="btn btn-link" href="/property/${prop.id}/edit"><span

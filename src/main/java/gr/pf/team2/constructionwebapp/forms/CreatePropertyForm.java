@@ -14,7 +14,7 @@ public class CreatePropertyForm {
 
     private String address;
 
-    private int year;
+    private String year;
 
     @NotEmpty(message = "{registerOwner.firstName.not.null}")
     private String afm;
@@ -47,11 +47,11 @@ public class CreatePropertyForm {
         this.address = address;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

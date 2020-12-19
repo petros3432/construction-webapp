@@ -24,7 +24,7 @@ public class Property {
     private String address;
 
     @Column(name = "Year")
-    private int year;
+    private String year;
 
     @Column(name = "Afm")
     private String afm;
@@ -72,11 +72,11 @@ public class Property {
         this.address = address;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
