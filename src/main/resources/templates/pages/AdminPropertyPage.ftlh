@@ -35,34 +35,31 @@
                 </tr>
                 </thead>
                 <tbody>
-<#--                <#if repairSearchForm??>-->
-<#--                    <#list repairSearchForm as rep>-->
-<#--                        <tr>-->
-<#--                            <td>${rep.typeOfRepair}</td>-->
-<#--                            <td>${rep.address}</td>-->
-<#--                            <td>${rep.cost} € </td>-->
-<#--                            <td>${rep.state}</td>-->
-<#--                            <td>${rep.scheduledDate}</td>-->
-<#--                            <td class="text-center"><a class="btn btn-link" href="/repair/${rep.id}/edit"><span-->
-<#--                                            data-feather="tool"></span></a></td>-->
-<#--                            <td class="text-center">-->
+                <#if propertySearchForm??>
+                    <#list propertySearchForm as prop>
+                        <tr>
+                            <td>${prop.propertyE9}</td>
+                            <td>${prop.address}</td>
+                            <td>${prop.year}</td>
+                            <td>${prop.afm}</td>
+                            <td>${prop.typeOfProperty}</td>
+                            <td class="text-center"><a class="btn btn-link" href="/property/${prop.id}/edit"><span
+                                            data-feather="tool"></span></a></td>
+                            <td class="text-center">
 
-<#--                                <button-->
-<#--                                        class="btn btn-link"-->
-<#--                                        data-toggle="modal"-->
-<#--                                        data-target="#modal"-->
-<#--                                        data-id="${rep.id}"-->
-<#--                                >-->
-<#--                                    <span data-feather="x"></span>-->
-<#--                                </button>-->
+                                <button
+                                        class="btn btn-link"
+                                        data-toggle="modal"
+                                        data-target="#modal"
+                                        data-id="${prop.id}"
+                                >
+                                    <span data-feather="x"></span>
+                                </button>
 
-<#--                            </td>-->
-<#--                        </tr>-->
-<#--                    </#list>-->
-<#--                </#if>-->
-
-
-
+                            </td>
+                        </tr>
+                    </#list>
+                </#if>
 
                 <#if properties??>
                     <#list properties as prop>

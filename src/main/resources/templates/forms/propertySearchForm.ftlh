@@ -10,7 +10,7 @@
     <div class="mb-3">
         <label for="propertyE9">E9 Number</label>
         <div class="input-group">
-            <@spring.bind "propertySearchForm.propertyE9"/>
+<#--            <@spring.bind "propertySearchForm.propertyE9"/>-->
             <input type="text" class="form-control" id="propertyE9" name="propertyE9"
                    placeholder="E9 Number">
 <#--                   placeholder="E9 Number" value="${propertySearchForm.propertyE9!''}">-->

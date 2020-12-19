@@ -26,8 +26,8 @@ public class AdvanceSearchProperty {
     private PropertyService propertyService;
 
 
-    @Autowired
-    private SearchRepairValidation searchRepairValidation;
+//    @Autowired
+//    private SearchRepairValidation searchRepairValidation;
 
 //    @InitBinder(SEARCHFORM)
 //    protected void initBinder(final WebDataBinder binder) {
