@@ -13,7 +13,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="typeOfProperty">Type of Property</label>
             <div class="input-group">
-               <select class="custom-select d-block w-100" id="propertyTypes" name="propertyTypes">
+               <select class="custom-select d-block w-100" id="typeOfProperty" name="typeOfProperty">
                     <#if propertyTypes??>
                         <#list propertyTypes as type>
                              <option value="${type}"<#if editProperty.typeOfProperty == type> selected</#if>>${type}</option>

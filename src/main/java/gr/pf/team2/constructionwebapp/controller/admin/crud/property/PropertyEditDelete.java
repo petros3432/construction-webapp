@@ -1,11 +1,13 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.property;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
+import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,9 @@ public class PropertyEditDelete {
     @Autowired
     private PropertyService propertyService;
 
+    @Autowired
+    private OwnerService ownerService;
+
     @GetMapping(value = "/property/{id}/edit")
     public String editPropertyById(@PathVariable Long id, Model model){
         PropertyModel propertyModel = propertyService.findPropertyById(id);
@@ -51,10 +56,12 @@ public class PropertyEditDelete {
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/property_edit";
         }
-        Optional<Property> propertyAddress = propertyService.findPropertyByAddress(propertyModel.getAddress());
-        Optional<Property> propertyAfm = propertyService.findPropertyByAfm(propertyModel.getAfm());
 
+        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(propertyModel.getAfm());
+        if (owner.isPresent())
+            propertyModel.setOwner(owner.get());
+        propertyService.updateProperty(propertyModel);
 
-        return "redirect:/AdminHomePage";
+        return "redirect:/AdminPropertyPage";
     }
 }

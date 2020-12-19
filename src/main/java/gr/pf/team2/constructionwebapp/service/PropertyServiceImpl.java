@@ -53,7 +53,8 @@ public class PropertyServiceImpl implements PropertyService{
         property.setPropertyE9(propertyModel.getPropertyE9());
         property.setAfm(propertyModel.getAfm());
         property.setAddress(propertyModel.getAddress());
-        return null;
+        Property property1 = propertyRepository.save(property);
+        return propertyMapper.propertyToModel(property1);
     }
     public List<PropertyModel> firstTenProperties() {
         return propertyRepository

@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.models;
 
+import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 
 
@@ -16,6 +17,16 @@ public class PropertyModel {
     private String afm;
 
     private TypeOfProperty typeOfProperty;
+
+    private Owner owner;
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
     public Long getId() {
         return id;
