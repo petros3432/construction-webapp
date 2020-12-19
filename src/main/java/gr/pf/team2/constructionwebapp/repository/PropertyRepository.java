@@ -3,8 +3,10 @@ package gr.pf.team2.constructionwebapp.repository;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,4 +33,9 @@ public interface PropertyRepository extends JpaRepository<Property,Long> {
 
     @Query(value="SELECT * FROM Property,Owner WHERE Property.Owner_id = Owner.Owner_id AND Property.Owner_id = (:id) ", nativeQuery = true)
     List<Property> findPropertyByOwner(Long id);
+
+    @Transactional
+    @Modifying
+    @Query(value="UPDATE Property SET Afm=(:afm) WHERE Property.Owner_id=(:id)", nativeQuery = true)
+    void updateProperty(Long id,String afm);
 }

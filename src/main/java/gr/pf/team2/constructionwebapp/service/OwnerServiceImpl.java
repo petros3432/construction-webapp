@@ -24,6 +24,9 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerRepository ownerRepository;
 
     @Autowired
+    private PropertyService propertyService;
+
+    @Autowired
     private OwnerMapper ownerMapper;
 
     @Override
@@ -86,13 +89,16 @@ public class OwnerServiceImpl implements OwnerService {
     public OwnerModel updateOwner(OwnerModel ownerModel) {
         Owner owner = ownerRepository.findById(ownerModel.getId()).get();
         owner.setAddress(ownerModel.getAddress());
-        owner.setAfm(ownerModel.getAfm());
         owner.setId(ownerModel.getId());
         owner.setName(ownerModel.getName());
         owner.setSurname(ownerModel.getSurname());
         owner.setTel(ownerModel.getTel());
         owner.setEmail(ownerModel.getEmail());
+        if (!owner.getAfm().equals(ownerModel.getAfm()))
+            propertyService.updateAfmFromOwner(owner.getId(),ownerModel.getAfm());
+        owner.setAfm(ownerModel.getAfm());
         Owner owner1 = ownerRepository.save(owner);
+
         return ownerMapper.ownerToModel(owner1);
     }
 

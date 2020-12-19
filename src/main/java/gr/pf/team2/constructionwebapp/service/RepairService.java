@@ -22,6 +22,8 @@ public interface RepairService {
 
     List<RepairModel> findRepairByProperty(List<Property> propertys);
 
+    void updateAddressFromProperty(Long id, String address);
+
     List<RepairModel> searchAdvanced(SearchForm searchForm) throws ExceptionsHandling;
 
 }

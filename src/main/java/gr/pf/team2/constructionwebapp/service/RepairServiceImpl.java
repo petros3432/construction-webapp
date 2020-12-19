@@ -71,6 +71,11 @@ public class RepairServiceImpl implements RepairService {
     }
 
     @Override
+    public void updateAddressFromProperty(Long id, String address) {
+            repairRepository.updateRepair(id,address);
+    }
+
+    @Override
     public RepairModel createRepair(RepairForm repairForm) {
         Repair repair = repairMapper.repairFormToRepair(repairForm);
         Repair repair1 = repairRepository.save(repair);

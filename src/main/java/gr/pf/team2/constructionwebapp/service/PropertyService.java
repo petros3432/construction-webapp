@@ -32,4 +32,6 @@ public interface PropertyService {
     PropertyModel updateProperty(PropertyModel propertyModel);
 
     List<PropertyModel> searchAdvanced(SearchFormProperty searchFormProperty) throws ExceptionsHandling;
+
+    void updateAfmFromOwner(Long id, String afm);
 }

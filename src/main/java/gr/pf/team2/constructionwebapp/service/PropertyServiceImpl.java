@@ -23,6 +23,9 @@ public class PropertyServiceImpl implements PropertyService{
     private PropertyRepository propertyRepository;
 
     @Autowired
+    private RepairService repairService;
+
+    @Autowired
     private PropertyMapper propertyMapper;
 
     @Override
@@ -58,6 +61,8 @@ public class PropertyServiceImpl implements PropertyService{
         property.setYear(propertyModel.getYear());
         property.setPropertyE9(propertyModel.getPropertyE9());
         property.setAfm(propertyModel.getAfm());
+        if (!property.getAddress().equals(propertyModel.getAddress()))
+            repairService.updateAddressFromProperty(property.getId(),propertyModel.getAddress());
         property.setAddress(propertyModel.getAddress());
         Property property1 = propertyRepository.save(property);
         return propertyMapper.propertyToModel(property1);
@@ -96,5 +101,8 @@ public class PropertyServiceImpl implements PropertyService{
         return null;
     }
 
-
+    @Override
+    public void updateAfmFromOwner(Long id, String afm) {
+        propertyRepository.updateProperty(id,afm);
+    }
 }
