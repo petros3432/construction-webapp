@@ -31,7 +31,6 @@
                         <th scope="col">Address</th>
                         <th scope="col">Tel. Number</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Type Of Property</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Remove</th>
                     </tr>
@@ -47,7 +46,6 @@
                                     <td>${owner.address}</td>
                                     <td>${owner.tel}</td>
                                     <td>${owner.email}</td>
-                                    <td>${owner.typeOfProperty}</td>
                                     <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
                                                     data-feather="tool"></span></a></td>
                                     <td class="text-center">
@@ -78,7 +76,6 @@
                                     <td>${owner.address}</td>
                                     <td>${owner.tel}</td>
                                     <td>${owner.email}</td>
-                                    <td>${owner.typeOfProperty}</td>
                                     <td class="text-center"><a class="btn btn-link" href="/owner/${owner.id}/edit"><span
                                                     data-feather="tool"></span></a></td>
                                     <td class="text-center">
