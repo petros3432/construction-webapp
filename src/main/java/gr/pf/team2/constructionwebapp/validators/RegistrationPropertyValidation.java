@@ -30,7 +30,7 @@ public class RegistrationPropertyValidation implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         CreatePropertyForm createPropertyForm = (CreatePropertyForm)  target;
-        Optional<OwnerModel> owner = ownerService.findOwnerByAfm(createPropertyForm.getAfm());
+        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(createPropertyForm.getAfm());
         Optional<Property> property =  propertyService.findPropertyByE9Property(createPropertyForm.getPropertyE9());
         if(!owner.isPresent()){
             errors.rejectValue("afm","createProperty.afm.not.existing");
@@ -39,6 +39,7 @@ public class RegistrationPropertyValidation implements Validator {
         if (property.isPresent()){
             errors.rejectValue("propertyE9","createProperty.propertyE9.in.use");
         }
+
 
 
 
