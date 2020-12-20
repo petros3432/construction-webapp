@@ -52,7 +52,7 @@
                     <select class="custom-select d-block w-100" id="typeOfRepair" name="typeOfRepair">
 
                         <#list repairTypes as type>
-                            <option value="${type}"> ${type}</option>
+                            <option value="${type.fullName}"> ${type}</option>
                         </#list>
 
                     </select>

@@ -31,17 +31,20 @@ public class EditOwnerValidation implements Validator {
         OwnerModel ownerModel = (OwnerModel) target;
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(ownerModel.getAfm());
 
-        String name1 = ownerModel.getName();
-        String name2 = owner.get().getName();
+
+      String emailModel= ownerModel.getEmail();
+
 
 
         if(!owner.isEmpty()) {
+            String email = owner.get().getEmail();
+
             String afm = owner.get().getAfm();
             String AFM = ownerModel.getAfm();
             boolean isNotTheSame = (!AFM.equals(afm));
 
-            if (!isNotTheSame){
-                errors.rejectValue("propertyE9", "createProperty.propertyE9.in.use");
+            if (!isNotTheSame&&(!emailModel.equals(email))){
+                errors.rejectValue("afm", "editOwner.afm.in.use");
             }
         }
     }

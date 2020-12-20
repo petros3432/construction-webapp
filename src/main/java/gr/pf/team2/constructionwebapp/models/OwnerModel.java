@@ -54,6 +54,11 @@ public class OwnerModel {
 
     private Long id;
 
+
+
+
+
+
     public OwnerModel(String afm, String name, String surname, String address, String tel, String email, String password, Long id, Role role) {
         this.afm = afm;
         this.name = name;

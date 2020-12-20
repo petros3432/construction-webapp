@@ -45,7 +45,7 @@
             <label for="title">Address</label>
             <div class="input-group">
                 <@spring.bind "editProperty.address"/>
-                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address">
+                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address" readonly>
             </div>
 
 
