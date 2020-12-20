@@ -8,9 +8,11 @@ jQuery(function ($) {
 
     $('#modal').on('show.bs.modal', function (event) {
         const id = event.relatedTarget.dataset.id;
+        const afm = event.relatedTarget.dataset.afm;
+        const name = event.relatedTarget.dataset.name;
         $('#deleteForm').attr('action', `/admin/owner/${id}/delete`);
         $('.modal-title').text(function () {
-            return `Owner with Security Number#${id}`;
+            return `Owner: ${name} with AFM: #${afm}`;
         });
     });
 });
