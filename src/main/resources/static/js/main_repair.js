@@ -9,9 +9,10 @@ jQuery(function ($) {
     $('#modal').on('show.bs.modal', function (event) {
         const id = event.relatedTarget.dataset.id;
         const address = event.relatedTarget.dataset.address;
+        const afm = event.relatedTarget.dataset.afm;
         $('#deleteForm').attr('action', `/admin/repair/${id}/delete`);
         $('.modal-title').text(function () {
-            return `Repair with Address: ${address}`;
+            return `Repair with Address: ${address} of Owner's AFM: ${afm}`;
         });
     });
 });

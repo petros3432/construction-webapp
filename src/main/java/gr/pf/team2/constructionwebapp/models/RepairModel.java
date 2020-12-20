@@ -45,9 +45,7 @@ public class RepairModel {
     @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{registerOwner.afm.size.invalid}")
     private String ownersAFM;
 
-
-
-    private Property Property;
+    private Property property;
 
 
     public RepairModel(String scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
@@ -82,11 +80,11 @@ public class RepairModel {
     }
 
     public Property getProperty() {
-        return Property;
+        return property;
     }
 
     public void setProperty(Property property) {
-        Property = property;
+        this.property = property;
     }
 
 

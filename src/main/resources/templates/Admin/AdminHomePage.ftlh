@@ -24,6 +24,7 @@
                     <tr>
                         <th scope="col">Type</th>
                         <th scope="col">Address</th>
+                        <th scope="col">Owner's AFM</th>
                         <th scope="col">Cost</th>
                         <th scope="col">State</th>
                         <th scope="col">Scheduled Date</th>
@@ -37,6 +38,7 @@
                             <tr>
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
+                                <td>${rep.ownersAFM}</td>
                                 <td>${rep.cost} € </td>
                                 <#if rep.state == "IN_PROGRESS">
                                     <td  style="color: #A8DADC">${rep.state}</td>
@@ -56,6 +58,7 @@
                                             data-target="#modal"
                                             data-id="${rep.id}"
                                             data-address="${rep.address}"
+                                            data-afm="${rep.ownersAFM}"
                                     >
                                         <span data-feather="x"></span>
                                     </button>
@@ -73,6 +76,7 @@
                             <tr>
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
+                                <td>${rep.ownersAFM}</td>
                                 <td>${rep.cost} € </td>
                                 <#if rep.state == "ONGOING">
                                     <td  style="color: blue">${rep.state}</td>
@@ -93,6 +97,7 @@
                                         data-target="#modal"
                                         data-id="${rep.id}"
                                         data-address="${rep.address}"
+                                        data-afm="${rep.ownersAFM}"
                                 >
                                     <span data-feather="x"></span>
                                 </button>

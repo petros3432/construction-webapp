@@ -22,7 +22,8 @@ public class RepairMapper {
         repairModel.setCost(repair.getCost());
         repairModel.setId(repair.getId());
         repairModel.setTextDesc(repair.getTextDesc());
-        repairModel.setOwnersAFM(repair.getProperty().getAfm());
+        repairModel.setProperty(repair.getProperty());
+        repairModel.setOwnersAFM(repairModel.getProperty().getAfm());
         return repairModel;
     }
 
