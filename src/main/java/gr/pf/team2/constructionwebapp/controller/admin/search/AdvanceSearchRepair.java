@@ -25,6 +25,7 @@ public class AdvanceSearchRepair {
     @Autowired
     private RepairService repairService;
 
+    @Autowired
     private SearchRepairValidation searchRepairValidation;
 
     @InitBinder(SEARCHFORM)

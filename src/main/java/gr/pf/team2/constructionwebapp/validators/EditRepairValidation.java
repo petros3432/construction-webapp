@@ -12,20 +12,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
 public class EditRepairValidation implements Validator {
 
 
-    @Autowired
-    private RepairService repairService;
 
     @Autowired
     private PropertyService propertyService;
 
-    @Autowired
-    private OwnerService ownerService;
 
 
     @Override
@@ -37,17 +34,15 @@ public class EditRepairValidation implements Validator {
     public void validate(Object target, Errors errors) {
         RepairModel repairModel = (RepairModel) target;
 
-
         String inputAFM = repairModel.getOwnersAFM();
-        Optional<Owner> ownersWithTheGivenAFM = ownerService.findOwnerByAfmOwner(inputAFM);
-        if (ownersWithTheGivenAFM.isEmpty()&&!inputAFM.isEmpty()) {
-            errors.rejectValue("ownersAFM", "create.repair.afm.IsNot.Exists");
-        }
+
 
         Optional<Property> property = propertyService.findPropertyByAddress(repairModel.getAddress());
+
+
         if (!property.isPresent()) {
-            errors.rejectValue("address"
-, "repair.address.edit.notExists.inProperty.Entity");
+            errors.rejectValue("address", "repair.address.edit.notExists.inProperty.Entity");
         }
+
     }
 }

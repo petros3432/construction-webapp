@@ -1,10 +1,12 @@
 package gr.pf.team2.constructionwebapp.validators;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
+import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 
 import gr.pf.team2.constructionwebapp.service.OwnerService;
+import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,7 +22,7 @@ import java.util.Optional;
 public class RegistrationRepairValidation implements Validator {
 
     @Autowired
-    private OwnerService ownerService;
+    private PropertyService propertyService;
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -31,12 +33,6 @@ public class RegistrationRepairValidation implements Validator {
     public void validate(Object target, Errors errors) {
         RepairForm repairForm = (RepairForm) target;
 
-        String inputAFM = repairForm.getAfmOwner();
-        Optional<Owner> ownersWithTheGivenAFM = ownerService.findOwnerByAfmOwner(inputAFM);
-        if (ownersWithTheGivenAFM.isEmpty()&&!inputAFM.isEmpty()) {
-            errors.rejectValue("afmOwner", "create.repair.afm.IsNot.Exists");
-        }
-
         LocalDate today = LocalDate.now();
         String inputdate = repairForm.getScheduledDate();
         if (!inputdate.isEmpty()) {
@@ -46,8 +42,15 @@ public class RegistrationRepairValidation implements Validator {
             if (today.isAfter(sd)) {
                 errors.rejectValue("scheduledDate", "create.repair.sceduled.date.isInThePast");
             }
-
-
         }
+
+
+        String inputAddress = repairForm.getAddress();
+        Optional<Property> property = propertyService.findPropertyByAddress(inputAddress);
+
+        if(property.isEmpty()&&!inputAddress.isEmpty()){
+            errors.rejectValue("address", "repair.address.edit.notExists.inProperty.Entity");
+        }
+
     }
 }

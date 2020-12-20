@@ -29,12 +29,12 @@ public class EditOwnerValidation implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         OwnerModel ownerModel = (OwnerModel) target;
+
+
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(ownerModel.getAfm());
 
 
       String emailModel= ownerModel.getEmail();
-
-
 
         if(!owner.isEmpty()) {
             String email = owner.get().getEmail();

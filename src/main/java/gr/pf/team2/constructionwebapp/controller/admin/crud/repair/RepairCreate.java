@@ -65,9 +65,8 @@ public class RepairCreate {
         }
 
         Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
-        Optional<Owner> owner = ownerService.findOwnerByAfmOwner(property.get().getAfm());
 
-        if(owner.isPresent() && property.isPresent() && owner.equals(ownerService.findOwnerByAfmOwner(repairCreateForm.getAfmOwner()))){
+        if(property.isPresent()){
             repairCreateForm.setProperty(property.get());
             repairService.createRepair(repairCreateForm);
             return "redirect:/admin/home";

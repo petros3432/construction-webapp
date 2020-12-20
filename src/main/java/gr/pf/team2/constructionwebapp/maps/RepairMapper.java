@@ -23,7 +23,7 @@ public class RepairMapper {
         repairModel.setId(repair.getId());
         repairModel.setTextDesc(repair.getTextDesc());
         repairModel.setProperty(repair.getProperty());
-        repairModel.setOwnersAFM(repairModel.getProperty().getAfm());
+        //repairModel.setOwnersAFM(repairModel.getProperty().getAfm());
         return repairModel;
     }
 

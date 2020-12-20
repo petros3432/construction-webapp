@@ -106,23 +106,6 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group col-md-6 text-left">
-            <label for="ownersAfm">Owner's AFM</label>
-            <div class="input-group">
-                <@spring.bind "repairCreateForm.afmOwner"/>
-                <input type="text" class="form-control" id="owner-afm" value="${repairCreateForm.afmOwner!''}"
-                       name="afmOwner">
 
-            </div>
-            <#if spring.status.error>
-                <ul>
-                    <#list spring.status.errorMessages as error>
-                        <li style="color: #dc3545">${error}</li>
-                    </#list>
-                </ul>
-            </#if>
-        </div>
-    </div>
     <button class="btn btn-lg mt-4 btnblue" type="submit">Create</button>
 </form>

@@ -28,25 +28,38 @@ public class EditPropertyValidation implements Validator {
     public void validate(Object target, Errors errors) {
         PropertyModel propertyModel = (PropertyModel) target;
 
-        Optional<Property> property = propertyService.findPropertyByE9Property(propertyModel.getPropertyE9());
-        String addressModel = propertyModel.getAddress();
 
-        if(!property.isEmpty()) {
-            String address = property.get().getAddress();
-            String e9 = property.get().getPropertyE9();
-            String e92 = propertyModel.getPropertyE9();
+        Optional<Property> pr = propertyService.findPropertyByAfm(propertyModel.getPropertyE9());
+        Optional<Property> pr2 = propertyService.findPropertyByAfm(propertyModel.getAddress());
 
 
+        String afmModel = propertyModel.getAfm();
 
-            boolean isNotTheSame = (!e9.equals(e92));
+        if (!pr.isEmpty()) {
+            String afm = pr.get().getAfm();
+
+            String e9 = pr.get().getPropertyE9();
+            String E92 = propertyModel.getPropertyE9();
+
+            String address = pr2.get().getAddress();
+            String address2 = propertyModel.getAddress();
+
+            boolean isNotTheSameE9 = (!e9.equals(E92));
+            boolean isNotTheSameAddress = (!address.equals(address2));
 
 
-            if (!isNotTheSame&&(!addressModel.equals(address))){
-                errors.rejectValue("propertyE9", "createProperty.propertyE9.in.use");
+            if (!isNotTheSameE9 && (!afmModel.equals(afm))) {
+                errors.rejectValue("e9", "e9.is.already.used");
             }
+
+            if (!isNotTheSameAddress && (!afmModel.equals(afm))) {
+                errors.rejectValue("address", "address.already.used");
+            }
+
+
         }
-
-
-
     }
+
+
 }
+

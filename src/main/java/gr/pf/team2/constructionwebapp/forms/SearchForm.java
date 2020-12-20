@@ -6,15 +6,14 @@ import javax.validation.constraints.Size;
 
 public class SearchForm {
 
-    private static final String AFM_PATTERN = "^[0-9]*$";
-    private static final int AFM_SIZE = 9;
+
 
     private String scheduledDateStart;
 
     private String scheduledDateEnd;
 
-    @Pattern(regexp = AFM_PATTERN, message = "{registerOwner.afm.pattern.invalid}")
-    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{registerOwner.afm.size.invalid}")
+//    @Pattern(regexp = AFM_PATTERN, message = "{registerOwner.afm.pattern.invalid}")
+//    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{registerOwner.afm.size.invalid}")
     private String afm;
 
     public String getScheduledDateStart() {

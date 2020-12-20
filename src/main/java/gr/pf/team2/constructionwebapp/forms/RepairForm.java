@@ -33,34 +33,18 @@ public class RepairForm {
 
     private String textDesc;
 
-    private String ownerFirstName;
 
-    private String ownerLastName;
 
-    @Pattern(regexp = AFM_PATTERN,message = "{repairCreate.afmOwner.pattern.invalid}")
-    @NotEmpty(message = "{repairCreate.afmOwner.not.null}")
-    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{repairCreate.afmOwner.size.invalid}")
-    private String afmOwner;
+
 
     private Property property;
 
-    private Owner owner;
-
-    public Owner getOwner() { return owner; }
-
-    public void setOwner(Owner owner) { this.owner = owner; }
 
     public Property getProperty() { return property; }
 
     public void setProperty(Property property) { this.property = property; }
 
-    public String getAfmOwner() {
-        return afmOwner;
-    }
 
-    public void setAfmOwner(String afmOwner) {
-        this.afmOwner = afmOwner;
-    }
 
     public String getScheduledDate() {
         return scheduledDate;
@@ -110,13 +94,7 @@ public class RepairForm {
         this.textDesc = textDesc;
     }
 
-    public String getOwnerFirstName() { return ownerFirstName; }
 
-    public void setOwnerFirstName(String ownerFirstName) { this.ownerFirstName = ownerFirstName; }
-
-    public String getOwnerLastName() { return ownerLastName; }
-
-    public void setOwnerLastName(String ownerLastName) { this.ownerLastName = ownerLastName; }
 
 
 
