@@ -108,7 +108,7 @@
             <div class="input-group">
                    <#if rep.ownersAFM??>
                        <@spring.bind "rep.ownersAFM"/>
-                       <input type="text" class="form-control" id="ownersAFM" value="${rep.ownersAFM}" name="ownersAFM">
+                       <input type="text" class="form-control" id="ownersAFM"  value="${rep.ownersAFM}" name="ownersAFM" readonly>
                    <#else>
                       <input type="text" class="form-control" id="ownersAFM" name="ownersAFM">
                   </#if>

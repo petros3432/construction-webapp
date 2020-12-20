@@ -46,8 +46,8 @@ public class EditRepairValidation implements Validator {
 
         Optional<Property> property = propertyService.findPropertyByAddress(repairModel.getAddress());
         if (!property.isPresent()) {
-            errors.rejectValue("address", "repair.address.edit.notExists.inProperty.Entity");
+            errors.rejectValue("address"
+, "repair.address.edit.notExists.inProperty.Entity");
         }
-
     }
 }

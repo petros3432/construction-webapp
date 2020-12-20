@@ -2,11 +2,11 @@ package gr.pf.team2.constructionwebapp.enums;
 
 public enum TypeOfRepair {
 
-    PAINTING("Painting"),
-    INSULATION("Insulation"),
-    FRAMES("Frames"),
-    PLUMBING("Plumbing tasks"),
-    ELECTRICAL("Electrical tasks");
+    PAINTING("PAINTING"),
+    INSULATION("INSULATION"),
+    FRAMES("FRAMES"),
+    PLUMBING("PLUMPING TASK"),
+    ELECTRICAL("ELECTRICAL TASKS");
 
 
     private String fullName;
