@@ -60,7 +60,7 @@ public class PropertyCreate {
         if(owner.isPresent()){
             createPropertyForm.setOwner(owner.get());
             propertyService.createProperty(createPropertyForm);
-            return "redirect:/admin/home";
+            return "redirect:/admin/property";
         }
         return "pages/property_create";
     }

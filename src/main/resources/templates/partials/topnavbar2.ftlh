@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="/admin/owner">
-        <img class="img-fluid" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="/AdminHomePage" style="width:60px; padding:nopadding">
+        <img class="img-fluid" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="/admin/owner" style="width:60px; padding:nopadding">
         BoBiToMastori.gr
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"

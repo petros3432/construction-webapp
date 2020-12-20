@@ -3,6 +3,7 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.domain.Repair;
+import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.forms.SearchForm;
 import gr.pf.team2.constructionwebapp.maps.RepairMapper;

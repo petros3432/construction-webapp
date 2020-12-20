@@ -1,9 +1,9 @@
 package gr.pf.team2.constructionwebapp.enums;
 
 public enum StateOfRepair {
-    DEFAULT("Waiting"),
-    IN_PROGRESS("In progress"),
-    COMPLETED("Completed");
+    WAITING("WAITING"),
+    IN_PROGRESS("IN PROGRESS"),
+    COMPLETED("COMPLETED");
 
     private String fullName;
 

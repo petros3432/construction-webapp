@@ -8,11 +8,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 public class RepairModel {
 
     private static final String COST_PATTERN = "(?!0\\.00)[1-9]\\d{0,9}(\\.(\\d|\\d\\d))?";
+    private static final String AFM_PATTERN = "^[0-9]*$";
+    private static final int AFM_SIZE = 9;
+
+
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotEmpty(message = "{repairCreate.scheduledDate.not.null}")
@@ -35,6 +40,9 @@ public class RepairModel {
 
     private String ownersName;
 
+    @NotEmpty(message = "{repair.afm.edit.not.null}")
+    @Pattern(regexp = AFM_PATTERN, message = "{registerOwner.afm.pattern.invalid}")
+    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{registerOwner.afm.size.invalid}")
     private String ownersAFM;
 
 

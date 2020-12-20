@@ -6,10 +6,12 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
+import gr.pf.team2.constructionwebapp.validators.EditRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -30,6 +32,14 @@ public class RepairEditDelete {
     @Autowired
     private PropertyService propertyService;
 
+
+    @Autowired
+    private EditRepairValidation editRepairValidation;
+
+    @InitBinder(EDIT_SERVICE)
+    protected void initBinder(final WebDataBinder binder) {
+        binder.addValidators(editRepairValidation);
+    }
 
     @GetMapping(value = "/repair/{id}/edit")
     public String editRepairById(@PathVariable Long id, Model model) {

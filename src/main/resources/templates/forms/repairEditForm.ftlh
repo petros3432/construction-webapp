@@ -6,7 +6,7 @@
             </span></i> Edit Repair</h3>
 
 
-<form id="createForm" action="/admin/repair/edit" method="post">
+<form id="createForm" action="/admin/repair/edit" name="rep" method="post">
 
     <input type="hidden" name="id" value="${rep.id}">
 
@@ -107,11 +107,21 @@
             <label for="ownersAFM">Owner's AFM</label>
             <div class="input-group">
                    <#if rep.ownersAFM??>
-                      <input type="text" class="form-control" id="ownersAFM" value="${rep.ownersAFM}" name="ownersAFM">
+                       <@spring.bind "rep.ownersAFM"/>
+                       <input type="text" class="form-control" id="ownersAFM" value="${rep.ownersAFM}" name="ownersAFM">
                    <#else>
                       <input type="text" class="form-control" id="ownersAFM" name="ownersAFM">
                   </#if>
+
             </div>
+
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
 
