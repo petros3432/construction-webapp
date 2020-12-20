@@ -38,4 +38,7 @@ public interface PropertyRepository extends JpaRepository<Property,Long> {
     @Modifying
     @Query(value="UPDATE Property SET Afm=(:afm) WHERE Property.Owner_id=(:id)", nativeQuery = true)
     void updateProperty(Long id,String afm);
+
+    @Query(value="SELECT * FROM Property WHERE Property.PropertyE9=(:propertyE9)",nativeQuery = true)
+    Optional<Property> findPropertyByE9Property(String propertyE9);
 }
