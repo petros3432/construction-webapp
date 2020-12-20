@@ -9,11 +9,11 @@ INSERT INTO Owner (Email,Password, Role) VALUES ('admin@gmail.com','$2a$10$VjOsV
 
 
 
-INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei', 'Meroglou 1' , '2000' , 'MEZONETA' , '123148359' , '2');
-INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei', 'Kolokotroni 9' , '1991' , 'MONOKATOIKIA' ,'123148359', '2');
-INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei', 'Thrakomakedonwn 35' , '2010' , 'POLIKATOIKIA' , '112257914' , '4');
-INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei', 'Mouratidou 12' , '2001' , 'POLIKATOIKIA' , '112257914' , '4');
-INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei', 'Kiriakou 5' , '2002' , 'MEZONETA' , '111145306' , '1');
+INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei1', 'Meroglou 1' , '2000' , 'MEZONETA' , '123148359' , '2');
+INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei2', 'Kolokotroni 9' , '1991' , 'MONOKATOIKIA' ,'123148359', '2');
+INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei3', 'Thrakomakedonwn 35' , '2010' , 'POLIKATOIKIA' , '112257914' , '4');
+INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei4', 'Mouratidou 12' , '2001' , 'POLIKATOIKIA' , '112257914' , '4');
+INSERT INTO Property (PropertyE9 , Address , Year , Type_of_Property , Afm , Owner_id)  VALUES ('makerwsei5', 'Kiriakou 5' , '2002' , 'MEZONETA' , '111145306' , '1');
 
 
 

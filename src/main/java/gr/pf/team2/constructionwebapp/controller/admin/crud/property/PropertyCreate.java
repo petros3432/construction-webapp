@@ -6,6 +6,7 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.CreatePropertyForm;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
+import gr.pf.team2.constructionwebapp.validators.RegistrationPropertyValidation;
 import gr.pf.team2.constructionwebapp.validators.RegistrationRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ import java.util.Optional;
 @RequestMapping("admin")
 public class PropertyCreate {
 
-    private static final String PROPERTY_CREATE_FORM = "repairCreateForm";
+    private static final String PROPERTY_CREATE_FORM = "createPropertyForm";
     private static final String PROPERTY_TYPES = "propertyTypes";
     private static final String ERROR_MESSAGE = "errorMessage";
 
@@ -32,13 +33,13 @@ public class PropertyCreate {
     @Autowired
     private OwnerService ownerService;
 
-//    @Autowired
-//    private RegistrationPropertyValidation registrationPropertyValidation;
+    @Autowired
+    private RegistrationPropertyValidation registrationPropertyValidation;
 
-//    @InitBinder(PROPERTY_CREATE_FORM)
-//    protected void initBinder(final WebDataBinder binder) {
-//        binder.addValidators(registrationPropertyValidation);
-//    }
+    @InitBinder(PROPERTY_CREATE_FORM)
+    protected void initBinder(final WebDataBinder binder) {
+        binder.addValidators(registrationPropertyValidation);
+    }
 
     @GetMapping(value = "/property/create")
     public String propertyDynamic(Model model) {
@@ -50,11 +51,11 @@ public class PropertyCreate {
     @PostMapping(value = "/property/create")
     public String createProperty(Model model, @Valid @ModelAttribute(PROPERTY_CREATE_FORM)CreatePropertyForm createPropertyForm, BindingResult bindingResult) {
 //
-//        if (bindingResult.hasErrors()) {
-//        model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
-//            model.addAttribute(ERROR_MESSAGE, "an error occurred");
-//            return "pages/property_create";
-//        }
+        if (bindingResult.hasErrors()) {
+        model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
+            model.addAttribute(ERROR_MESSAGE, "an error occurred");
+            return "pages/property_create";
+        }
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(createPropertyForm.getAfm());
         if(owner.isPresent()){
             createPropertyForm.setOwner(owner.get());

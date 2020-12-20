@@ -29,17 +29,17 @@
         <div class="form-group col-md-6 text-left">
             <label for="cost">E9 Property</label>
             <div class="input-group">
-<#--                <@spring.bind "propertyCreateForm.cost"/>-->
+                <@spring.bind "createPropertyForm.propertyE9"/>
                 <input type="text" class="form-control" id="propertyE9"  name="propertyE9">
 
             </div>
-<#--            <#if spring.status.error>-->
-<#--                <ul>-->
-<#--                    <#list spring.status.errorMessages as error>-->
-<#--                        <li style="color: #dc3545">${error}</li>-->
-<#--                    </#list>-->
-<#--                </ul>-->
-<#--            </#if>-->
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
 
@@ -48,24 +48,32 @@
         <div class="form-group col-md-6 text-left">
             <label for="address">Address</label>
             <div class="input-group">
-<#--                <@spring.bind "propertyCreateForm.address"/>-->
+                <@spring.bind "createPropertyForm.address"/>
                 <input type="text" class="form-control" id="title" name="address">
 
             </div>
-<#--            <#if spring.status.error>-->
-<#--                <ul>-->
-<#--                    <#list spring.status.errorMessages as error>-->
-<#--                        <li style="color: #dc3545">${error}</li>-->
-<#--                    </#list>-->
-<#--                </ul>-->
-<#--            </#if>-->
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
 
         <div class="form-group col-md-6 text-left">
             <label for="textDesc">Year</label>
             <div class="input-group">
+                <@spring.bind "createPropertyForm.year"/>
                 <input type="text" class="form-control" id="year" name="year">
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
 
@@ -73,18 +81,18 @@
         <div class="form-group col-md-6 text-left">
             <label for="ownersAfm">Owner's AFM</label>
             <div class="input-group">
-<#--                <@spring.bind "propertyCreateForm.afmOwner"/>-->
+                <@spring.bind "createPropertyForm.afm"/>
                 <input type="text" class="form-control" id="afm"
                        name="afm">
 
             </div>
-<#--            <#if spring.status.error>-->
-<#--                <ul>-->
-<#--                    <#list spring.status.errorMessages as error>-->
-<#--                        <li style="color: #dc3545">${error}</li>-->
-<#--                    </#list>-->
-<#--                </ul>-->
-<#--            </#if>-->
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
     <button class="btn btn-lg mt-4 btnblue" type="submit">Create</button>

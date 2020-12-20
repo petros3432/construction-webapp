@@ -31,4 +31,6 @@ public interface PropertyRepository extends JpaRepository<Property,Long> {
 
     @Query(value="SELECT * FROM Property,Owner WHERE Property.Owner_id = Owner.Owner_id AND Property.Owner_id = (:id) ", nativeQuery = true)
     List<Property> findPropertyByOwner(Long id);
+    @Query(value="SELECT * FROM Property WHERE Property.PropertyE9=(:propertyE9)",nativeQuery = true)
+    Optional<Property> findPropertyByE9Property(String propertyE9);
 }

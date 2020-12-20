@@ -24,6 +24,10 @@ public class PropertyServiceImpl implements PropertyService{
 
     @Autowired
     private PropertyMapper propertyMapper;
+    @Override
+    public Optional<Property> findPropertyByE9Property(String propertyE9){
+        return propertyRepository.findPropertyByE9Property(propertyE9);
+    }
 
     @Override
     public Optional<Property> findPropertyByAddress(String address) { return propertyRepository.findPropertyByAddress(address); }

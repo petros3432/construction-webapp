@@ -16,6 +16,7 @@ import java.util.Optional;
 public interface PropertyService {
 
     Optional<Property> findPropertyByAddress(String address);
+    Optional<Property> findPropertyByE9Property(String propertyE9);
 
     Optional<Property> findPropertyByAfm(String Afm);
 
