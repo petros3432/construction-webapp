@@ -29,13 +29,19 @@ public class EditPropertyValidation implements Validator {
         PropertyModel propertyModel = (PropertyModel) target;
 
         Optional<Property> property = propertyService.findPropertyByE9Property(propertyModel.getPropertyE9());
+        String addressModel = propertyModel.getAddress();
 
         if(!property.isEmpty()) {
+            String address = property.get().getAddress();
             String e9 = property.get().getPropertyE9();
             String e92 = propertyModel.getPropertyE9();
+
+
+
             boolean isNotTheSame = (!e9.equals(e92));
 
-            if (!isNotTheSame){
+
+            if (!isNotTheSame&&(!addressModel.equals(address))){
                 errors.rejectValue("propertyE9", "createProperty.propertyE9.in.use");
             }
         }
