@@ -38,7 +38,13 @@
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
                                 <td>${rep.cost} € </td>
-                                <td>${rep.state}</td>
+                                <#if rep.state == "IN_PROGRESS">
+                                    <td  style="color: #A8DADC">${rep.state}</td>
+                                <#elseif rep.state == "COMPLETED">
+                                    <td  style="color: green">${rep.state}</td>
+                                <#else>
+                                    <td  style="color: blue">${rep.state}</td>
+                                </#if>
                                 <td>${rep.scheduledDate}</td>
                                 <td class="text-center"><a class="btn btn-link" href="/admin/repair/${rep.id}/edit"><span
                                                 data-feather="tool"></span></a></td>
@@ -68,7 +74,14 @@
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
                                 <td>${rep.cost} € </td>
-                                <td>${rep.state}</td>
+                                <#if rep.state == "ONGOING">
+                                    <td  style="color: blue">${rep.state}</td>
+                                <#elseif rep.state == "COMPLETED">
+                                    <td  style="color: green">${rep.state}</td>
+                                <#else>
+                                    <td  style="color: red">${rep.state}</td>
+                                </#if>
+
                                 <td>${rep.scheduledDate}</td>
                                 <td class="text-center"><a class="btn btn-link" href="/admin/repair/${rep.id}/edit"><span
                                                 data-feather="tool"></span></a></td>
