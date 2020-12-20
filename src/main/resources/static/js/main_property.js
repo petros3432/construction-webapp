@@ -8,9 +8,10 @@ jQuery(function ($) {
 
     $('#modal').on('show.bs.modal', function (event) {
         const id = event.relatedTarget.dataset.id;
+        const address = event.relatedTarget.dataset.address;
         $('#deleteForm').attr('action', `/admin/property/${id}/delete`);
         $('.modal-title').text(function () {
-            return `Property #${id}`;
+            return `Property with Address: ${address}`;
         });
     });
 });

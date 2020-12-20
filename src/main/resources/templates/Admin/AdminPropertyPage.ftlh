@@ -16,7 +16,7 @@
         <h3 class="mb-3">
             <span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-home"></i>
-            </span></i> Properties</h3>
+            </span> Properties</h3>
 
         <div class="table-responsive">
             <table class="table table-sm table-striped table-hover table-borderless" style="text-align:center;"
@@ -27,7 +27,7 @@
                     <th scope="col">Address</th>
                     <th scope="col">Year of Construction</th>
                     <th scope="col">Owner's Afm</th>
-                    <th scope="col">Type of Propery</th>
+                    <th scope="col">Type of Property</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Remove</th>
                 </tr>
@@ -50,6 +50,7 @@
                                         data-toggle="modal"
                                         data-target="#modal"
                                         data-id="${prop.id}"
+                                        data-address="${prop.address}"
                                 >
                                     <span data-feather="x"></span>
                                 </button>
@@ -76,6 +77,7 @@
                                         data-toggle="modal"
                                         data-target="#modal"
                                         data-id="${prop.id}"
+                                        data-address="${prop.address}"
                                 >
                                     <span data-feather="x"></span>
                                 </button>
@@ -103,6 +105,7 @@
                         </div>
                         <div class="modal-body">
                             <p>Are you sure?</p>
+                            <p>Deleting this Property will also delete all Repairs that belongs to this Property!</p>
                         </div>
                         <div class="modal-footer">
                             <form method="post" id="deleteForm">
@@ -115,7 +118,6 @@
             </div>
         </div>
     </main>
-</div>
 </div>
 <#include "../partials/scripts_property.ftlh">
 <#include "../partials/script-datepicker.ftlh">

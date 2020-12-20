@@ -11,7 +11,7 @@ jQuery(function ($) {
         const address = event.relatedTarget.dataset.address;
         $('#deleteForm').attr('action', `/admin/repair/${id}/delete`);
         $('.modal-title').text(function () {
-            return `Repair with address #${address}`;
+            return `Repair with Address: ${address}`;
         });
     });
 });

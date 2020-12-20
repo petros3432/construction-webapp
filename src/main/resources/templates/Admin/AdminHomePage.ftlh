@@ -49,6 +49,7 @@
                                             data-toggle="modal"
                                             data-target="#modal"
                                             data-id="${rep.id}"
+                                            data-address="${rep.address}"
                                     >
                                         <span data-feather="x"></span>
                                     </button>
@@ -78,6 +79,7 @@
                                         data-toggle="modal"
                                         data-target="#modal"
                                         data-id="${rep.id}"
+                                        data-address="${rep.address}"
                                 >
                                     <span data-feather="x"></span>
                                 </button>
