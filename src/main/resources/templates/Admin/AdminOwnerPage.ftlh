@@ -2,11 +2,8 @@
 <html>
 
 <head>
-    <title>Admin Home Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/../css/main2.css" rel="stylesheet"/>
-    <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
+    <title>Owner Page</title>
+    <#include "../partials/header.ftlh">
 </head>
 
 
@@ -55,6 +52,8 @@
                                                 data-toggle="modal"
                                                 data-target="#modal"
                                                 data-id="${owner.id}"
+                                                data-name="${owner.name} ${owner.surname}"
+                                                data-afm="${owner.afm}"
                                         >
                                             <span data-feather="x"></span>
                                         </button>
@@ -81,10 +80,13 @@
                                     <td class="text-center">
 
                                         <button
+                                                id="${owner.id}"
                                                 class="btn btn-link"
                                                 data-toggle="modal"
                                                 data-target="#modal"
                                                 data-id="${owner.id}"
+                                                data-name="${owner.name} ${owner.surname}"
+                                                data-afm="${owner.afm}"
                                         >
                                             <span data-feather="x"></span>
                                         </button>
@@ -110,6 +112,7 @@
                             </div>
                             <div class="modal-body">
                                 <p>Are you sure?</p>
+                                <p>Deleting this Owner will also delete all Properties and Repairs that belongs to this Owner!</p>
                             </div>
                             <div class="modal-footer">
                                 <form method="post" id="deleteForm">

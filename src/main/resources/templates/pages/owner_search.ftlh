@@ -2,10 +2,8 @@
 <html>
 
 <head>
-    <title>Owner Search</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="/../css/main2.css" rel="stylesheet"/>
-    <link rel="icon" href="/../css/helmet.png" type="image/x-icon">
+    <title>Search Owner</title>
+    <#include "../partials/header.ftlh">
 </head>
 
 
