@@ -4,10 +4,12 @@ import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
+import gr.pf.team2.constructionwebapp.validators.EditOwnerValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,7 +19,6 @@ import javax.validation.Valid;
 public class OwnerEditDelete {
 
     private static final String EDIT_SERVICE = "owner";
-   // private static final String PROPERTY_TYPE = "PropertyTypes";
     private static final String ERROR_MESSAGE = "errormessage";
 
 
@@ -26,6 +27,14 @@ public class OwnerEditDelete {
 
     @Autowired
     private OwnerMapper ownerMapper;
+
+    @Autowired
+    private EditOwnerValidation editOwnerValidation;
+
+    @InitBinder(EDIT_SERVICE)
+    protected void initBinder(final WebDataBinder binder) {
+        binder.addValidators(editOwnerValidation);
+    }
 
     @GetMapping(value = "/owner/{id}/edit")
     public String editOwnerById(@PathVariable Long id, Model model) {
@@ -49,6 +58,7 @@ public class OwnerEditDelete {
             model.addAttribute(ERROR_MESSAGE, "validation errors occurred");
             return "pages/owner_edit";
         }
+
 
         ownerService.updateOwner(ownerModel);
         return "redirect:/admin/owner";

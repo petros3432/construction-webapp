@@ -5,7 +5,7 @@
             <i class="fas fa-user-edit"></i>
             </span></i> Edit Owner </h3>
 
-<form id="createForm" action="/admin/owner/edit" method="post">
+<form id="createForm" action="/admin/owner/edit" name="owner" method="post">
     <input type="hidden" name="id" value="${owner.id}">
 
     <div class="row">
