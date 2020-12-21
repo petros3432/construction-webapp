@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/admin/repair">
+    <a class="navbar-brand" href="/user/home">
         <img class="img-fluid" src="/../css/engineer.svg" alt="Kiwi standing on oval" href="User/OwnerHomePage" style="width:60px; padding:nopadding">
         BoBiToMastori.gr
     </a>

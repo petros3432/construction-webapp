@@ -16,7 +16,6 @@ import javax.validation.Valid;
 @RequestMapping("admin")
 public class OwnerCreate {
     private static final String REGISTER_FORM = "registerOwnerForm";
-   // private static final String TYPE_OF_PROPERTIES = "typeOfProperties";
     private static final String ERROR_MESSAGE = "errorMessage";
 
     @Autowired

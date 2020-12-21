@@ -18,8 +18,8 @@
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
                 <@spring.bind "rep.scheduledDate"/>
-                <input type="text" class="form-control datepicker" value="${rep.scheduledDate}"
-                       name="scheduledDate">
+                <input type="text" class="form-control datepicker" value="${rep.scheduledDate} "
+                       name="scheduledDate" required>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -64,7 +64,7 @@
             <label for="cost">Cost € </label>
             <div class="input-group">
                 <@spring.bind "rep.cost"/>
-                <input type="text" class="form-control" value="${rep.cost}" id="cost" name="cost">
+                <input type="text" class="form-control" value="${rep.cost}" id="cost" name="cost" required>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -81,7 +81,7 @@
             <label for="title">Address</label>
             <div class="input-group">
                 <@spring.bind "rep.address"/>
-                <input type="text" class="form-control" id="address" value="${rep.address}" name="address">
+                <input type="text" class="form-control" id="address" value="${rep.address}" name="address" required>
             </div>
             <#if spring.status.error>
                 <ul>

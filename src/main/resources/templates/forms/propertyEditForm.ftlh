@@ -63,7 +63,7 @@
             <label for="cost">Afm</label>
             <div class="input-group">
 
-                <input type="text" class="form-control" value="${editProperty.afm}" id="afm" name="afm" readonly>
+                <p>  ${editProperty.afm} </p>
             </div>
         </div>
     </div>

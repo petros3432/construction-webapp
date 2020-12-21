@@ -12,7 +12,7 @@
             <div class="inputGroupContainer">
                                 <@spring.bind "registerOwnerForm.name"/>
                 <input type="text" class="form-control" name="name" id="name"
-                       placeholder="Name" value="${registerOwnerForm.name!''}">
+                       placeholder="Name" value="${registerOwnerForm.name!''}" required>
                                 <#if spring.status.error>
                                     <ul>
                                         <#list spring.status.errorMessages as error>
@@ -28,7 +28,7 @@
             <div class="inputGroupContainer">
                                 <@spring.bind "registerOwnerForm.surname"/>
                 <input type="text" class="form-control" name="surname" id="surname"
-                       placeholder="Surname" required value="${registerOwnerForm.surname!''}">
+                       placeholder="Surname" required value="${registerOwnerForm.surname!''}" required >
                                 <#if spring.status.error>
                                     <ul>
                                         <#list spring.status.errorMessages as error>
@@ -46,7 +46,7 @@
             <div class="inputGroupContainer">
                                 <@spring.bind "registerOwnerForm.address"/>
                 <input type="text" class="form-control"  id="address" name="address"
-                       placeholder="Address" required value="${registerOwnerForm.address!''}">
+                       placeholder="Address" required value="${registerOwnerForm.address!''}" required>
                                 <#if spring.status.error>
                                     <ul>
                                         <#list spring.status.errorMessages as error>
@@ -121,7 +121,7 @@
             <div class="inputGroupContainer">
                                 <@spring.bind "registerOwnerForm.password"/>
                 <input type="password" class="form-control" name="password"
-                       id="inputPassword3" placeholder="Password" value="${registerOwnerForm.password!''}">
+                       id="inputPassword3" placeholder="Password" value="${registerOwnerForm.password!''}" required>
                                 <#if spring.status.error>
                                     <ul>
                                         <#list spring.status.errorMessages as error>

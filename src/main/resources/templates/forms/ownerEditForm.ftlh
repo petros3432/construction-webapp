@@ -13,7 +13,7 @@
             <label for="cost">Name</label>
             <div class="input-group">
                 <@spring.bind "owner.name"/>
-                <input type="text" class="form-control" value="${owner.name!''}" id="name" name="name">
+                <input type="text" class="form-control" value="${owner.name!''}" id="name" name="name" required>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -28,7 +28,7 @@
             <label for="cost">Surname</label>
             <div class="input-group">
                 <@spring.bind "owner.surname"/>
-                <input type="text" class="form-control" value="${owner.surname}" id="surname" name="surname">
+                <input type="text" class="form-control" value="${owner.surname}" id="surname" name="surname" required>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -44,7 +44,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="title">Address</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="address" value="${owner.address}" name="address">
+                <input type="text" class="form-control" id="address" value="${owner.address}" name="address" required>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
             <label for="cost">Afm</label>
             <div class="input-group">
                 <@spring.bind "owner.afm"/>
-                <input type="text" class="form-control" value="${owner.afm}" id="afm" name="afm">
+                <input type="text" class="form-control" value="${owner.afm}" id="afm" name="afm" required>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -69,7 +69,7 @@
             <label for="title">Email</label>
             <div class="input-group">
                 <@spring.bind "owner.email"/>
-                <input type="text" class="form-control" id="email" value="${owner.email}" name="email" readonly>
+                <p> ${owner.email} </p>
             </div>
             <#if spring.status.error>
                 <ul>
@@ -85,7 +85,7 @@
             <label for="title">Telephone</label>
             <div class="input-group">
                 <@spring.bind "owner.tel"/>
-                <input type="text" class="form-control" id="tel" value="${owner.tel}" name="tel">
+                <input type="text" class="form-control" id="tel" value="${owner.tel}" name="tel" required>
             </div>
             <#if spring.status.error>
                 <ul>

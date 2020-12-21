@@ -59,13 +59,13 @@ public class RepairCreate {
             return "pages/repair_create";
         }
 
-        Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
+    Optional<Property> property = propertyService.findPropertyByAddress(repairCreateForm.getAddress());
 
         if(property.isPresent()){
             repairCreateForm.setProperty(property.get());
             repairService.createRepair(repairCreateForm);
             return "redirect:/admin/home";
         }
-        return "pages/repair_create";
+      return "pages/repair_create";
     }
 }

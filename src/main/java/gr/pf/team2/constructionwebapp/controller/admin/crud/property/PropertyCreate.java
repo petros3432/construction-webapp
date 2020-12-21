@@ -50,11 +50,13 @@ public class PropertyCreate {
     public String createProperty(Model model, @Valid @ModelAttribute(PROPERTY_CREATE_FORM)CreatePropertyForm createPropertyForm, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-        model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
+            model.addAttribute(PROPERTY_TYPES, TypeOfProperty.values());
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             return "pages/property_create";
         }
+
         Optional<Owner> owner = ownerService.findOwnerByAfmOwner(createPropertyForm.getAfm());
+
         if(owner.isPresent()){
             createPropertyForm.setOwner(owner.get());
             propertyService.createProperty(createPropertyForm);

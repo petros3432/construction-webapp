@@ -15,7 +15,7 @@
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
                 <@spring.bind "repairCreateForm.scheduledDate"/>
-                <input type="text" class="form-control datepicker" name="scheduledDate">
+                <input type="text" class="form-control datepicker" name="scheduledDate" required>
 
             </div>
             <#if spring.status.error>
@@ -66,7 +66,7 @@
             <label for="cost">Cost €</label>
             <div class="input-group">
                 <@spring.bind "repairCreateForm.cost"/>
-                <input type="text" class="form-control" id="cost" value="${repairCreateForm.cost!''}" name="cost">
+                <input type="text" class="form-control" id="cost" value="${repairCreateForm.cost!''}" name="cost" required>
 
             </div>
             <#if spring.status.error>
@@ -86,7 +86,7 @@
             <div class="input-group">
                 <@spring.bind "repairCreateForm.address"/>
                 <input type="text" class="form-control" id="title" value="${repairCreateForm.address!''}"
-                       name="address">
+                       name="address" required>
 
             </div>
             <#if spring.status.error>
@@ -101,7 +101,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="textDesc">Description</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="textDesc" name="textDesc">
+                <input type="text" class="form-control" id="textDesc" name="textDesc" value="${repairCreateForm.textDesc!'-'}">
             </div>
         </div>
     </div>
