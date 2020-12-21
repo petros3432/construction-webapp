@@ -1,5 +1,6 @@
 package gr.pf.team2.constructionwebapp.service;
 
+import gr.pf.team2.constructionwebapp.configuration.SecurityConfig;
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
@@ -11,6 +12,7 @@ import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,6 +30,9 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Autowired
     private OwnerMapper ownerMapper;
+
+    @Autowired
+    private SecurityConfig securityConfig;
 
     @Override
     public OwnerModel findOwnerById(Long id) {
@@ -56,9 +61,17 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Override
     public void deleteById(Long id) {
-//        repairRepository.deleteBy(ow)
         ownerRepository.deleteById(id);
     }
+
+    public String hashPassword(String inputPassword) {
+
+        String passwordsToBeHashed ;
+        passwordsToBeHashed = securityConfig.passwordEncoder().encode(inputPassword);
+        return passwordsToBeHashed;
+
+    }
+
 
     @Override
     public Owner register(RegisterOwnerForm registerOwnerForm){
@@ -69,7 +82,7 @@ public class OwnerServiceImpl implements OwnerService {
                 registerOwnerForm.getAddress(),
                 registerOwnerForm.getTel(),
                 registerOwnerForm.getEmail(),
-                registerOwnerForm.getPassword(),
+                hashPassword(registerOwnerForm.getPassword()),
                 USER
         );
         Owner savedOwner = ownerRepository.save(owner);

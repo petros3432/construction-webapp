@@ -21,7 +21,6 @@ public interface OwnerService {
 
     Owner findOwnerByEmail(String email);
 
-//    Owner addOwnerProperty(Owner owner);
 
     List<Owner> getAllOwners();
 
@@ -30,7 +29,6 @@ public interface OwnerService {
     Owner register(RegisterOwnerForm registerOwnerForm);
 
     OwnerModel updateOwner(OwnerModel ownerModel);
-    //List<String> findAllNames();
 
     List<OwnerModel> searchAdvanced(SearchFormOwner searchFormOwner) throws ExceptionsHandling;
 
