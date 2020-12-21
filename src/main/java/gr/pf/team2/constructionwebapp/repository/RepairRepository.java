@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,12 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
 
     @Query(value="SELECT TOP 10 * FROM Repair ORDER BY Scheduled_Date_Of_Repair DESC", nativeQuery = true)
     List<Repair> firstTenRepairs();
+
+
+    @Query(value= "SELECT * FROM Repair WHERE (SELECT DATEDIFF(minute , Scheduled_Date_Of_Repair , CAST(GETDATE() AS DATE))) < 0 Order By Scheduled_Date_Of_Repair ;" , nativeQuery = true)
+    List<Repair> nextTenRepairs();
+
+
 
     Optional<Repair> findById(Long id);
 

@@ -27,7 +27,8 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public List<RepairModel> firstTenRepairs() {
         return repairRepository
-                .firstTenRepairs()
+               // .firstTenRepairs()
+                .nextTenRepairs()
                 .stream()
                 .map(repair -> repairMapper.repairToModel(repair))
                 .collect(Collectors.toList());
@@ -48,7 +49,7 @@ public class RepairServiceImpl implements RepairService {
         repair.setScheduledDate(repairMapper.parseLocalDateFromString(repairModel.getScheduledDate()));
         repair.setTextDesc(repairModel.getTextDesc());
         repair.setProperty(repairModel.getProperty());
-        Repair repair1 = repairRepository.save(repair);
+        repairRepository.save(repair);
         return repairMapper.repairToModel(repair);
     }
 

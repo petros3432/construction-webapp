@@ -17,7 +17,7 @@
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
                 </div>
                 <@spring.bind "rep.scheduledDate"/>
-                <input type="text" class="form-control datepicker" value="${rep.scheduledDate} "
+                <input type="text" class="form-control datepicker" value="${rep.scheduledDate}"
                        name="scheduledDate" required>
             </div>
             <#if spring.status.error>
