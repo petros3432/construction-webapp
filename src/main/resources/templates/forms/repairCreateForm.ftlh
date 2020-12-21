@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="datepicker">Date</label>
+            <label for="datepicker">Date*</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
@@ -28,7 +28,7 @@
         </div>
         <#if repairStates??>
         <div class="form-group col-md-6 text-left">
-            <label for="stateOfRepair">State of Repair</label>
+            <label for="stateOfRepair">State of Repair*</label>
             <div class="input-group">
                 <select class="custom-select d-block w-100" id="stateOfRepair" name="state">
 
@@ -47,7 +47,7 @@
         <#if repairTypes??>
 
             <div class="form-group col-md-6 text-left">
-                <label for="typeOfRepair">Type of Repair</label>
+                <label for="typeOfRepair">Type of Repair*</label>
                 <div class="input-group">
                     <select class="custom-select d-block w-100" id="typeOfRepair" name="typeOfRepair">
 
@@ -63,7 +63,7 @@
 
         <#--    </div>-->
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Cost €</label>
+            <label for="cost">Cost* €</label>
             <div class="input-group">
                 <@spring.bind "repairCreateForm.cost"/>
                 <input type="text" class="form-control" id="cost" value="${repairCreateForm.cost!''}" name="cost" required>
@@ -82,7 +82,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="address">Address</label>
+            <label for="address">Address*</label>
             <div class="input-group">
                 <@spring.bind "repairCreateForm.address"/>
                 <input type="text" class="form-control" id="title" value="${repairCreateForm.address!''}"
@@ -105,7 +105,12 @@
             </div>
         </div>
     </div>
-
-
-    <button class="btn btn-lg mt-4 btnblue" type="submit">Create</button>
+    <div class="row">
+        <div class="form-group col-md-6 text-left">
+            <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
+        </div>
+        <div class="form-group col-md-6 text-right">
+            <small> *Required Fields</small>
+        </div>
+    </div>
 </form>

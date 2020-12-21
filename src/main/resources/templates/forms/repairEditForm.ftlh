@@ -5,14 +5,13 @@
             <i class="fas fa-edit"></i>
             </span></i> Edit Repair</h3>
 
-
 <form id="createForm" action="/admin/repair/edit" name="rep" method="post">
 
     <input type="hidden" name="id" value="${rep.id}">
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="datepicker">Date</label>
+            <label for="datepicker">Date*</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span data-feather="calendar"></span></span>
@@ -32,7 +31,7 @@
 
 
         <div class="form-group col-md-6 text-left">
-            <label for="state">State of Repair</label>
+            <label for="state">State of Repair*</label>
             <div class="input-group">
                 <select class="custom-select d-block w-100" id="state" name="state">
                     <#if repairStates??>
@@ -48,7 +47,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="typeOfRepair">Type of Repair</label>
+            <label for="typeOfRepair">Type of Repair*</label>
             <div class="input-group">
                 <select class="custom-select d-block w-100" id="typeOfRepair" name="typeOfRepair">
                     <#if repairTypes??>
@@ -61,7 +60,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Cost € </label>
+            <label for="cost">Cost* € </label>
             <div class="input-group">
                 <@spring.bind "rep.cost"/>
                 <input type="text" class="form-control" value="${rep.cost}" id="cost" name="cost" required>
@@ -78,7 +77,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="title">Address</label>
+            <label for="title">Address*</label>
             <div class="input-group">
                 <@spring.bind "rep.address"/>
                 <input type="text" class="form-control" id="address" value="${rep.address}" name="address" required>
@@ -104,8 +103,13 @@
         </div>
 
     </div>
+    <div class="row">
+        <div class="form-group col-md-6 text-left">
+            <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
+        </div>
+        <div class="form-group col-md-6 text-right">
+            <small> *Required Fields</small>
+        </div>
+    </div>
 
-
-
-    <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
 </form>

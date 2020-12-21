@@ -9,6 +9,9 @@ th {
     color: #F1FAEE;
     font-weight: 200;
 }
+.form-group{
+    margin-bottom: 0.5rem;
+}
 .btnblue{
     background-color: #457B9D;
     color: whitesmoke;

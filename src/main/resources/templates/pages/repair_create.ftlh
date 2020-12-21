@@ -11,7 +11,7 @@
 <#include "../partials/topnavbar1.ftlh">
 
 <div class="container-fluid">
-    <div class="row mt-4">
+    <div class="row mt-2">
         <#--Table for the repair items-->
         <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4">
             <div class="row">

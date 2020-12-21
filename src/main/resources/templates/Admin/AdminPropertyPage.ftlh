@@ -12,7 +12,7 @@
 <#include "../partials/topnavbar3.ftlh">
 
 <div class="container-fluid">
-    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 mt-4">
+    <main role="main" class="mx-auto col-md-9 col-lg-10 pt-3 px-4 mt-2">
         <h3 class="mb-3">
             <span style="font-size: 1em; color: #E63946;">
             <i class="fas fa-home"></i>

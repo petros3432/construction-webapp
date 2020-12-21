@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="propertyE9">Property Identity</label>
+            <label for="propertyE9">Property Identity*</label>
             <div class="input-group">
                 <@spring.bind "editProperty.propertyE9"/>
                 <input type="text" class="form-control" value="${editProperty.propertyE9}" id="propertyE9"
@@ -42,10 +42,10 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="title">Address</label>
+            <label for="title">Address*</label>
             <div class="input-group">
                 <@spring.bind "editProperty.address"/>
-                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address" >
+                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address" required>
             </div>
 
 
@@ -62,7 +62,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="cost">Afm</label>
             <div class="input-group">
-                <p class="mt-2 ml-3" style="font-size: large">  ${editProperty.afm} </p>
+                <p class="mt-2 ml-3" style="font-size: large">${editProperty.afm}</p>
             </div>
         </div>
     </div>
@@ -70,11 +70,11 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="title">Property Year</label>
+            <label for="title">Property Year*</label>
             <div class="input-group">
 
                 <@spring.bind "editProperty.year"/>
-                <input type="text" class="form-control" id="year" value="${editProperty.year}" name="year">
+                <input type="text" class="form-control" id="year" value="${editProperty.year}" name="year" required>
 
             </div>
 
@@ -85,6 +85,9 @@
                     </#list>
                 </ul>
             </#if>
+        </div>
+        <div class="form-group col-md-6 text-right">
+            <small> *Required Fields</small>
         </div>
     </div>
 

@@ -11,7 +11,7 @@
         <#if propertyTypes??>
 
             <div class="form-group col-md-6 text-left">
-                <label for="typeOfProperty">Type of property</label>
+                <label for="typeOfProperty">Type of property*</label>
                 <div class="input-group">
                     <select class="custom-select d-block w-100" id="typeOfproperty" name="typeOfProperty">
 
@@ -27,7 +27,7 @@
 
         <#--    </div>-->
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Property Identity</label>
+            <label for="cost">Property Identity*</label>
             <div class="input-group">
                 <@spring.bind "createPropertyForm.propertyE9"/>
                 <input type="text" class="form-control" id="propertyE9"  name="propertyE9" value="${createPropertyForm.propertyE9!''}" required>
@@ -46,7 +46,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="address">Address</label>
+            <label for="address">Address*</label>
             <div class="input-group">
                 <@spring.bind "createPropertyForm.address"/>
                 <input type="text" class="form-control" id="title" name="address" value="${createPropertyForm.address!''}" required>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="textDesc">Year</label>
+            <label for="textDesc">Year*</label>
             <div class="input-group">
                 <@spring.bind "createPropertyForm.year"/>
                 <input type="text" class="form-control" id="year" name="year" value="${createPropertyForm.year!''}" required>
@@ -79,7 +79,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="ownersAfm">Owner's AFM</label>
+            <label for="ownersAfm">Owner's AFM*</label>
             <div class="input-group">
                 <@spring.bind "createPropertyForm.afm"/>
                 <input type="text" class="form-control" id="afm"
@@ -93,6 +93,9 @@
                     </#list>
                 </ul>
             </#if>
+        </div>
+        <div class="form-group col-md-6 text-right">
+            <small> *Required Fields</small>
         </div>
     </div>
     <button class="btn btn-lg mt-4 btnblue" type="submit">Create</button>

@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Name</label>
+            <label for="cost">Name*</label>
             <div class="input-group">
                 <@spring.bind "owner.name"/>
                 <input type="text" class="form-control" value="${owner.name!''}" id="name" name="name" required>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Surname</label>
+            <label for="cost">Surname*</label>
             <div class="input-group">
                 <@spring.bind "owner.surname"/>
                 <input type="text" class="form-control" value="${owner.surname}" id="surname" name="surname" required>
@@ -42,14 +42,14 @@
 
     <div class="row">
         <div class="form-group col-md-6 text-left">
-            <label for="title">Address</label>
+            <label for="title">Home Address*</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="address" value="${owner.address}" name="address" required>
             </div>
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="cost">Afm</label>
+            <label for="cost">Afm*</label>
             <div class="input-group">
                 <@spring.bind "owner.afm"/>
                 <input type="text" class="form-control" value="${owner.afm}" id="afm" name="afm" required>
@@ -82,7 +82,7 @@
 
 
         <div class="form-group col-md-6 text-left">
-            <label for="title">Telephone</label>
+            <label for="title">Telephone*</label>
             <div class="input-group">
                 <@spring.bind "owner.tel"/>
                 <input type="text" class="form-control" id="tel" value="${owner.tel}" name="tel" required>
@@ -95,10 +95,13 @@
                 </ul>
             </#if>
         </div>
-
-
     </div>
-
-
-    <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
+    <div class="row">
+        <div class="form-group col-md-6 text-left">
+        <button class="btn btn-lg mt-4 btnblue" type="submit">Submit</button>
+            </div>
+        <div class="form-group col-md-6 text-right">
+        <small> *Required Fields</small>
+            </div>
+    </div>
 </form>
