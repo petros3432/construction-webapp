@@ -20,6 +20,8 @@ public class AdminRepairControllerHome {
     private static final String TOP_10_REPAIRS = "top10rep";
     private static final String REGISTER_FORM = "registerRepairForm";
     private static final String OWNERS_REPAIRS = "repairs";
+    private static final String NAME = "name";
+    private static final String SURNAME = "surname";
 
     @Autowired
     private RepairService repairService;
@@ -56,6 +58,8 @@ public class AdminRepairControllerHome {
 
         List<Property> propertys = propertyService.findPropertyByOwner(owner.getId());
         List<RepairModel> repairs = repairService.findRepairByProperty(propertys);
+        model.addAttribute(NAME, owner.getName());
+        model.addAttribute(SURNAME, owner.getSurname());
         model.addAttribute(OWNERS_REPAIRS, repairs);
         return "User/OwnerHomePage";
 

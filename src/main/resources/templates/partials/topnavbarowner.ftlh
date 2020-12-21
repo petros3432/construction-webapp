@@ -10,7 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="ml-1 mr-auto navbar-nav mt-2 mt-lg-0">
         </ul>
-        <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0" >
+        <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0 inline" >
+            <a class="nav-link" >
+                <span class="d-inline text-truncate">
+                    <i class="fas fa-user mr-1"></i>
+                    ${name} ${surname}</span></a>
             <a class="btn btn-logout" href="/logout">
                 <span data-feather="log-out"></span>
                 Logout

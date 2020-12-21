@@ -26,7 +26,10 @@
                 <a class="nav-link" href="/admin/property/search"><span data-feather="search"></span>Search Property</a>
             </li>
         </ul>
-        <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0" >
+        <ul class="ml-1 mr-lg-0 navbar-nav mt-2 mt-lg-0">
+            <a class="nav-link" >
+                <span class="d-inline text-truncate">
+                    <i class="fas fa-user-astronaut mr-1"></i>ADMIN</span></a>
             <a class="btn btn-logout" href="/logout">
                 <span data-feather="log-out"></span>
                 Logout
