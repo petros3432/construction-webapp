@@ -1,6 +1,5 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.owner;
 
-import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;

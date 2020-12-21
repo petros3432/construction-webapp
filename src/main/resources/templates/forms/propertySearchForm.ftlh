@@ -8,12 +8,11 @@
 <form id="createForm" action="/admin/property/search" name="propertySearchForm" method="post">
 
     <div class="mb-3">
-        <label for="propertyE9">E9 Number</label>
+        <label for="propertyE9">Property Identity</label>
         <div class="input-group">
             <@spring.bind "propertySearchForm.propertyE9"/>
             <input type="text" class="form-control" id="propertyE9" name="propertyE9"
                  >
-<#--                   placeholder="E9 Number" value="${propertySearchForm.propertyE9!''}">-->
         </div>
         <#if spring.status.error>
             <ul>
@@ -30,7 +29,6 @@
             <@spring.bind "propertySearchForm.afm"/>
             <input type="text" class="form-control" id="owner-afm" name="afm"
                     >
-<#--                   placeholder="Owner's ΑΦΜ" value="${propertySearchForm.afm!''}">-->
         </div>
         <#if spring.status.error>
             <ul>

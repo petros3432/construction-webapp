@@ -2,7 +2,6 @@ package gr.pf.team2.constructionwebapp.controller.admin;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
-import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;

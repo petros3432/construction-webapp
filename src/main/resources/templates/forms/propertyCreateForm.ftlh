@@ -27,7 +27,7 @@
 
         <#--    </div>-->
         <div class="form-group col-md-6 text-left">
-            <label for="cost">E9 Property</label>
+            <label for="cost">Property Identity</label>
             <div class="input-group">
                 <@spring.bind "createPropertyForm.propertyE9"/>
                 <input type="text" class="form-control" id="propertyE9"  name="propertyE9">

@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group col-md-6 text-left">
-            <label for="propertyE9">Property E9</label>
+            <label for="propertyE9">Property Identity</label>
             <div class="input-group">
                 <@spring.bind "editProperty.propertyE9"/>
                 <input type="text" class="form-control" value="${editProperty.propertyE9}" id="propertyE9"

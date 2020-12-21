@@ -1,12 +1,8 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.property;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.domain.Property;
-import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
-import gr.pf.team2.constructionwebapp.models.RepairModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.validators.EditPropertyValidation;

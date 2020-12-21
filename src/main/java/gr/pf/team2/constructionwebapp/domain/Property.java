@@ -2,7 +2,6 @@ package gr.pf.team2.constructionwebapp.domain;
 
 import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import lombok.Data;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;

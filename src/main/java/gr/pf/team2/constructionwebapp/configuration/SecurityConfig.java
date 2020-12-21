@@ -1,10 +1,6 @@
 package gr.pf.team2.constructionwebapp.configuration;
 
 
-
-
-
-//import gr.pf.team2.constructionwebapp.authenticationhandlers.LoginFailureHandler;
 import gr.pf.team2.constructionwebapp.authenticationhandlers.LoginSuccessHandler;
 import gr.pf.team2.constructionwebapp.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private LoginSuccessHandler loginSuccessHandler;
 
-//    @Autowired
-//    private LoginFailureHandler loginFailureHandler;
 
 
     @Bean
@@ -52,10 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //LOGIN Configuration
                 .formLogin()
                 .loginPage("/login")
-                //.usernameParameter()
-                //.passwordParameter()
                 .successHandler(loginSuccessHandler)
-                //.failureHandler(loginFailureHandler)
                 .failureUrl("/login?error=true")
 
 
@@ -70,11 +61,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //AUTHORIZATION AND ROLES
                 .authorizeRequests()
-                //.antMatchers("/").permitAll()
                 .antMatchers("/login/**").anonymous()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .antMatchers("/user/**").hasAuthority("USER")
-
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/js/**").permitAll()
 
@@ -83,7 +72,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //ERROR HANDLING FOR ACCESS DENIED
                 .and()
                 .exceptionHandling().accessDeniedPage("/error/access-denied")
-
                 .and()
                 .headers()
                 .frameOptions()

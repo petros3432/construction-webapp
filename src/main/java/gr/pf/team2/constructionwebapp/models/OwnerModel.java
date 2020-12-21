@@ -1,11 +1,6 @@
 package gr.pf.team2.constructionwebapp.models;
 
-import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
 import gr.pf.team2.constructionwebapp.enums.Role;
-
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -47,15 +42,11 @@ public class OwnerModel {
 
     @Pattern(regexp = PASSWORD_PATTERN, message = "{registerOwner.password.pattern.invalid}")
     @Size(min = PASSWORD_MIN_SIZE, max = PASSWORD_MAX_SIZE, message = "{registerOwner.password.size.invalid}")
-//    @NotEmpty(message = "{registerOwner.password.not.null}")
     private String password;
 
     private Role role;
 
     private Long id;
-
-
-
 
 
 

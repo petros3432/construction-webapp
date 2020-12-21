@@ -23,7 +23,7 @@
                    id="empTable">
                 <thead>
                 <tr>
-                    <th scope="col">E9</th>
+                    <th scope="col">Property Identity</th>
                     <th scope="col">Address</th>
                     <th scope="col">Year of Construction</th>
                     <th scope="col">Owner's Afm</th>

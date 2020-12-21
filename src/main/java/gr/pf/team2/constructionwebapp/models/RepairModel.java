@@ -1,15 +1,12 @@
 package gr.pf.team2.constructionwebapp.models;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 
 public class RepairModel {
 
@@ -40,15 +37,11 @@ public class RepairModel {
 
     private String ownersName;
 
-    @NotEmpty(message = "{repair.afm.edit.not.null}")
-    @Pattern(regexp = AFM_PATTERN, message = "{registerOwner.afm.pattern.invalid}")
-    @Size( min = AFM_SIZE, max= AFM_SIZE, message = "{registerOwner.afm.size.invalid}")
-    private String ownersAFM;
 
     private Property property;
 
 
-    public RepairModel(String scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName, String ownersAFM) {
+    public RepairModel(String scheduledDate, StateOfRepair state, TypeOfRepair typeOfRepair, String cost, String address, String textDesc, Long id, String ownersName) {
         this.scheduledDate = scheduledDate;
         this.state = state;
         this.typeOfRepair = typeOfRepair;
@@ -57,7 +50,6 @@ public class RepairModel {
         this.textDesc = textDesc;
         this.id = id;
         this.ownersName = ownersName;
-        this.ownersAFM = ownersAFM;
     }
 
     public RepairModel() {
@@ -69,14 +61,6 @@ public class RepairModel {
 
     public void setOwnersName(String ownersName) {
         this.ownersName = ownersName;
-    }
-
-    public String getOwnersAFM() {
-        return ownersAFM;
-    }
-
-    public void setOwnersAFM(String ownersAFM) {
-        this.ownersAFM = ownersAFM;
     }
 
     public Property getProperty() {

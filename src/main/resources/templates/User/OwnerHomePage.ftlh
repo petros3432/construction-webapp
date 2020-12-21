@@ -26,7 +26,7 @@
                     <th scope="col">Cost</th>
                     <th scope="col">State</th>
                     <th scope="col">Scheduled Date</th>
-                    <th scope="col">Description</th>
+<#--                    <th scope="col">Description</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -36,9 +36,15 @@
                             <td>${rep.typeOfRepair}</td>
                             <td>${rep.address}</td>
                             <td>${rep.cost} € </td>
-                            <td>${rep.state}</td>
+                            <#if rep.state == "ONGOING">
+                                <td  style="color: blue">${rep.state}</td>
+                            <#elseif rep.state == "COMPLETED">
+                                <td  style="color: green">${rep.state}</td>
+                            <#else>
+                                <td  style="color: red">${rep.state}</td>
+                            </#if>
                             <td>${rep.scheduledDate}</td>
-                            <td>${rep.textDesc!''}</td>
+<#--                            <td>${rep.textDesc!'-'}</td>-->
                         </tr>
                     </#list>
                 </#if>

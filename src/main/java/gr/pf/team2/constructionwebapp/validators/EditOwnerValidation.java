@@ -1,11 +1,8 @@
 package gr.pf.team2.constructionwebapp.validators;
 
 import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.models.OwnerModel;
-import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.service.OwnerService;
-import gr.pf.team2.constructionwebapp.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

@@ -27,6 +27,7 @@
                         <th scope="col">Cost</th>
                         <th scope="col">State</th>
                         <th scope="col">Scheduled Date</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Remove</th>
                     </tr>
@@ -46,6 +47,7 @@
                                     <td  style="color: blue">${rep.state}</td>
                                 </#if>
                                 <td>${rep.scheduledDate}</td>
+                                <td>${rep.textDesc!'-'}</td>
                                 <td class="text-center"><a class="btn btn-link" href="/admin/repair/${rep.id}/edit"><span
                                                 data-feather="tool"></span></a></td>
                                 <td class="text-center">
@@ -83,6 +85,7 @@
                                 </#if>
 
                                 <td>${rep.scheduledDate}</td>
+                                <td>${rep.textDesc!'-'}</td>
                                 <td class="text-center"><a class="btn btn-link" href="/admin/repair/${rep.id}/edit"><span
                                                 data-feather="tool"></span></a></td>
                                 <td class="text-center">

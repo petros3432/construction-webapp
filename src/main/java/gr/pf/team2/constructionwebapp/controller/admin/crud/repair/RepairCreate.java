@@ -1,11 +1,9 @@
 package gr.pf.team2.constructionwebapp.controller.admin.crud.repair;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
-import gr.pf.team2.constructionwebapp.service.OwnerService;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.service.RepairService;
 import gr.pf.team2.constructionwebapp.validators.RegistrationRepairValidation;
@@ -31,9 +29,6 @@ public class RepairCreate {
 
     @Autowired
     private RepairService repairService;
-
-    @Autowired
-    private OwnerService ownerService;
 
     @Autowired
     private PropertyService propertyService;

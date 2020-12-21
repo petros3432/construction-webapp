@@ -2,8 +2,6 @@ package gr.pf.team2.constructionwebapp.service;
 
 import gr.pf.team2.constructionwebapp.configuration.SecurityConfig;
 import gr.pf.team2.constructionwebapp.domain.Owner;
-import gr.pf.team2.constructionwebapp.enums.TypeOfProperty;
-import gr.pf.team2.constructionwebapp.exceptions.ExceptionsHandling;
 import gr.pf.team2.constructionwebapp.forms.RegisterOwnerForm;
 import gr.pf.team2.constructionwebapp.forms.SearchFormOwner;
 import gr.pf.team2.constructionwebapp.maps.OwnerMapper;
@@ -11,8 +9,6 @@ import gr.pf.team2.constructionwebapp.models.OwnerModel;
 import gr.pf.team2.constructionwebapp.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

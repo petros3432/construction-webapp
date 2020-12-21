@@ -26,8 +26,6 @@ public interface OwnerRepository extends JpaRepository<Owner,Long> {
 
     Optional<Owner> findById(Long id);
 
-
-
     @Query(value = "SELECT * FROM Owner WHERE Owner.AFM=(:afm)", nativeQuery = true)
     List<Owner> advSearchAfm(String afm);
 

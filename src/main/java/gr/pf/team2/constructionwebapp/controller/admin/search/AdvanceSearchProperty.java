@@ -5,7 +5,6 @@ import gr.pf.team2.constructionwebapp.forms.SearchFormProperty;
 import gr.pf.team2.constructionwebapp.models.PropertyModel;
 import gr.pf.team2.constructionwebapp.service.PropertyService;
 import gr.pf.team2.constructionwebapp.validators.SearchPropertyValidation;
-import gr.pf.team2.constructionwebapp.validators.SearchRepairValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

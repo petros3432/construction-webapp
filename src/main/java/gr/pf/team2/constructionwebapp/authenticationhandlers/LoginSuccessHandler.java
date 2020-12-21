@@ -1,8 +1,5 @@
 package gr.pf.team2.constructionwebapp.authenticationhandlers;
 
-
-
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
@@ -30,12 +27,6 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 
         String redirectUrl = USER_HOME_PAGE_URL;
-
-
-//        RedirectAttributes attributes = new RedirectAttributesModelMap();
-//        attributes.addFlashAttribute(USER_HOME_PAGE_URL , authentication.getName());
-
-
 
 
         for (GrantedAuthority grantedAuthority: authorities) {

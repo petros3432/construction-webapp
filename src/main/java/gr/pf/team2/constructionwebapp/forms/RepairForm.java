@@ -1,6 +1,5 @@
 package gr.pf.team2.constructionwebapp.forms;
 
-import gr.pf.team2.constructionwebapp.domain.Owner;
 import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.enums.StateOfRepair;
 import gr.pf.team2.constructionwebapp.enums.TypeOfRepair;
@@ -9,8 +8,7 @@ import javax.validation.constraints.*;
 
 public class RepairForm {
 
-    private static final String AFM_PATTERN = "^[0-9]*$";
-    private static final int AFM_SIZE=9;
+
     private static final String COST_PATTERN = "(?!0\\.00)[1-9]\\d{0,9}(\\.(\\d|\\d\\d))?";
 
 
@@ -30,15 +28,9 @@ public class RepairForm {
     @NotEmpty(message="{repairCreate.address.not.null}")
     private String address;
 
-
     private String textDesc;
 
-
-
-
-
     private Property property;
-
 
     public Property getProperty() { return property; }
 

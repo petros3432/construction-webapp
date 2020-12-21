@@ -103,26 +103,6 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6 text-left">
-            <label for="ownersAFM">Owner's AFM</label>
-            <div class="input-group">
-                   <#if rep.ownersAFM??>
-                       <@spring.bind "rep.ownersAFM"/>
-                       <input type="text" class="form-control" id="ownersAFM"  value="${rep.ownersAFM}" name="ownersAFM" readonly>
-                   <#else>
-                      <input type="text" class="form-control" id="ownersAFM" name="ownersAFM">
-                  </#if>
-
-            </div>
-
-            <#if spring.status.error>
-                <ul>
-                    <#list spring.status.errorMessages as error>
-                        <li style="color: #dc3545">${error}</li>
-                    </#list>
-                </ul>
-            </#if>
-        </div>
     </div>
 
 

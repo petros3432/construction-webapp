@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface RepairRepository extends JpaRepository<Repair,Long> {
 
-    @Query(value="SELECT * FROM Repair ORDER BY Scheduled_Date_Of_Repair DESC", nativeQuery = true)
+    @Query(value="SELECT TOP 10 * FROM Repair ORDER BY Scheduled_Date_Of_Repair DESC", nativeQuery = true)
     List<Repair> firstTenRepairs();
 
     Optional<Repair> findById(Long id);

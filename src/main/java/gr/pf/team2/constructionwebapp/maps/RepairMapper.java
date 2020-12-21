@@ -1,6 +1,5 @@
 package gr.pf.team2.constructionwebapp.maps;
 
-import gr.pf.team2.constructionwebapp.domain.Property;
 import gr.pf.team2.constructionwebapp.domain.Repair;
 import gr.pf.team2.constructionwebapp.forms.RepairForm;
 import gr.pf.team2.constructionwebapp.models.RepairModel;
@@ -23,7 +22,6 @@ public class RepairMapper {
         repairModel.setId(repair.getId());
         repairModel.setTextDesc(repair.getTextDesc());
         repairModel.setProperty(repair.getProperty());
-        //repairModel.setOwnersAFM(repairModel.getProperty().getAfm());
         return repairModel;
     }
 

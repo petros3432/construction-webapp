@@ -9,6 +9,8 @@ import javax.validation.constraints.Pattern;
 
 public class PropertyModel {
     private static final String AFM_PATTERN = "^[0-9]*$";
+
+
     private static final String YEAR_PATTERN = "^[12][0-9]{3}$";
 
 
