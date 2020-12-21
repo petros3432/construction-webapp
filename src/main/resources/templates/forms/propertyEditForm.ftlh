@@ -62,8 +62,7 @@
         <div class="form-group col-md-6 text-left">
             <label for="cost">Afm</label>
             <div class="input-group">
-
-                <p>  ${editProperty.afm} </p>
+                <p class="mt-2 ml-3" style="font-size: large">  ${editProperty.afm} </p>
             </div>
         </div>
     </div>
