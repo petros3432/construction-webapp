@@ -30,7 +30,7 @@ INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair 
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair,Description ,Type_Of_Repair , Property_id) VALUES ('Thrakomakedonwn 35' , '25' , '2020-12-22 11:30:00' , 'ONGOING'  , 'The property is outside of the city center'  , 'ELECTRICAL' , '3');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair,Description ,Type_Of_Repair , Property_id) VALUES ('Mouratidou 12' , '170' , '2020-12-27 12:00:00' , 'WAITING', 'The problem is in the bathroom'  , 'PLUMBING' , '4');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair,Description ,Type_Of_Repair , Property_id) VALUES ('Meroglou 1' , '30' , '2020-11-23 12:00:00' , 'COMPLETED' , ' We will need to change the front door '  , 'FRAMES' , '1');
-INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair,Description ,Type_Of_Repair , Property_id) VALUES ('Kiriakou 5' , '120' , '2020-12-22 9:00:00' , 'ONGOING', 'The property has no electricity '  , 'ELECTRICAL' , '5');
+INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair,Description ,Type_Of_Repair , Property_id) VALUES ('Kiriakou 5' , '120' , '2020-12-22 09:00:00' , 'ONGOING', 'The property has no electricity '  , 'ELECTRICAL' , '5');
 INSERT INTO Repair (Address , Cost , Scheduled_Date_Of_Repair , State_Of_Repair ,Type_Of_Repair , Property_id) VALUES ('Kiriakou 5' , '50' , '2021-03-06 9:00:00' , 'WAITING'  , 'INSULATION' , '5');
 
 

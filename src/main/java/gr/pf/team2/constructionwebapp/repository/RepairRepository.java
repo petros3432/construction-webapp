@@ -19,7 +19,7 @@ public interface RepairRepository extends JpaRepository<Repair,Long> {
     List<Repair> firstTenRepairs();
 
 
-    @Query(value= "SELECT * FROM Repair WHERE (SELECT DATEDIFF(minute , Scheduled_Date_Of_Repair , CAST(GETDATE() AS DATE))) < 0 Order By Scheduled_Date_Of_Repair ;" , nativeQuery = true)
+    @Query(value= "SELECT * FROM Repair WHERE (SELECT DATEDIFF(hour , Scheduled_Date_Of_Repair , CAST(GETDATE() AS DATE))) <= 0 Order By Scheduled_Date_Of_Repair ;" , nativeQuery = true)
     List<Repair> nextTenRepairs();
 
 
