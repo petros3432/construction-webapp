@@ -39,7 +39,7 @@
                                 <td>${rep.typeOfRepair}</td>
                                 <td>${rep.address}</td>
                                 <td>${rep.cost} € </td>
-                                <#if rep.state == "IN_PROGRESS">
+                                <#if rep.state == "ONGOING">
                                     <td  style="color: #A8DADC">${rep.state}</td>
                                 <#elseif rep.state == "COMPLETED">
                                     <td  style="color: green">${rep.state}</td>
