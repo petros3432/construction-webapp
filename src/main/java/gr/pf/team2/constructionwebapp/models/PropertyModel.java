@@ -30,6 +30,7 @@ public class PropertyModel {
     @NotEmpty(message="{createProperty.year.not.null}")
     private String year;
 
+    private TypeOfProperty typeOfProperty;
 
 
     @Pattern(regexp = AFM_PATTERN,message="{createProperty.afm.pattern.invalid}")
@@ -45,8 +46,6 @@ public class PropertyModel {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-
-    private TypeOfProperty typeOfProperty;
 
     public String getPropertyE9() {
         return propertyE9;

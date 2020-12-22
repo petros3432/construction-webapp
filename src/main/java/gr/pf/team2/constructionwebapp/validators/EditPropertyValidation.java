@@ -92,7 +92,7 @@ public class EditPropertyValidation implements Validator {
             boolean isNotTheSameAddress2 = (!address3.equals(address4));
 
 
-            if(!isNotTheSameAddress2&&!isNotTheSameE92&&afmModel.equals(afm3)){
+            if(!isNotTheSameAddress2&&!isNotTheSameE92&&!afmModel.equals(afm3)){
                 errors.rejectValue("propertyE9", "e9.is.already.used");
             }
         }
