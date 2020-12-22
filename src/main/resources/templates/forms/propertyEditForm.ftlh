@@ -45,25 +45,34 @@
             <label for="title">Address*</label>
             <div class="input-group">
                 <@spring.bind "editProperty.address"/>
-                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address" required>
+                <input type="text" class="form-control" id="address" value="${editProperty.address}" name="address"
+                       required>
             </div>
 
 
-        <#if spring.status.error>
-            <ul>
-                <#list spring.status.errorMessages as error>
-                    <li style="color: #dc3545">${error}</li>
-                </#list>
-            </ul>
-        </#if>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
 
 
         <div class="form-group col-md-6 text-left">
             <label for="cost">Afm</label>
             <div class="input-group">
-                <p class="mt-2 ml-3" style="font-size: large">${editProperty.afm}</p>
+                <@spring.bind "editProperty.afm"/>
+                <input type="text" class="form-control" id="afm" value="${editProperty.afm}" name="afm" readonly>
             </div>
+            <#if spring.status.error>
+                <ul>
+                    <#list spring.status.errorMessages as error>
+                        <li style="color: #dc3545">${error}</li>
+                    </#list>
+                </ul>
+            </#if>
         </div>
     </div>
 
@@ -72,12 +81,9 @@
         <div class="form-group col-md-6 text-left">
             <label for="title">Property Year*</label>
             <div class="input-group">
-
                 <@spring.bind "editProperty.year"/>
                 <input type="text" class="form-control" id="year" value="${editProperty.year}" name="year" required>
-
             </div>
-
             <#if spring.status.error>
                 <ul>
                     <#list spring.status.errorMessages as error>

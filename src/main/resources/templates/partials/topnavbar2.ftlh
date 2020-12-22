@@ -13,11 +13,11 @@
             <li class="nav-item">
                 <a class="nav-link" id="RepairZone"href="/admin/home">Repair Zone</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" id="OwnerZone"href="/admin/owner">Owner Zone</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" id="PropertyZone" href="/admin/property">Property Zone</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" id="OwnerZone"href="/admin/owner">Owner Zone</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/owner/create"><span data-feather="plus-circle"></span>Add Owner</a>

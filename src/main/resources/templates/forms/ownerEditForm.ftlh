@@ -69,7 +69,7 @@
             <label for="title">Email</label>
             <div class="input-group">
                 <@spring.bind "owner.email"/>
-                <p class="mt-2 ml-3" style="font-size: large"> ${owner.email} </p>
+                <input type="text" class="form-control" id="email" value="${owner.email}" name="email" readonly>
             </div>
             <#if spring.status.error>
                 <ul>
